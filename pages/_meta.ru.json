@@ -1,0 +1,23 @@
+{
+  "index": {
+    "title": "Главная",
+    "type": "page",
+    "display": "hidden"
+  },
+  "docs": {
+    "title": "Документация",
+    "type": "page"
+  },
+  "blog": {
+    "title": "Блог",
+    "type": "page",
+    "theme": {
+      "sidebar": false
+    },
+    "display": "hidden"
+  },
+  "roadmap": {
+    "title": "Дорожная карта",
+    "type": "page"
+  }
+}

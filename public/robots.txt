@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://s2ue.org
+
+# Sitemaps
+Sitemap: https://s2ue.org/sitemap.xml

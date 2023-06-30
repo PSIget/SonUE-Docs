@@ -1,0 +1,23 @@
+{
+  "index": {
+    "title": "Home",
+    "type": "page",
+    "display": "hidden"
+  },
+  "docs": {
+    "title": "Documentation",
+    "type": "page"
+  },
+  "blog": {
+    "title": "Blog",
+    "type": "page",
+    "theme": {
+      "sidebar": false
+    },
+    "display": "hidden"
+  },
+  "roadmap": {
+    "title": "Roadmap",
+    "type": "page"
+  }
+}

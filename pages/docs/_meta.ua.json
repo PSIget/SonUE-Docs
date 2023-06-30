@@ -1,0 +1,17 @@
+{
+  "getting-started": "Початок роботи",
+  "install-and-build": "Встановлення та збірка",
+  "-- editor": {
+    "type": "separator",
+    "title": "Редактор"
+  },
+  "editor": "Робота з редактором",
+  "examples": "Приклади",
+  "-- wiki": {
+    "type": "separator",
+    "title": "Наповнення документації"
+  },
+  "doc-start": "Початок роботи з документацією",
+  "doc-blocs": "Блоки",
+  "doc-public": "Публікація"
+}
