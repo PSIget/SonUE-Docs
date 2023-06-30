@@ -5,7 +5,7 @@ In order to make sure your PR is handled as smoothly as possible we request that
 
 ### New page 📚
 
-- Created default English translation (`.en-US`) page
+- Created default English translation (`.ru`) page
 - Add translation pages for all other languages (no need to translate them but copy from the original one)
 
 ### Updating existing pages ✍️
