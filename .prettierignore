@@ -1,0 +1,13 @@
+.next/
+build/
+dist
+
+node_modules/
+target/
+coverage/
+snapshot/
+generated/
+pnpm-lock.yaml
+
+# generators
+*.hbs

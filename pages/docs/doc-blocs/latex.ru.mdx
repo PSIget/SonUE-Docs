@@ -1,0 +1,29 @@
+import { Callout } from 'nextra-theme-docs'
+
+# LaTeX
+
+Мы используем [KaTeX](https://katex.org/) для отображения выражений LaTeX непосредственно в MDX. 
+
+## Пример
+
+Например, следующий код Markdown:
+
+```md filename="page.mdx"
+The **Pythagorean equation**: $a=\sqrt{b^2 + c^2}$.
+```
+
+Будет отображаться следующим образом:
+
+<div className="mt-6 rounded border border-gray-200 p-4 dark:border-gray-900">
+  The **Pythagorean equation**: $a=\sqrt{b^2 + c^2}$.
+</div>
+
+Вы всё еще можете использовать [синтаксис Markdown и MDX](markdown) в той же строке, где находится ваше выражение LaTeX.
+
+<Callout>
+  Если вы хотите отобразить символ `$` в вашем контенте, а не интерпретировать его как выражение, вы можете экранировать его обратной косой чертой (`\`). Например, `\$e = mc^2\$` будет отображаться как \$e = mc^2\$.
+</Callout>
+
+## API
+
+Чтобы узнать больше о KaTeX и поддерживаемых им функциях и соглашениях, посетите [документацию KaTeX](https://katex.org/docs/supported.html).
