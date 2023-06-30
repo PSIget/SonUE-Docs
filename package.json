@@ -8,7 +8,8 @@
     "debug": "NODE_OPTIONS='--inspect' next",
     "start": "next start",
     "build": "next build && next-sitemap",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "export": "next export"
   },
   "author": "Shu Ding",
   "license": "Apache-2.0",
