@@ -8,7 +8,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Callout } from 'nextra-theme-docs'
-import { Bleed } from 'nextra-theme-docs'
 
 import { titleMap } from "../translations/text";
 
@@ -26,19 +25,18 @@ import { titleMap } from "../translations/text";
         height={256}
         alt="Picture of the author"
         priority={true}
+        className={style.logo_center}
       />
 </div>
 }
 
 {
 
-<Bleed>
 <p className="text-center text-lg mb-2 text-white-600 md:!text-2xl">Port of the original STALKER trilogy games to UE5</p>
-</Bleed>
 }
 
 <div className="mt-8 mb-8 text-center">
-  [Get Started](/docs/getting-started) · [Examples](/docs/examples/simple-level) · [Blog](/blog) · [GitHub Repository](https://github.com/RedPandaProjects/Stalker2UE)
+  [Get Started](/docs/getting-started) · [Examples](/docs/examples/simple-level) · [GitHub Repository](https://github.com/RedPandaProjects/Stalker2UE)
 </div>
 
 This project aims to recreate and experience the unique post-apocalyptic atmosphere and game world characteristic of the S.T.A.L.K.E.R. series using the advanced technologies of Unreal Engine 5.

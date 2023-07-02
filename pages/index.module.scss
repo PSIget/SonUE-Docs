@@ -1,5 +1,9 @@
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html:not([class~=dark]) img.logo_center {
+  filter: invert(100) hue-rotate(180deg);
 }
