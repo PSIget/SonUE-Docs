@@ -4,22 +4,22 @@ module.exports = {
   generateIndexSitemap: false,
   generateRobotsTxt: true,
   sitemapSize: 7000,
-  exclude: ['/*.en', '/*.ua'],
+  exclude: ['/*.en', '/*.uk'],
   alternateRefs: [
     {
       href: 'https://s2ue.org/en',
       hreflang: 'en',
     },
     {
-      href: 'https://s2ue.org/ua',
-      hreflang: 'ua',
+      href: 'https://s2ue.org/uk',
+      hreflang: 'uk',
     },
   ],
   transform: async (config, path) => {
     // Remove the locale part of the path (e.g. /es/about -> /about)
     const extractLocaleIndependentPath = (path) => {
       const matches = config.alternateRefs.map((alt) =>
-        `${path}`.replace(/\.(en|ru|ua)$/, '')
+        `${path}`.replace(/\.(en|ru|uk)$/, '')
       );
       return matches.sort((a, b) => a.length - b.length)[0];
     };
