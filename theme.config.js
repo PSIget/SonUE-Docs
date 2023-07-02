@@ -118,9 +118,10 @@ const themeConfig = {
           .map((l) => (
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
-          <link rel="alternate" hreflang="x-default" href="https://s2ue.org/" />
-          <link rel="alternate" hreflang="en" href="https://s2ue.org/en" />
-          <link rel="alternate" hreflang="ua" href="https://s2ue.org/ua" />
+          canonicalUrl =
+          <link rel="alternate" hreflang="x-default" href={("https://s2ue.org" + useRouter().asPath)} />
+          <link rel="alternate" hreflang="en" href={("https://s2ue.org/en" + useRouter().asPath)} />
+          <link rel="alternate" hreflang="ua" href={("https://s2ue.org/ua" + useRouter().asPath)} />
       </>
     );
   },
