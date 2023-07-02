@@ -2,7 +2,8 @@
   "framework": "nextjs",
   "git": {
     "deploymentEnabled": {
-      "main": false
+      "main": false,
+      "production": true
     }
   },
   "github": {
