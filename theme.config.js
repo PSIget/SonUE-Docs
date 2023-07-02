@@ -104,11 +104,10 @@ const themeConfig = {
           color="#000000"
         />
         <meta httpEquiv="Content-Language" content={contentLanguage} />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="apple-mobile-web-app-title" content="SWR" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="apple-mobile-web-app-title" content="STALKER2UE" />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@vercel" />
         <meta name="twitter:image" content={ogImage} />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
@@ -119,6 +118,9 @@ const themeConfig = {
           .map((l) => (
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
+          <link rel="alternate" hreflang="x-default" href="https://s2ue.org/" />
+          <link rel="alternate" hreflang="en" href="https://s2ue.org/en" />
+          <link rel="alternate" hreflang="ua" href="https://s2ue.org/ua" />
       </>
     );
   },
