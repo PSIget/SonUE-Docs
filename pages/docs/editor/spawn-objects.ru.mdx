@@ -4,19 +4,19 @@
 
 Создание и редактирование Spawn Objects схоже с оригинальным редактором GSC. В `Place Actors` создан отдельный список объектов, он заполняется автоматически как в оригинальном SDK GSC.
 
-![...](./spawn-objects.ru/img/image19.png) 
+![...](./spawn-objects.ru/img/image19.png)
 
 Они также работают через SE\_Factory.
 
-![...](./spawn-objects.ru/img/image20.png) 
+![...](./spawn-objects.ru/img/image20.png)
 
 Свойства почти идентичны GSC свойствам спавна Shape (Box, Sphere). Добавляются как компонент.
 
-![...](./spawn-objects.ru/img/image21.png) 
+![...](./spawn-objects.ru/img/image21.png)
 
 Пример заполнения Shapes SpawnObject.
 
-![...](./spawn-objects.ru/img/image22.png) 
+![...](./spawn-objects.ru/img/image22.png)
 
 Их отображение можно отключить.
 
@@ -28,8 +28,8 @@
 
 ![...](./spawn-objects.ru/img/image24.png)
 
-Сборка спавна как и у пыс делится на два типа:  
-1. LevelSpawn - Спавн уровня (Спавн уровня можно собрать только на самом уровне)  
+Сборка спавна как и у пыс делится на два типа:
+1. LevelSpawn - Спавн уровня (Спавн уровня можно собрать только на самом уровне)
 2. GameSpawn - Спавн всей игры (Собирается из спавнов уровней как настроите)
 
 Она также может быть автоматической при необходимости для PIE (Play In Editor).
@@ -68,9 +68,9 @@
 
 ![...](./spawn-objects.ru/img/image31.png)
 
-Для корректной сборки GameSpawn нужно чтобы все пункты были выполнены:  
-1. Хотя бы один GraphPoint на каждом уровне  
-2. Только один "actor" он single\_player  
+Для корректной сборки GameSpawn нужно чтобы все пункты были выполнены:
+1. Хотя бы один GraphPoint на каждом уровне
+2. Только один "actor" он single\_player
 3. Наличие у уровня собранного LevelSpawn,AIMap
 
 Собранный файл выглядит как в оригинале:
