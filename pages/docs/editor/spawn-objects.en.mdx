@@ -1,0 +1,82 @@
+# How to Work with Spawn Objects
+
+## Creating Spawn Objects
+
+Creating and editing Spawn Objects is similar to the original GSC editor. In the "Place Actors" section, there is a separate list of objects that is automatically populated, just like in the original GSC SDK.
+
+![...](./spawn-objects.ru/img/image19.png)
+
+They also work through the SE\_Factory.
+
+![...](./spawn-objects.ru/img/image20.png)
+
+The properties are almost identical to the GSC spawn shape properties (Box, Sphere). They are added as components.
+
+![...](./spawn-objects.ru/img/image21.png)
+
+Example of filling in Shapes for a SpawnObject.
+
+![...](./spawn-objects.ru/img/image22.png)
+
+Their display can be disabled.
+
+![...](./spawn-objects.ru/img/image23.png)
+
+## Building Spawn for the Game
+
+Unreal Editor also automatically marks that Level Spawn requires rebuilding.
+
+![...](./spawn-objects.ru/img/image24.png)
+
+The spawn building, like in GSC, is divided into two types:
+1. LevelSpawn - Level spawn (can only be built on the respective level)
+2. GameSpawn - Game spawn (built from level spawns as configured)
+
+It can also be automatic if required for PIE (Play In Editor).
+
+![...](./spawn-objects.ru/img/image25.png)
+
+* * *
+
+For PIE, there are GameSpawn build modes.
+
+![...](./spawn-objects.ru/img/image26.png)
+
+The configuration of the level list used for building GameSpawn is located in the project settings. Each game has its own list.
+
+![...](./spawn-objects.ru/img/image27.png)
+
+Here, the link to the level is configured, as well as the `Include In Build Spawn` option.
+
+![...](./spawn-objects.ru/img/image28.png)
+
+With `Include In Build Spawn` disabled and "Ignore `Include In Build Spawn`" enabled in PIE, the level will not be included in the list during automatic `Build full spawn`.
+
+Manual triggering of the build is also possible.
+
+![...](./spawn-objects.ru/img/image29.png)
+
+* * *
+
+Building GameSpawn from the toolbar or menu will build the entire GameSpawn entirely, ignoring `Include In Build Spawn` (i.e., all levels in the list for that game).
+
+What the Level Spawn build log looks like.
+
+![...](./spawn-objects.ru/img/image30.png)
+
+What the GameSpawn build log looks like.
+
+![...](./spawn-objects.ru/img/image31.png)
+
+For the proper building of GameSpawn, all the following conditions must be met:
+1. At least one GraphPoint on each level.
+2. Only one "actor" with the tag single\_player.
+3. The level must have a built LevelSpawn and AIMap.
+
+The built file looks the same as in the original:
+
+![...](./spawn-objects.ru/img/image32.png)
+
+If there is an error during spawn building, detailed information is provided in the log.
+
+![...](./spawn-objects.ru/img/image33.png)
