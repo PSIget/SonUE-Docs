@@ -5,8 +5,8 @@
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const languageMap = {
-  "en": "English (not translated)",
-  "uk": "Український (не перекладено)",
+  "en": "English",
+  "uk": "Український",
   "ru": "Русский",
 };
 

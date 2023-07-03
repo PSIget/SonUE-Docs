@@ -1,0 +1,82 @@
+# Як працювати з Spawn Object
+
+## Створення Spawn Object
+
+Створення та редагування Spawn Objects схоже з оригінальним редактором GSC. У секції "Place Actors" є окремий список об'єктів, який автоматично заповнюється, так само, як у вихідному SDK GSC.
+
+![...](./spawn-objects.ru/img/image19.png)
+
+Вони також працюють через SE\_Factory.
+
+![...](./spawn-objects.ru/img/image20.png)
+
+Властивості практично ідентичні властивостям GSC для створення форми (Box, Sphere). Вони додаються як компоненти.
+
+![...](./spawn-objects.ru/img/image21.png)
+
+Приклад заповнення форм створення SpawnObject.
+
+![...](./spawn-objects.ru/img/image22.png)
+
+Відображення їх можна вимкнути.
+
+![...](./spawn-objects.ru/img/image23.png)
+
+## Збірка Spawn для гри
+
+Також Unreal Editor автоматично позначає, що Level Spawn потребує перезбірки.
+
+![...](./spawn-objects.ru/img/image24.png)
+
+Збірка спавна, так само, як і у GSC, поділяється на два типи:
+1. LevelSpawn - Спавн рівня (Спавн рівня можна зібрати тільки на самому рівні)
+2. GameSpawn - Спавн усієї гри (Збирається зі спавнів рівнів, як налаштовано)
+
+Також вона може бути автоматичною, якщо потрібно для PIE (Play In Editor).
+
+![...](./spawn-objects.ru/img/image25.png)
+
+* * *
+
+Для PIE є режими збірки GameSpawn.
+
+![...](./spawn-objects.ru/img/image26.png)
+
+Налаштування списку рівнів, які використовуються для збірки GameSpawn, знаходиться в налаштуваннях проекту. Для кожної гри свій список.
+
+![...](./spawn-objects.ru/img/image27.png)
+
+Тут налаштовується посилання на рівень, а також опція `Include In Build Spawn`.
+
+![...](./spawn-objects.ru/img/image28.png)
+
+Якщо `Include In Build Spawn` вимкнено, а в PIE увімкнена опція "Ignore `Include In Build Spawn`", рівень не буде включений до списку під час автоматичної збірки `Build full spawn`.
+
+Також збірку можна запустити вручну.
+
+![...](./spawn-objects.ru/img/image29.png)
+
+* * *
+
+Збірка GameSpawn з панелі або меню буде збирати весь GameSpawn повністю, ігноруючи `Include In Build Spawn` (тобто всі рівні, які є в списку для цієї гри).
+
+Як виглядає журнал збірки Level Spawn.
+
+![...](./spawn-objects.ru/img/image30.png)
+
+Як виглядає журнал збірки GameSpawn.
+
+![...](./spawn-objects.ru/img/image31.png)
+
+Для правильної збірки GameSpawn необхідно виконати всі наступні умови:
+1. Принаймні одна GraphPoint на кожному рівні.
+2. Тільки один "actor" з тегом single\_player.
+3. Рівень повинен мати зібраний LevelSpawn, AIMap.
+
+Зібраний файл виглядає так само, як і в оригіналі:
+
+![...](./spawn-objects.ru/img/image32.png)
+
+Якщо виникає помилка під час збірки спавна, докладна інформація наведена в журналі.
+
+![...](./spawn-objects.ru/img/image33.png)

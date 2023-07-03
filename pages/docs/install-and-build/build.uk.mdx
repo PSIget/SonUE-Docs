@@ -1,0 +1,69 @@
+import { Callout } from 'nextra-theme-docs'
+
+# Збірка вихідного коду
+На даний момент є можливість зібрати проект для наступних платформ:
+- Windows 10 20H2 64-біт та новіше
+
+У майбутньому буде можливість збирати для всіх інших платформ, включаючи мобільні пристрої.
+
+<Callout type="info" emoji="ℹ️">
+  Зверніть увагу на порядок. Дуже важливо спочатку зібрати X-Ray Engine, а потім Unreal Engine!
+</Callout>
+
+## Клонування проекту
+Необхідно зробити це рекурсивно за допомогою параметра `--recursive`
+
+```bash
+git clone https://github.com/RedPandaProjects/Stalker2UE --recursive
+```
+
+![Terminal](./build.ru/img/git-clone.png)
+
+## Збірка X-Ray Engine
+X-Ray знаходиться за таким шляхом:
+
+```path
+{src}/Source/XRayEngine/Source/Engine.sln
+```
+
+Необхідно відкрити цей проект і скомпілювати його з необхідною [конфігурацією](../install-and-build/configs).
+
+---
+
+### Приклад збірки
+Збірка `DebugGame Editor` в проекті Unreal. Для цього мені потрібно зібрати всі рішення з конфігурацією `Debug`.
+
+<Callout type="warning" emoji="⚠️">
+  Все, як у [тій](../install-and-build/configs) таблиці, інакше не запуститься!
+</Callout>
+
+![Visual Studio](./build.ru/img/xray-build.png)
+
+## Збірка проекту Unreal Engine
+
+### 1. Створення проекту Visual Studio для збірки UE
+Після успішної збірки X-Ray Engine потрібно повернутися до кореневої теки репозиторію і згенерувати проект.
+
+![Generate Visual Studio Project](./build.ru/img/generate-vs-project.png)
+
+**Примітка**
+* Якщо ви не бачите пункту "Generate Visual Studio project files", ви можете виправити це за допомогою [цього відео](https://www.youtube.com/watch?v=MZu5EB2UfiA).
+* Перед генерацією проекту, щоб уникнути помилок компіляції, залиште лише останню версію MSVC в Visual Studio Installer.
+
+---
+
+### 2. Компіляція файлів для запуску проекту Unreal Engine
+Після генерації проекту Visual Studio відкрийте його та виберіть потрібну конфігурацію збірки.
+
+Згенерований файл знаходиться за шляхом `{src}/Stalker.sln`
+
+![UE Build](./build.ru/img/ue-build.png)
+
+**Примітка**
+* Після збірки ви можете запускати редактор, але ви не зможете грати, поки не встановите повний контент.
+* Актуальну збірку контенту для останньої версії ви можете знайти в нашому [дискорді](https://discord.gg/redprojects) в каналі [#last-build](https://discord.com/channels/530968529311367178/1085389969675268196).
+
+---
+
+### 3. Запуск проекту
+Після успішної збірки редактора ви можете запустити його, натиснувши кнопку `Запуск` в VS або через файл `{src}/Stalker.uproject`.

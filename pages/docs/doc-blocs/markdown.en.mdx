@@ -2,13 +2,13 @@ import { Callout } from 'nextra-theme-docs'
 
 # Markdown
 
-## Базовые понятия
+## Basic Concepts
 
-Данная информация коротко пересказывает информацию с сайта [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+This information briefly summarizes the information from the [Markdown Guide](https://www.markdownguide.org/basic-syntax/) website.
 
-### Заголовки
+### Headings
 
-Чтобы создать заголовок, добавьте перед словом или фразой знаки номеров `#`. Количество знаков номеров должно соответствовать уровню заголовка. Например, чтобы создать заголовок третьего уровня `<h3>`, используйте три знака номеров `например, ### Мой заголовок`.
+To create a heading, add number signs `#` before the word or phrase. The number of number signs should correspond to the heading level. For example, to create a third-level heading `<h3>`, use three number signs, for example, ### My Heading.
 
 ```md filename="Markdown"
 # Heading level 1
@@ -19,27 +19,27 @@ import { Callout } from 'nextra-theme-docs'
 ###### Heading level 6
 ```
 
-### Акцент
-Вы можете добавить акцент, сделав текст полужирным или курсивом.
+### Emphasis
+You can add emphasis by making text bold or italic.
 
-#### Жирный
+#### Bold
 - `I just love **bold text**.` - I just love **bold text**.
 - `I just love __bold text__.` - I just love __bold text__.
 - `Love**is**bold` - Love**is**bold
 
-#### Курсив
+#### Italic
 
 - `Italicized text is the *cat's meow*.` - Italicized text is the *cat's meow*.
 - `Italicized text is the _cat's meow_.` - Italicized text is the _cat's meow_.
 - `A*cat*meow` - A*cat*meow
 
-#### Жирный и курсивный
+#### Bold and Italic
 
 - `This text is ***really important***.` - This text is ***really important***.
 - `This text is ___really important___.` - This text is ___really important___.
 - `This text is __*really important*__.` - This text is __*really important*__.
 
-### Цитаты
+### Blockquotes
 
 ```md filename="Markdown"
 > Dorothy followed her through many of the beautiful rooms in her castle.
@@ -47,7 +47,7 @@ import { Callout } from 'nextra-theme-docs'
 
 > Dorothy followed her through many of the beautiful rooms in her castle.
 
-##### Цитаты с несколькими абзацами
+##### Blockquotes with multiple paragraphs
 
 ```md filename="Markdown"
 > Dorothy followed her through many of the beautiful rooms in her castle.
@@ -59,7 +59,7 @@ import { Callout } from 'nextra-theme-docs'
 >
 > The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
 
-##### Вложенные цитаты
+##### Nested blockquotes
 
 ```md filename="Markdown"
 > Dorothy followed her through many of the beautiful rooms in her castle.
@@ -71,7 +71,7 @@ import { Callout } from 'nextra-theme-docs'
 >
 >> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
 
-##### Цитаты с другими элементами
+##### Blockquotes with other elements
 
 ```md filename="Markdown"
 > **The quarterly results look great!**
@@ -89,8 +89,8 @@ import { Callout } from 'nextra-theme-docs'
 >
 >  *Everything* is going according to **plan**.
 
-### Списки
-Вы можете организовать элементы в упорядоченные и неупорядоченные списки.
+### Lists
+You can organize items into ordered and unordered lists.
 
 ```md filename="Markdown"
 1. First item
@@ -164,9 +164,9 @@ import { Callout } from 'nextra-theme-docs'
 
 * And here's the third list item.
 
-### Линия (HR)
+### Horizontal Rule
 
-Чтобы создать горизонтальную линейку, используйте три или более звездочек `***`, дефисов `---` или символов подчеркивания `___` в отдельной строке.
+To create a horizontal rule, use three or more asterisks `***`, dashes `---`, or underscores `___` on a separate line.
 
 ```md filename="Markdown"
 ***
@@ -176,27 +176,27 @@ import { Callout } from 'nextra-theme-docs'
 _________________
 ```
 
-Визуализированный вывод всех трех выглядит одинаково:
+The visual output of all three is the same:
 
 ---
 
-### Ссылки
-Чтобы создать ссылку, заключите текст ссылки в квадратные скобки (например, `[Duck Duck Go]`), а затем сразу же укажите URL-адрес в круглых скобках (например, `(https://duckduckgo.com)`).
+### Links
+To create a link, enclose the link text in square brackets (e.g., `[Duck Duck Go]`), and then immediately follow it with the URL in parentheses (e.g., `(https://duckduckgo.com)`).
 
 ```md filename="Markdown"
 My favorite search engine is [Duck Duck Go](https://duckduckgo.com "The best search engine for privacy").
 ```
 
-Отрендеренный вывод выглядит следующим образом:
+The rendered output will look like this:
 
 My favorite search engine is [Duck Duck Go](https://duckduckgo.com "The best search engine for privacy").
 
 <Callout type="info" emoji="ℹ️">
-    Вы также можете вставить просто ссылку без какого либо форматирования.
+    You can also insert a plain URL without any formatting.
 </Callout>
 
-### Изображения
-Чтобы добавить изображение, добавьте восклицательный знак `!`, замещающий текст в скобках и путь или URL-адрес ресурса изображения в скобках. При желании вы можете добавить заголовок в кавычках после пути или URL-адреса.
+### Images
+To add an image, use an exclamation mark `!`, followed by the alt text in brackets, and the path or URL of the image resource in parentheses. Optionally, you can add a title in quotes after the path or URL.
 
 ```md filename="Markdown"
 ![Placeholder!](https://placehold.co/832x400/ "Placeholder")
@@ -206,12 +206,12 @@ My favorite search engine is [Duck Duck Go](https://duckduckgo.com "The best sea
 
 ## MDX
 
-Все ваши файлы `.mdx`, находящиеся в каталоге `pages`, будут отображаться с использованием [MDX](https://mdxjs.com/about) — это расширенный формат Markdown с поддержкой компонентов React.
+All your `.mdx` files located in the `pages` directory will be rendered using [MDX](https://mdxjs.com/about) - an extended Markdown format with React components support.
 
-Например, вы можете использовать импорт и использовать компоненты React внутри файлов Markdown следующим образом:
+For example, you can import and use React components inside Markdown files like this:
 
 ```mdx filename="Markdown"
-## Привет, MDX
+## Hello, MDX
 
 import { useState } from 'react'
 
@@ -225,10 +225,10 @@ export function Counter({ children }) {
   )
 }
 
-<Counter>**Клики**: </Counter>
+<Counter>**Clicks**: </Counter>
 ```
 
-Преобразуется в:
+It will be transformed into:
 
 import Shadow from './markdown.ru/components/shadow'
 import { useState } from 'react'
@@ -245,60 +245,60 @@ export function Counter({ children }) {
 
 <div className="mt-6 rounded border border-gray-200 p-4 dark:border-gray-900">
   <Shadow mode="open">
-    <h2>Привет, MDX</h2>
-    <Counter>**Клики**: </Counter>
+    <h2>Hello, MDX</h2>
+    <Counter>**Clicks**: </Counter>
   </Shadow>
 </div>
 
-Помимо базового MDX, в Документации также встроены некоторые расширенные возможности Markdown.
+In addition to basic MDX, the Documentation also incorporates some advanced Markdown features.
 
 ## GitHub Flavored Markdown
 
-[GFM](https://github.github.com/gfm) - это расширение Markdown, созданное GitHub, которое добавляет поддержку зачеркивания, списков задач, таблиц и многого другого.
+[GFM](https://github.github.com/gfm) is a Markdown extension created by GitHub that adds support for strikethrough, task lists, tables, and more.
 
-### Зачеркивание
+### Strikethrough
 
-~~удалено~~
-
-```md filename="Markdown"
-~~удалено~~
-```
-
-### Список задач
-
-- [x] Написать пресс-релиз
-- [ ] Обновить веб-сайт
-- [ ] Связаться с СМИ
+~~deleted~~
 
 ```md filename="Markdown"
-- [x] Написать пресс-релиз
-- [ ] Обновить веб-сайт
-- [ ] Связаться с СМИ
+~~deleted~~
 ```
 
-### Автоссылки
+### Task Lists
 
-Посетите https://nextjs.org.
+- [x] Write press release
+- [ ] Update website
+- [ ] Contact media
+
+```md filename="Markdown"
+- [x] Write press release
+- [ ] Update website
+- [ ] Contact media
+```
+
+### Autolinks
+
+Visit https://nextjs.org.
 
 ```md
-Посетите https://nextjs.org.
+Visit https://nextjs.org.
 ```
 
-### Пользовательский идентификатор заголовка
+### Custom Heading ID
 
-Вы можете указать пользовательский идентификатор заголовка, используя формат `## Мой заголовок [#пользовательский-id]`. Например:
+You can specify a custom heading ID using the format `## My Heading [#custom-id]`. For example:
 
 ```md filename="Markdown"
-## Длинный заголовок [#about]
+## Long Heading [#about]
 ```
 
-В этом примере `#about` будет использоваться в качестве ссылки на заголовок, заменяя стандартный `#длинный-заголовок`.
+In this example, `#about` will be used as the link to the heading, replacing the default `#long-heading`.
 
 `import`
 
-## Подсветка синтаксиса
+## Syntax Highlighting
 
-Мы используем [Shiki](https://shiki.matsu.io) для подсветки синтаксиса на этапе сборки. Он очень надежный и эффективный. Например, добавление следующего кода в ваш файл Markdown:
+We use [Shiki](https://shiki.matsu.io) for syntax highlighting during the build process. It is highly reliable and efficient. For example, adding the following code to your Markdown file:
 
 ````md filename="Markdown"
 ```js
@@ -306,25 +306,25 @@ console.log('hello, world')
 ```
 ````
 
-Результат:
+Output:
 
 ```js
 console.log('hello, world')
 ```
 
-### Особенности
+### Features
 
-#### Встроенный код
+#### Inline Code
 
-Также поддерживается встроенная подсветка синтаксиса, например `let x = 1{:jsx}`, с помощью синтаксиса `{:}`:
+Inline syntax highlighting is also supported, for example `let x = 1{:jsx}`, using the syntax `{:}`:
 
 ```md filename="Markdown"
 Inlined syntax highlighting is also supported `let x = 1{:jsx}` via:
 ```
 
-#### Подсветка строк
+#### Line Highlighting
 
-Вы можете выделить определенные строки кода, добавив атрибут `{}` к блоку кода:
+You can highlight specific lines of code by adding the `{}` attribute to the code block:
 
 ````md filename="Markdown"
 ```js {1,4-5}
@@ -337,7 +337,7 @@ function Counter() {
 ```
 ````
 
-Результат:
+Output:
 
 ```js {1,4-5}
 import { useState } from 'react'
@@ -348,9 +348,9 @@ function Counter() {
 }
 ```
 
-#### Подсветка подстрок
+#### Substring Highlighting
 
-Вы можете выделить определенные подстроки кода, добавив атрибут `//` к блоку кода:
+You can highlight specific substrings within the code block by adding `//` attribute:
 
 ````md filename="Markdown"
 ```js /useState/
@@ -363,6 +363,8 @@ function Counter() {
 ```
 ````
 
+Output:
+
 ```js /useState/
 import { useState } from 'react'
 
@@ -372,11 +374,11 @@ function Counter() {
 }
 ```
 
-Вы можете выделить только часть вхождений этой подстроки, добавив к ней число: `/str/1` или несколько: `/str/1-3`, `/str/1,3`.
+You can highlight only certain occurrences of that substring by adding a number to it: `/str/1` or multiple: `/str/1-3`, `/str/1,3`.
 
-#### Кнопка копирования
+#### Copy Button
 
-Добавление атрибута `copy` приведет к добавлению кнопки копирования в блок кода, когда пользователь наводит на него курсор:
+Adding the `copy` attribute will add a copy button to the code block when the user hovers over it:
 
 ````md filename="Markdown"
 ```js copy
@@ -384,15 +386,15 @@ console.log('hello, world')
 ```
 ````
 
-Вывод:
+Output:
 
 ```js copy
 console.log('hello, world')
 ```
 
-#### Номера строк
+#### Line Numbers
 
-Вы можете добавить номера строк к блокам кода, добавив атрибут `showLineNumbers`:
+You can add line numbers to code blocks by adding the `showLineNumbers` attribute:
 
 ````md filename="Markdown"
 ```js showLineNumbers
@@ -405,7 +407,7 @@ function Counter() {
 ```
 ````
 
-Вывод:
+Output:
 
 ```js showLineNumbers
 import { useState } from 'react'
@@ -416,9 +418,9 @@ function Counter() {
 }
 ```
 
-#### Имена файлов и заголовки
+#### File Names and Headers
 
-Вы можете добавить имя файла или заголовок к блокам кода, добавив атрибут `filename`:
+You can add a file name or header to code blocks by adding the `filename` attribute:
 
 ````md filename="Markdown"
 ```js filename="example.js"
@@ -426,15 +428,15 @@ console.log('hello, world')
 ```
 ````
 
-Вывод:
+Output:
 
 ```js filename="example.js"
 console.log('hello, world')
 ```
 
-#### Подсветка ANSI-кодов
+#### ANSI Highlighting
 
-Вы можете подсветить ANSI-escape-коды:
+You can highlight ANSI escape codes:
 
 ````md filename="Markdown"
 ```ansi
@@ -448,7 +450,7 @@ console.log('hello, world')
 ```
 ````
 
-Вывод:
+Output:
 
 ```ansi
 [0m [0;32m✓[0m [0;2msrc/[0mindex[0;2m.test.ts (1)[0m
@@ -460,13 +462,13 @@ console.log('hello, world')
          [0;2mpress [0;1mh[0;2m to show help, press [0;1mq[0;2m to quit
 ```
 
-### Поддерживаемые языки
+### Supported Languages
 
-Проверьте [этот список](https://github.com/shikijs/shiki/blob/main/docs/languages.md) для всех поддерживаемых языков.
+Check [this list](https://github.com/shikijs/shiki/blob/main/docs/languages.md) for all the supported languages.
 
-### С динамическим содержимым
+### With Dynamic Content
 
-Поскольку подсветка синтаксиса выполняется на этапе сборки, вы не можете использовать динамическое содержимое в блоках кода. Однако, так как MDX очень мощный, есть обходной путь через клиентский JS. Например:
+Since syntax highlighting is done during the build process, you cannot use dynamic content within code blocks. However, since MDX is very powerful, there is a workaround using client-side JavaScript. For example:
 
 import { useEffect, useRef } from 'react'
 
@@ -524,4 +526,4 @@ function hello () {
 ```
 </DynamicCode>
 
-Этот обходной путь имеет ограничение: обновленное содержимое не будет подсвечиваться снова. Например, если мы обновим число на `1 + 1`, оно будет неправильно подсвечено.
+This workaround has a limitation: updated content will not be highlighted again. For example, if we update the number to `1 + 1`, it will not be correctly highlighted.
