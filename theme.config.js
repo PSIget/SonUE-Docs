@@ -97,6 +97,7 @@ const themeConfig = {
           href="/favicon/favicon-16x16.png"
         />
         <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link
           rel="mask-icon"
