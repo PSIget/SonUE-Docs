@@ -114,6 +114,8 @@ const themeConfig = {
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=0.86"></meta>
         <meta httpEquiv="Content-Language" content={contentLanguage} />
         <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-title" content="STALKER2UE" />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
