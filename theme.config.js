@@ -17,9 +17,16 @@ import {
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const themeConfig = {
   project: {
-    link: "https://github.com/psiget/s2ue-docs",
+    link: "https://github.com/RedPandaProjects/Stalker2UE",
   },
   docsRepositoryBase: "https://github.com/psiget/s2ue-docs/blob/main",
+  chat: {
+    link: 'https://discord.gg/red-projects-530968529311367178',
+  },
+  primaryHue: {
+    dark: 41,
+    light: 41,
+  },
   useNextSeoProps() {
     return {
       titleTemplate: "%s – STALKER2UE",
@@ -42,9 +49,9 @@ const themeConfig = {
     const title = useLocalesMap(titleMap);
     return (
       <>
-        <Logo height={12} />
+        <Logo height={24} />
         <span
-          className="mx-2 font-bold hidden md:inline select-none"
+          className="mx-4 font-bold hidden md:inline select-none"
           title={`STALKER2UE: ${title}`}
         >
           STALKER2UE
@@ -104,8 +111,11 @@ const themeConfig = {
           href="/favicon/safari-pinned-tab.svg"
           color="#000000"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=0.86"></meta>
         <meta httpEquiv="Content-Language" content={contentLanguage} />
         <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
         <meta name="apple-mobile-web-app-title" content="STALKER2UE" />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -120,20 +130,14 @@ const themeConfig = {
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
           canonicalUrl =
-          <link rel="alternate" hreflang="x-default" href={("https://s2ue.org" + useRouter().asPath)} />
-          <link rel="alternate" hreflang="en" href={("https://s2ue.org/en" + useRouter().asPath)} />
-          <link rel="alternate" hreflang="uk" href={("https://s2ue.org/uk" + useRouter().asPath)} />
+          <link rel="alternate" hrefLang="x-default" href={("https://s2ue.org" + useRouter().asPath)} />
+          <link rel="alternate" hrefLang="en" href={("https://s2ue.org/en" + useRouter().asPath)} />
+          <link rel="alternate" hrefLang="uk" href={("https://s2ue.org/uk" + useRouter().asPath)} />
       </>
     );
   },
   footer: {
-    text: () => {
-      const { utmSource, text, suffix } = useLocalesMap(footerTextMap);
-
-      return (
-        <span>STALKER2UE</span>
-      );
-    },
+    text: `${new Date().getFullYear()} © Red Projects`,
   },
   gitTimestamp({ timestamp }) {
     const { locale } = useRouter();
