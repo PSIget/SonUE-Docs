@@ -108,6 +108,7 @@ const themeConfig = {
           href="/favicon/safari-pinned-tab.svg"
           color="#000000"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=0.86"></meta>
         <meta httpEquiv="Content-Language" content={contentLanguage} />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="apple-mobile-web-app-title" content="STALKER2UE" />
