@@ -20,6 +20,10 @@ const themeConfig = {
     link: "https://github.com/psiget/s2ue-docs",
   },
   docsRepositoryBase: "https://github.com/psiget/s2ue-docs/blob/main",
+  primaryHue: {
+    dark: 41,
+    light: 41,
+  },
   useNextSeoProps() {
     return {
       titleTemplate: "%s – STALKER2UE",
