@@ -49,9 +49,9 @@ const themeConfig = {
     const title = useLocalesMap(titleMap);
     return (
       <>
-        <Logo height={12} />
+        <Logo height={24} />
         <span
-          className="mx-2 font-bold hidden md:inline select-none"
+          className="mx-4 font-bold hidden md:inline select-none"
           title={`STALKER2UE: ${title}`}
         >
           STALKER2UE
