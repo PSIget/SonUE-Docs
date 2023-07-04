@@ -81,4 +81,20 @@ html:not([class~=dark]) {
 
 #nprogress .bar {
   background: hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity));
+
+  & .peg{
+    box-shadow: 0 0 10px hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity)), 0 0 5px hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity));
+  }
+}
+
+html:not([class~=dark]) {
+
+  & #nprogress .bar {
+    background: #000;
+
+    & .peg{
+      box-shadow: 0 0 10px #000, 0 0 5px #000;
+    }
+  }
+
 }
