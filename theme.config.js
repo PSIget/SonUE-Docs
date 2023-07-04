@@ -137,13 +137,7 @@ const themeConfig = {
     );
   },
   footer: {
-    text: () => {
-      const { utmSource, text, suffix } = useLocalesMap(footerTextMap);
-
-      return (
-        <span>STALKER2UE</span>
-      );
-    },
+    text: `${new Date().getFullYear()} © Red Projects`,
   },
   gitTimestamp({ timestamp }) {
     const { locale } = useRouter();
