@@ -16,6 +16,8 @@ html {
   filter: invert(1) brightness(1.8);
 }
 
+/* Custom Style Tables */
+
 table {
   width: 100%;
 
@@ -28,7 +30,7 @@ table {
   border-collapse: collapse;
   border-radius: 12px;
   border-style: hidden; /* hide standard table (collapsed) border */
-  box-shadow: 0 0 0 1px #666; /* this draws the table border  */ 
+  box-shadow: 0 0 0 1px #666; /* this draws the table border  */
 }
 
 td {
@@ -43,4 +45,40 @@ tr:last-child {
   td:last-child {
     border-radius: 0px 0px 12px 0px;
   }
+}
+
+/* Custom Light Theme */
+
+html:not([class~=dark]) {
+  /* Custom Light Link Color */
+
+  & .nx-text-primary-600 {
+    color: hsl(var(--nextra-primary-hue)80% 24%/var(--tw-text-opacity));
+  }
+
+  /* Custom Light TabItem Color */
+
+  & .nx-bg-primary-100 {
+    background-color: hsl(var(--nextra-primary-hue)80% 94%/var(--tw-bg-opacity));
+  }
+
+  & .nx-text-primary-800 {
+    color: hsl(var(--nextra-primary-hue)100% 32%/var(--tw-text-opacity));
+  }
+
+  /* Custom Color on Code Block */
+
+  & .nx-bg-primary-700\/5 {
+    --tw-bg-opacity: .03;
+    --tw-border-opacity: .04;
+    border-width: 1px;
+    background-color: rgba(0,0,0,var(--tw-bg-opacity));
+    border-color: rgba(0,0,0,var(--tw-border-opacity));
+  }
+}
+
+/* NProgress Line Custom Color */
+
+#nprogress .bar {
+  background: hsl(var(--nextra-primary-hue)100% 45%/var(--tw-text-opacity));
 }
