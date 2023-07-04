@@ -68,12 +68,32 @@ html:not([class~=dark]) {
 
   /* Custom Color on Code Block */
 
-  & .nx-bg-primary-700\/5 {
+  pre.nx-bg-primary-700\/5,
+  :is(html[class~=dark] pre.dark\:nx-bg-primary-300\/10) {
     --tw-bg-opacity: .03;
     --tw-border-opacity: .04;
     border-width: 1px;
     background-color: rgba(0,0,0,var(--tw-bg-opacity));
     border-color: rgba(0,0,0,var(--tw-border-opacity));
+  }
+
+  .dark\:nx-bg-primary-300\/10 {
+    background-color: rgba(0,0,0,.04);
+  }
+}
+
+/* Custom Color on Code Block */
+:is(html[class~=dark]){
+  pre.nx-bg-primary-700\/5,
+  pre.dark\:nx-bg-primary-300\/10 {
+    --tw-bg-opacity: .03;
+    --tw-border-opacity: .04;
+    border-width: 1px;
+    background-color: rgba(255,255,255,var(--tw-bg-opacity));
+    border-color: rgba(255,255,255,var(--tw-border-opacity));
+  }
+  .dark\:nx-bg-primary-300\/10 {
+    background-color: rgba(255,255,255,.1);
   }
 }
 
