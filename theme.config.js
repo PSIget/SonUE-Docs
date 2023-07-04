@@ -120,9 +120,9 @@ const themeConfig = {
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
           canonicalUrl =
-          <link rel="alternate" hreflang="x-default" href={("https://s2ue.org" + useRouter().asPath)} />
-          <link rel="alternate" hreflang="en" href={("https://s2ue.org/en" + useRouter().asPath)} />
-          <link rel="alternate" hreflang="uk" href={("https://s2ue.org/uk" + useRouter().asPath)} />
+          <link rel="alternate" hrefLang="x-default" href={("https://s2ue.org" + useRouter().asPath)} />
+          <link rel="alternate" hrefLang="en" href={("https://s2ue.org/en" + useRouter().asPath)} />
+          <link rel="alternate" hrefLang="uk" href={("https://s2ue.org/uk" + useRouter().asPath)} />
       </>
     );
   },
