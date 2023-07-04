@@ -26,6 +26,9 @@ dependencies:
   nextra-theme-docs:
     specifier: ^2.4.2
     version: 2.4.2(next@13.2.4)(nextra@2.4.2)(react-dom@18.2.0)(react@18.2.0)
+  nprogress:
+    specifier: ^0.2.0
+    version: 0.2.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1968,6 +1971,10 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       path-key: 2.0.1
+    dev: false
+
+  /nprogress@0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
     dev: false
 
   /object-hash@3.0.0:

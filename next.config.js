@@ -25,7 +25,20 @@ module.exports = withNextra({
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['youtube.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        port: '',
+        pathname: '/vi/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        port: '',
+        pathname: '/vi/**'
+      },
+    ],
   },
   reactStrictMode: true,
 });
