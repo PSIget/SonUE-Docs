@@ -17,9 +17,12 @@ import {
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const themeConfig = {
   project: {
-    link: "https://github.com/psiget/s2ue-docs",
+    link: "https://github.com/RedPandaProjects/Stalker2UE",
   },
   docsRepositoryBase: "https://github.com/psiget/s2ue-docs/blob/main",
+  chat: {
+    link: 'https://discord.gg/red-projects-530968529311367178',
+  },
   primaryHue: {
     dark: 41,
     light: 41,
