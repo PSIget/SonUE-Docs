@@ -1,4 +1,4 @@
-export default function Authors({ date, children, by = "by" }) {
+export default function Authors({ date, children, by = "by:" }) {
   return (
     <div className="mt-4 mb-16 text-gray-500 text-sm">
       {date} {by} {children}
