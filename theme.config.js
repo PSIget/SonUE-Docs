@@ -72,7 +72,7 @@ const themeConfig = {
     // }
 
 
-    const imageUrl = new URL("https://s2ue.org/favicon/og-image.png");
+    const imageUrl = new URL("https://s2ue.org/favicon/og-image.jpg");
 
     if (!/\/index\.+/.test(route)) {
       imageUrl;
