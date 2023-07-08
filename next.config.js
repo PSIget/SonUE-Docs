@@ -16,6 +16,30 @@ module.exports = withNextra({
   },
   redirects: () => {
     return [
+      // Discord Link
+      {
+        source: "/discord",
+        destination: "https://discord.gg/red-projects-530968529311367178",
+        statusCode: 301,
+      },
+      // ModDB Link
+      {
+        source: "/moddb",
+        destination: "https://www.moddb.com/mods/stalker2ue",
+        statusCode: 301,
+      },
+      // GitHub Link
+      {
+        source: "/github",
+        destination: "https://github.com/RedPandaProjects/Stalker2UE",
+        statusCode: 301,
+      },
+      // Boosty Link
+      {
+        source: "/Boosty",
+        destination: "https://boosty.to/stalker2ue",
+        statusCode: 301,
+      },
       {
         source: "/docs",
         destination: "/docs/getting-started",
