@@ -129,9 +129,9 @@ const themeConfig = {
           .map((l) => (
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
-        <link rel="alternate" hrefLang="x-default" href={("https://s2ue.org" + useRouter().asPath)} />
-        <link rel="alternate" hrefLang="en" href={("https://s2ue.org/en" + useRouter().asPath)} />
-        <link rel="alternate" hrefLang="uk" href={("https://s2ue.org/uk" + useRouter().asPath)} />
+        <link rel="alternate" hrefLang="x-default" href={("https://s2ue.org" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
+        <link rel="alternate" hrefLang="en" href={("https://s2ue.org/en" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
+        <link rel="alternate" hrefLang="uk" href={("https://s2ue.org/uk" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
       </>
     );
   },
