@@ -1,9 +1,9 @@
 export function Youtube({ code }) {
   return (
-    <div class="video-container">
+    <div className="video-container nx-mt-6">
       <iframe
         loading="lazy"
-        class="video"
+        className="video"
         src={"https://www.youtube.com/embed/" + code}
         allowfullscreen
       />
