@@ -1,0 +1,93 @@
+---
+description: "Explore the Devlog of S.T.A.L.K.E.R. on Unreal Engine - a unique project that combines the original X-Ray engine with Unreal Engine graphics. Explore the fully functional Zone from Shadow of Chernobyl, enjoy shooting and interaction. Download the build and immerse yourself in the captivating world of the Stalker!"
+date: 2022-12-28
+---
+
+import Authors, { Author } from 'components/authors'
+
+# S.T.A.L.K.E.R. on Unreal Engine: DEVLOG 0
+
+<Authors date="2022-12-28" by="by:">
+  <Author name="Red Panda" />
+  <Author name="Last Day Alive" link="https://www.youtube.com/channel/UCagShjMvwP2028fQUoykehw" />
+  <Author name="PSI" link="https://github.com/psiget" />
+</Authors>
+
+## Project Description and Goals
+
+This is not just a simple port in the traditional sense - it's a hybrid. All internal processes, NPC behavior logic, shooting, quests, and A-Life are taken from the original X-Ray engine. The graphical part has been replaced with Unreal Engine. To demonstrate the full functionality of the port, the entire trilogy is available: Shadow of Chernobyl, Clear Sky, and Call of Pripyat.
+
+The goal of the entire project is to create a toolkit for mod creators, making the implementation of any ideas much easier than in the original X-Ray engine.
+
+The current build has been made available to the public by popular demand, as there have been many requests for its release. It is also important to show that the project is not stillborn and is already functional.
+
+## Features of the Current Build
+
+The most important thing is that the entire Zone from Shadow of Chernobyl is fully functional. The level logic, quests, firefights, and A-Life simulation work flawlessly. However, there are some minor bugs. For example, due to an unfinished attachment system, the flashlight remains in Sidorovich's bunker and does not follow the player. The weapons and the player's hands are also not displayed. Despite this, shooting and interaction are fully functional. There is a small non-critical bug that causes items to spawn away from the crates and containers they should come from. Most of the console commands from the original Stalker also work here; the commands are executed as follows: `xray.{command from X-Ray}`.
+
+### Minor flaws
+
+- Accessing the menu is blocked to avoid game crashes (except for loading the latest save)
+- Save and load are performed using the `F6` and `F7` keys, respectively
+- Accidentally pressing `F5` for saving will trigger shader debugging mode, which can be exited by pressing `F3`
+- Some materials are not configured, including the display of graphic flow boundaries (culling)
+- Grass is missing
+- Interface elements loading issue (related to improperly configured game resource caching)
+
+## Performance and Recommendations
+
+### Performance
+
+The build is a test version, and many things are not optimized.
+
+- Resource monitoring is performed continuously
+- The build is launched with the maximum graphics settings available in the engine
+
+Significant performance drops may be observed on weaker systems.
+
+### Performance Recommendations
+
+For comfortable gameplay at Full HD resolution, a video card no weaker than an **RTX 3060 Ti** is recommended. If your hardware is weaker, you can run the game in windowed mode instead of fullscreen or make changes to the settings file to improve performance:
+
+```ini filename="{game}\Stalker\Saved\Config\Windows\GameUserSettings.ini" {5-7,10-12}
+[ScalabilityGroups]
+sg.ResolutionQuality=100
+sg.ViewDistanceQuality=3
+sg.AntiAliasingQuality=3
+sg.ShadowQuality=3
+sg.GlobalIlluminationQuality=3
+sg.ReflectionQuality=3
+sg.PostProcessQuality=3
+sg.TextureQuality=3
+sg.EffectsQuality=3
+sg.FoliageQuality=3
+sg.ShadingQuality=2
+```
+
+Replace the values `3` with `2`. Speaker1: This will improve performance. Additionally, you can disable anti-aliasing (if your eyes are not sensitive to jagged edges). To do this, change `sg.AntiAliasingQuality=3` to `sg.AntiAliasingQuality=0`.
+
+## Download and Installation
+
+1. Download from https://disk.yandex.ru/d/QA3BsONIYB9zpA
+2. Unpack the contents of the archive in a location of your choice (just make sure the path to the folder does not contain Cyrillic characters)
+3. Launch via `Start.bat` or `Start_FullScreen.bat`
+    - `Start.bat` - windowed mode
+    - `Start_FullScreen.bat` - fullscreen mode
+
+You also need to download and install [OpenAL 1.1](https://www.openal.org/downloads/) (OpenAL 1.1 Windows Installer).
+
+### Minimum System Requirements
+
+- **Operating System:** Windows 10 20H2 64-bit or later
+- **Processor:** Intel® Core™ i5-9400F / AMD Ryzen™ 5 2400G
+- **Memory:** 16 GB RAM
+- **Graphics:** NVIDIA GeForce GTX 1660 Super / AMD Radeon RX 5600
+- **Storage:** 6 GB SSD
+
+## Acknowledgements
+
+Material prepared by Red Panda, edited and narrated by Last Day Alive, blog text adapted by PSI.
+
+## Troubleshooting and Community
+
+To solve any issues and ask questions, you can join our [Discord](https://discord.gg/red-projects-530968529311367178) server.
