@@ -5,7 +5,7 @@ export function Youtube({ code }) {
         loading="lazy"
         className="video"
         src={"https://www.youtube.com/embed/" + code}
-        allowfullscreen
+        allowFullScreen
       />
     </div>
   );
