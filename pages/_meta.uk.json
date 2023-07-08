@@ -13,8 +13,7 @@
     "type": "page",
     "theme": {
       "sidebar": false
-    },
-    "display": "hidden"
+    }
   },
   "roadmap": {
     "title": "Дорожня карта",
