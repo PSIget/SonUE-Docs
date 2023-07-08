@@ -6,7 +6,7 @@
 /** @type {Readonly<Record<Locale, string>>} */
 export const languageMap = {
   "en": "English",
-  "uk": "Український",
+  "uk": "Українська",
   "ru": "Русский",
 };
 
@@ -20,7 +20,7 @@ export const titleMap = {
 /** @type {Readonly<Record<Locale, string>>} */
 export const headDescriptionMap = {
   "en": "This is a project to port the original S.T.A.L.K.E.R. game series to the Unreal Engine 5. It aims to recreate the post-apocalyptic atmosphere and gaming world that are characteristic of the S.T.A.L.K.E.R. series, using advanced Unreal Engine 5 technologies.",
-  "uk": "Це проект з перенесення оригінальної серії ігор S.T.A.L.K.E.R. на двигун Unreal Engine 5. Він має на меті відтворити постапокаліптичну атмосферу та геймплейний світ, які є характерними для серії S.T.A.L.K.E.R., з використанням передових технологій Unreal Engine 5.",
+  "uk": "Це проект з перенесення оригінальної серії ігор S.T.A.L.K.E.R. на рушiй Unreal Engine 5. Він має на меті відтворити постапокаліптичну атмосферу та геймплейний світ, які є характерними для серії S.T.A.L.K.E.R., з використанням передових технологій Unreal Engine 5.",
   "ru": "Это проект по переносу оригинальной серии игр S.T.A.L.K.E.R. на движок Unreal Engine 5. Он призван воссоздать постапокалиптическую атмосферу и игровой мир, характерные для серии S.T.A.L.K.E.R., с использованием передовых технологий Unreal Engine 5.",
 };
 
