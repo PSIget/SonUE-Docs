@@ -1,7 +1,7 @@
 {
-  "name": "s2ue-docs",
+  "name": "S2UE-Docs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Website for STALKER2UE Mod",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,7 @@
     "postbuild": "next-sitemap",
     "export": "next export"
   },
-  "author": "Shu Ding",
+  "author": "PSI",
   "license": "Apache-2.0",
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
