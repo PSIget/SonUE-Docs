@@ -3,7 +3,7 @@ import "nextra-theme-docs/style.css";
 import "nprogress/nprogress.css";
 import "../styles.css";
 
-import { Analytics } from "@vercel/analytics/react";
+import Analytics from "components/google-analytics";
 
 import { useRouter } from "next/router";
 import Head from "next/head";
