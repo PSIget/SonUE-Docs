@@ -36,7 +36,7 @@ module.exports = withNextra({
       },
       // Boosty Link
       {
-        source: "/Boosty",
+        source: "/boosty",
         destination: "https://boosty.to/stalker2ue",
         statusCode: 301,
       },
