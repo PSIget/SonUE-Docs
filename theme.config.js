@@ -5,13 +5,13 @@ import useLocalesMap from "./components/use-locales-map";
 import {
   editTextMap,
   feedbackLinkMap,
-  footerTextMap,
   gitTimestampMap,
   headDescriptionMap,
   languageMap,
   searchPlaceholderMap,
   tableOfContentsTitleMap,
   titleMap,
+  build134AndEditor135Release,
 } from "./translations/text";
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
@@ -22,6 +22,19 @@ const themeConfig = {
   docsRepositoryBase: "https://github.com/psiget/s2ue-docs/blob/main",
   chat: {
     link: 'https://discord.gg/red-projects-530968529311367178',
+  },
+  banner: {
+    key: 'build-134-and-editor-135-release',
+    text: () => {
+      const text = useLocalesMap(build134AndEditor135Release);
+      return (
+        <>
+          <a href="/blog/devlog-1">
+            {text}
+          </a>
+        </>
+      );
+    }
   },
   primaryHue: {
     dark: 41,
