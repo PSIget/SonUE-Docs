@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
 import Logo from "./components/logo";
-import useLocalesMap from "./components/use-locales-map";
+import useLocalesMap from "./utils/use-locales-map";
 import {
   editTextMap,
   feedbackLinkMap,
