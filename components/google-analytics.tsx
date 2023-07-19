@@ -1,11 +1,11 @@
-import Script from 'next/script'
+import Script from 'next/script';
 
-export default function Analytics() {
+const Analytics: React.FC = () => {
   return (
     <div className="container">
       {/* Google tag (gtag.js) */}
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-55PM901V2S"></Script>
-      <Script>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-55PM901V2S" />
+      <Script strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -16,5 +16,6 @@ export default function Analytics() {
       </Script>
     </div>
   );
-}
+};
 
+export default Analytics;
