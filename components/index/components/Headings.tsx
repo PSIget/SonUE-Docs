@@ -1,5 +1,5 @@
 import cn from "classnames";
-import gradients from "./gradients.module.css";
+import gradients from "./gradients.module.scss";
 
 export function HeroText({
   children,
