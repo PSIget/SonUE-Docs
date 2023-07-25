@@ -1,6 +1,6 @@
 import cn from "classnames";
 import { MouseEventHandler } from "react";
-import gradients from "./gradients.module.css";
+import gradients from "./gradients.module.scss";
 
 export function CTAButton({
   children,
