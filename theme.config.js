@@ -12,6 +12,7 @@ import {
   tableOfContentsTitleMap,
   titleMap,
   build134AndEditor135Release,
+  reMarkFooter,
 } from "./translations/text";
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
@@ -149,7 +150,7 @@ const themeConfig = {
     );
   },
   footer: {
-    text: `${new Date().getFullYear()} © Red Projects`,
+    text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. belong to GSC Game World`,
   },
   gitTimestamp({ timestamp }) {
     const { locale } = useRouter();

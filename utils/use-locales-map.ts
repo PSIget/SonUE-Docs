@@ -39,8 +39,12 @@ export default function useLocalesMap(localesMap) {
     return localesMap[locale] || localesMap[defaultLocale];
   }
 
-  const target = JSON.parse(JSON.stringify(localesMap[defaultLocale]));
-  return mergeDeep(target, localesMap[locale]);
+  return JSON.parse(JSON.stringify(localesMap[defaultLocale]), (key, value) => {
+    if (typeof value === "string") {
+      return value.replace(/\\n/g, "\n");
+    }
+    return value;
+  });
 }
 
 /**
@@ -50,29 +54,4 @@ export default function useLocalesMap(localesMap) {
  */
 function isObject(item) {
   return item && typeof item === "object" && !Array.isArray(item);
-}
-
-/**
- * Deep merge two objects.
- * @template T
- * @param {Record<string, T>} target
- * @param {Record<string, T>} sources
- * @returns {Record<string, T>}
- */
-function mergeDeep(target, ...sources) {
-  if (!sources.length) return target;
-  const source = sources.shift();
-
-  if (isObject(target) && isObject(source)) {
-    for (const key in source) {
-      if (isObject(source[key])) {
-        if (!target[key]) Object.assign(target, { [key]: {} });
-        mergeDeep(target[key], source[key]);
-      } else {
-        Object.assign(target, { [key]: source[key] });
-      }
-    }
-  }
-
-  return mergeDeep(target, ...sources);
 }

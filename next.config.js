@@ -49,6 +49,7 @@ module.exports = withNextra({
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+    domains: ['i.imgur.com', 'cdn.cloudflare.steamstatic.com'],
     remotePatterns: [
       {
         protocol: 'https',

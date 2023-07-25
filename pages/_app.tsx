@@ -1,7 +1,7 @@
 import "nextra-theme-docs/style.css";
 
 import "nprogress/nprogress.css";
-import "../styles.css";
+import "../styles.scss";
 
 import Analytics from "components/google-analytics";
 
