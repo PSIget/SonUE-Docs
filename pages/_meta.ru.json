@@ -1,8 +1,12 @@
 {
   "index": {
     "title": "Главная",
-    "type": "page",
-    "display": "hidden"
+    "display": "hidden",
+    "theme": {
+      "layout": "raw",
+      "sidebar": false,
+      "toc": true
+    }
   },
   "docs": {
     "title": "Документация",

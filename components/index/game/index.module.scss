@@ -1,0 +1,93 @@
+main.game {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    white-space: pre-line;
+  }
+
+  .hero {
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.08);
+
+    .content {
+      .logo {
+        .sub {
+          color: #888;
+          text-align: center;
+          font-size: 0.75rem;
+          font-family: var(--font-inter);
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.125rem; /* 150% */
+          letter-spacing: 0.2rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .whiteShadow {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.01) 29.69%,
+      rgba(255, 255, 255, 0.01) 65.1%,
+      rgba(255, 255, 255, 0) 77.6%,
+      rgba(255, 255, 255, 0) 91.15%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+}
+
+.tech {
+  background: radial-gradient(
+    20.78% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  .ueBanner {
+    max-width: 75rem;
+  }
+}
+
+.rad {
+  max-width: 75rem;
+  & > div > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 64rem) {
+      align-items: center;
+    }
+    h2,
+    p {
+      text-align: left;
+      @media screen and (max-width: 64rem) {
+        text-align: center;
+      }
+    }
+    ul {
+      list-style-type: disc;
+      @media screen and (max-width: 64rem) {
+        list-style-type: none;
+      }
+      li {
+        color: #888;
+        font-family: var(--font-inter);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5rem; /* 150% */
+        letter-spacing: -0.0125rem;
+        &::marker {
+          color: #fff;
+        }
+        @media screen and (max-width: 64rem) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

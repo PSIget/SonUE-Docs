@@ -1,0 +1,161 @@
+@tailwind utilities;
+
+html {
+  font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1, "ss06" 1 !important;
+}
+
+[data-reach-skip-link] {
+  @apply sr-only;
+}
+
+[data-reach-skip-link]:focus {
+  @apply not-sr-only fixed ml-6 top-0 bg-white text-lg px-6 py-2 mt-2 outline-none focus:ring z-50;
+}
+
+.dark .invert-on-dark {
+  filter: invert(1) brightness(1.8);
+}
+
+/* Custom Style Tables */
+
+table {
+  width: 100%;
+
+  &.nx-block {
+    display: inline-table;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 0.75rem;
+  border-style: hidden; /* hide standard table (collapsed) border */
+  box-shadow: 0 0 0 1px #666; /* this draws the table border  */
+}
+
+td {
+  border: 1px solid #ccc;
+}
+
+tr:last-child {
+  td:first-child {
+    border-radius: 0px 0px 0px 0.75rem;
+  }
+
+  td:last-child {
+    border-radius: 0px 0px 0.75rem 0px;
+  }
+}
+
+/* Custom Light Theme */
+
+html:not([class~="dark"]) {
+  /* Custom Light Link Color */
+
+  & .nx-text-primary-600 {
+    color: hsl(var(--nextra-primary-hue) 80% 24% / var(--tw-text-opacity));
+  }
+
+  /* Custom Light TabItem Color */
+
+  & .nx-bg-primary-100 {
+    background-color: hsl(
+      var(--nextra-primary-hue) 80% 94% / var(--tw-bg-opacity)
+    );
+  }
+
+  & .nx-text-primary-800 {
+    color: hsl(var(--nextra-primary-hue) 100% 32% / var(--tw-text-opacity));
+  }
+
+  /* Custom Color on Code Block */
+
+  pre.nx-bg-primary-700\/5,
+  :is(html[class~="dark"] pre.dark\:nx-bg-primary-300\/10) {
+    --tw-bg-opacity: 0.03;
+    --tw-border-opacity: 0.04;
+    border-width: 1px;
+    background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+    border-color: rgba(0, 0, 0, var(--tw-border-opacity));
+  }
+
+  .dark\:nx-bg-primary-300\/10 {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+/* Custom Color on Code Block */
+:is(html[class~="dark"]) {
+  pre.nx-bg-primary-700\/5,
+  pre.dark\:nx-bg-primary-300\/10 {
+    --tw-bg-opacity: 0.03;
+    --tw-border-opacity: 0.04;
+    border-width: 1px;
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+    border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+  }
+  .dark\:nx-bg-primary-300\/10 {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* NProgress Line Custom Color */
+
+#nprogress .bar {
+  background: hsl(var(--nextra-primary-hue) 100% 45% / var(--tw-text-opacity));
+
+  & .peg {
+    box-shadow: 0 0 10px
+        hsl(var(--nextra-primary-hue) 100% 45% / var(--tw-text-opacity)),
+      0 0 5px hsl(var(--nextra-primary-hue) 100% 45% / var(--tw-text-opacity));
+  }
+}
+
+html:not([class~="dark"]) {
+  & #nprogress .bar {
+    background: #000;
+
+    & .peg {
+      box-shadow: 0 0 0.625rem #000, 0 0 0.3125rem #000;
+    }
+  }
+}
+
+/* Video Frame Full Width */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  iframe {
+    border-radius: 0.75rem;
+  }
+}
+
+/* Custom fslightbox Style */
+.fslightbox-container {
+  background: #000000b7 !important;
+  backdrop-filter: blur(1.5rem);
+}
+
+/* Custom Game Global SCSS */
+html:not([class~="dark"]) {
+  #game-index {
+    .light\:invert {
+      filter: invert(1) hue-rotate(180deg);
+      &.brightness {
+        filter: brightness(200%);
+      }
+    }
+  }
+}

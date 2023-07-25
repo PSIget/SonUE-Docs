@@ -1,0 +1,30 @@
+<svg width="818" height="224" viewBox="0 0 818 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_424_2007)">
+    <g opacity="0.5" filter="url(#filter0_f_424_2007)">
+      <line x1="408" y1="226" x2="408" y2="128" stroke="white" stroke-width="2" />
+      <path d="M-1 87C-1 73.1929 10.1929 62 24 62H794C807.807 62 819 73.1929 819 87H817C817 74.2975 806.703 64 794 64H24C11.2975 64 1 74.2975 1 87H-1ZM818 224H0H818ZM-1 224V87C-1 73.1929 10.1929 62 24 62V64C11.2975 64 1 74.2975 1 87V224H-1ZM794 62C807.807 62 819 73.1929 819 87V224H817V87C817 74.2975 806.703 64 794 64V62Z" fill="white" />
+    </g>
+    <line x1="408" y1="226" x2="408" y2="128" stroke="white" stroke-width="2" />
+    <path d="M-1 87C-1 73.1929 10.1929 62 24 62H794C807.807 62 819 73.1929 819 87H817C817 74.2975 806.703 64 794 64H24C11.2975 64 1 74.2975 1 87H-1ZM818 224H0H818ZM-1 224V87C-1 73.1929 10.1929 62 24 62V64C11.2975 64 1 74.2975 1 87V224H-1ZM794 62C807.807 62 819 73.1929 819 87V224H817V87C817 74.2975 806.703 64 794 64V62Z" fill="white" />
+    <g filter="url(#filter1_f_424_2007)">
+      <circle cx="409" cy="64" r="64" fill="white" fill-opacity="0.2" />
+    </g>
+    <circle cx="409" cy="64" r="64" fill="white" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M447.034 73.2185C445.931 78.5389 441.023 92.1853 425.379 99.5774L419.101 92.5149L408.508 103.171C402.476 103.09 396.544 101.616 391.177 98.8623C385.809 96.1091 381.151 92.1521 377.566 87.3004C378.693 87.6509 379.857 87.8695 381.034 87.9517C382.769 87.9831 384.648 87.3475 384.648 84.4204V55.6799C384.674 54.9404 384.526 54.205 384.216 53.533C383.906 52.8609 383.443 52.2709 382.864 51.8104C382.285 51.3498 381.606 51.0315 380.881 50.8811C380.156 50.7306 379.407 50.7522 378.692 50.9441C373.787 52.0663 369.864 64.3119 369.864 64.3119C369.809 58.657 370.987 53.0581 373.315 47.9044C375.643 42.7507 379.066 38.1659 383.345 34.4688C390.651 28.2774 397.788 26.1351 403.211 25.2954C397.855 28.348 394.842 33.331 394.842 37.5136C394.842 44.219 398.891 43.4265 400.091 42.4377V81.2502C400.294 81.7378 400.558 82.1979 400.876 82.6195C401.413 83.3612 402.119 83.9635 402.936 84.3759C403.753 84.7882 404.657 84.9986 405.573 84.9894C409.63 84.9894 414.891 80.3595 414.891 80.3595V48.9313C414.891 45.7336 412.482 41.8688 410.069 40.5504C410.069 40.5504 414.534 39.7657 417.987 42.3985C418.635 41.6054 419.323 40.8471 420.051 40.1267C428.079 32.2402 435.655 30.0038 441.964 28.8816C441.964 28.8816 430.48 37.9059 430.48 49.9907C430.48 58.9875 430.711 80.9245 430.711 80.9245C434.984 85.0286 441.313 79.1039 447.034 73.2185Z" fill="black" fill-opacity="0.8" />
+  </g>
+  <defs>
+    <filter id="filter0_f_424_2007" x="-25" y="38" width="868" height="212" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feGaussianBlur stdDeviation="12" result="effect1_foregroundBlur_424_2007" />
+    </filter>
+    <filter id="filter1_f_424_2007" x="281" y="-64" width="256" height="256" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+      <feGaussianBlur stdDeviation="32" result="effect1_foregroundBlur_424_2007" />
+    </filter>
+    <clipPath id="clip0_424_2007">
+      <rect width="818" height="224" fill="white" />
+    </clipPath>
+  </defs>
+</svg>

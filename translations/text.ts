@@ -67,6 +67,13 @@ export const gitTimestampMap = {
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
+export const reMarkFooter = {
+  "en": "ВСІ ПРАВА НА S.T.A.L.K.E.R. НАЛЕЖИТЬ GSC GAME WORLD",
+  "uk": "ALL RIGHTS TO THE S.T.A.L.K.E.R. BELONG TO GSC GAME WORLD",
+  "ru": "ВСЕ ПРАВА НА БРЕНД S.T.A.L.K.E.R. ПРИНАДЛЕЖАТ GSC GAME WORLD",
+};
+
+/** @type {Readonly<Record<Locale, string>>} */
 export const build134AndEditor135Release = {
   "en": "🎉 Game and Editor Builds is released. Read more →",
   "uk": "🎉 Випущені збірки Ігри та Редактора. Читати далі →",
