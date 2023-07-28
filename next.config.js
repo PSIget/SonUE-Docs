@@ -40,6 +40,22 @@ module.exports = withNextra({
         destination: "https://boosty.to/stalker2ue",
         statusCode: 301,
       },
+      // Tech Redirects
+      {
+        source: "/index",
+        destination: "/",
+        statusCode: 301,
+      },
+      {
+        source: "/en/index",
+        destination: "/en",
+        statusCode: 301,
+      },
+      {
+        source: "/uk/index",
+        destination: "/uk",
+        statusCode: 301,
+      },
       {
         source: "/docs",
         destination: "/docs/getting-started",
