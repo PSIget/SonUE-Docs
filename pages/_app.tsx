@@ -22,7 +22,7 @@ export default function Nextra({ Component, pageProps }) {
     router.events.on('routeChangeError', () =>  NProgress.done());
   }, []);
 
-  const CANONICAL_DOMAIN = 'https://s2ue.org';
+  const CANONICAL_DOMAIN = process.env.BASE_URL;
 
   const _pathSliceLength = Math.min.apply(Math, [
       router.asPath.indexOf('?') > 0 ? router.asPath.indexOf('?') : router.asPath.length,

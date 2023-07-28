@@ -1,17 +1,17 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://s2ue.org',
+  siteUrl: process.env.BASE_URL || '',
   generateIndexSitemap: false,
   generateRobotsTxt: true,
   sitemapSize: 7000,
   exclude: ['/*.en', '/*.uk'],
   alternateRefs: [
     {
-      href: 'https://s2ue.org/en',
+      href: process.env.BASE_URL + '/en',
       hreflang: 'en',
     },
     {
-      href: 'https://s2ue.org/uk',
+      href: process.env.BASE_URL + '/en',
       hreflang: 'uk',
     },
   ],
