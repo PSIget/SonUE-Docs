@@ -150,7 +150,7 @@ const themeConfig = {
     );
   },
   footer: {
-    text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. belong to GSC Game World`,
+    text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. and X-Ray Engine belong to GSC Game World}`,
   },
   gitTimestamp({ timestamp }) {
     const { locale } = useRouter();

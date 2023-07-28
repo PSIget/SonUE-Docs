@@ -15,7 +15,7 @@ interface ImageData {
   url: string;
 }
 
-export function Screenshots() {
+export function ScreenshotsSlider() {
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     sourceIndex: 0,

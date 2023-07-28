@@ -1,0 +1,39 @@
+.rad {
+  max-width: 75rem;
+  & > div > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 64rem) {
+      align-items: center;
+    }
+    h2,
+    p {
+      text-align: left;
+      @media screen and (max-width: 64rem) {
+        text-align: center;
+      }
+    }
+    ul {
+      list-style-type: disc;
+      @media screen and (max-width: 64rem) {
+        list-style-type: none;
+      }
+      li {
+        color: #888;
+        font-family: var(--font-inter);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5rem; /* 150% */
+        letter-spacing: -0.0125rem;
+        &::marker {
+          color: #fff;
+        }
+        @media screen and (max-width: 64rem) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
