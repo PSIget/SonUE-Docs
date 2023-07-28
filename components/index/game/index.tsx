@@ -44,7 +44,7 @@ export default function Home() {
           `}
         </style>
       </Head>
-      <main className={classnames(inter.variable, styles.game) + " relative place-content-center"} id="game-index">
+      <main className={classnames(inter.className, inter.variable, styles.game) + " relative place-content-center"} id="game-index">
         <h1 className="hidden">{useLocalesMap(firstTitle)}</h1>
         <Hero />
         <Screenshots />
