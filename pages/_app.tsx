@@ -28,6 +28,7 @@ export default function Nextra({ Component, pageProps }) {
       router.asPath.indexOf('?') > 0 ? router.asPath.indexOf('?') : router.asPath.length,
       router.asPath.indexOf('#') > 0 ? router.asPath.indexOf('#') : router.asPath.length
   ]);
+
   const canonicalURL = CANONICAL_DOMAIN + router.asPath.substring(0, _pathSliceLength).replace(/\.(en|ru|uk)$/, '');
 
   return (
