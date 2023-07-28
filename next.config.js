@@ -66,4 +66,7 @@ module.exports = withNextra({
     ],
   },
   reactStrictMode: true,
+  env: {
+    BASE_URL: 'https://s2ue.org',
+  },
 });
