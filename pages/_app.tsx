@@ -1,4 +1,5 @@
-import { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
+import { ReactNode } from 'react';
 import "nextra-theme-docs/style.css";
 import "nprogress/nprogress.css";
 import "../styles.scss";
@@ -8,7 +9,13 @@ import Head from "next/head";
 import { useEffect, useCallback } from 'react';
 import NProgress from 'nprogress';
 
-export default function Nextra({ Component, pageProps }: AppProps) {
+type NextraAppProps = AppProps & {
+  Component: AppProps["Component"] & {
+    getLayout: (page: ReactNode) => ReactNode;
+  };
+};
+
+export default function Nextra({ Component, pageProps }: NextraAppProps) {
   const router = useRouter();
   const { asPath, pathname } = router;
 
