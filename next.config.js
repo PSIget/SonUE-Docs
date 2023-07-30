@@ -1,5 +1,7 @@
 const withNextra = require("nextra")("nextra-theme-docs", "./theme.config.js");
-
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 const env = {
   NEXT_PUBLIC_SITE_NAME: 'STALKER on UE',
   NEXT_PUBLIC_BASE_URL: 'https://s2ue.org',
@@ -68,10 +70,12 @@ const redirects = async () => {
   ];
 };
 
-module.exports = withNextra({
+const nextraConfig = withNextra({
   env,
   i18n,
   images,
   redirects,
   reactStrictMode: true,
 });
+
+module.exports = withBundleAnalyzer(nextraConfig);
