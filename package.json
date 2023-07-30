@@ -12,12 +12,14 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "anal": "ANALYZE=true pnpm build"
   },
   "engines": {
     "node": "18.x"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.4.12",
     "@splidejs/react-splide": "^0.7.12",
     "@vercel/analytics": "^0.1.11",
     "classnames": "^2.3.2",
