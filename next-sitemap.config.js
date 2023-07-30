@@ -1,20 +1,25 @@
+// Define the base URL for the site
+const siteUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://s2ue.org').replace(/\/$/, '');
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://s2ue.org',
+  siteUrl,
   generateIndexSitemap: false,
   generateRobotsTxt: true,
   sitemapSize: 7000,
   exclude: ['/*.en', '/*.uk'],
+  // Define alternate references for different locales
   alternateRefs: [
     {
-      href: 'https://s2ue.org/en',
+      href: `${siteUrl}/en/`,
       hreflang: 'en',
     },
     {
-      href: 'https://s2ue.org/uk',
+      href: `${siteUrl}/uk/`,
       hreflang: 'uk',
     },
   ],
+  // Transform the paths for the sitemap
   transform: async (config, path) => {
     // Remove the locale part of the path (e.g. /es/about -> /about)
     const extractLocaleIndependentPath = (path) => {
@@ -39,4 +44,4 @@ module.exports = {
       alternateRefs,
     };
   },
-}
+};

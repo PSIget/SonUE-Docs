@@ -1,6 +1,6 @@
-# [STALKER2UE Docs](https://s2ue.org)
+# [STALKER on UE Docs](https://s2ue.org)
 
-The official website for [STALKER2UE](https://s2ue.org).
+Website for modification "[STALKER on UE](https://s2ue.org)"
 
 ```bash
 pnpm install
