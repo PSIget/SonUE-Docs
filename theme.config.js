@@ -18,11 +18,11 @@ import {
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const themeConfig = {
   project: {
-    link: "https://github.com/RedPandaProjects/Stalker2UE",
+    link: process.env.NEXT_PUBLIC_SOURCE_CODE_URL,
   },
-  docsRepositoryBase: "https://github.com/psiget/s2ue-docs/blob/main",
+  docsRepositoryBase: process.env.NEXT_PUBLIC_DOCS_SOURCE_CODE_URL + '/src/branch/main/',
   chat: {
-    link: 'https://discord.gg/red-projects-530968529311367178',
+    link: process.env.NEXT_PUBLIC_DISCORD_URL,
   },
   banner: {
     key: 'build-134-and-editor-135-release',
@@ -43,7 +43,7 @@ const themeConfig = {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: "%s – STALKER2UE",
+      titleTemplate: "%s – " + process.env.NEXT_PUBLIC_SITE_NAME,
     };
   },
   toc: {
@@ -66,9 +66,9 @@ const themeConfig = {
         <Logo height={24} />
         <span
           className="mx-4 font-bold hidden md:inline select-none"
-          title={`STALKER2UE: ${title}`}
+          title={`${process.env.NEXT_PUBLIC_SITE_NAME}: ${title}`}
         >
-          STALKER2UE
+          {process.env.NEXT_PUBLIC_SITE_NAME}
         </span>
       </>
     );
@@ -86,14 +86,14 @@ const themeConfig = {
     // }
 
 
-    const imageUrl = new URL(process.env.BASE_URL + "/favicon/og-image.jpg");
+    const imageUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL + "/favicon/og-image.jpg");
 
     if (!/\/index\.+/.test(route)) {
       imageUrl;
     }
 
     const contentLanguage = locales.join(", ");
-    const ogTitle = title ? `${title} – STALKER2UE` : `STALKER2UE: ${titleSuffix}`;
+    const ogTitle = title ? `${title} – ${process.env.NEXT_PUBLIC_SITE_NAME}` : `${process.env.NEXT_PUBLIC_SITE_NAME}: ${titleSuffix}`;
     const ogDescription = frontMatter.description || description;
     const ogImage = frontMatter.image || imageUrl.toString();
 
@@ -130,7 +130,7 @@ const themeConfig = {
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
-        <meta name="apple-mobile-web-app-title" content="STALKER2UE" />
+        <meta name="apple-mobile-web-app-title" content={process.env.NEXT_PUBLIC_SITE_NAME} />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogImage} />
@@ -143,14 +143,14 @@ const themeConfig = {
           .map((l) => (
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
-        <link rel="alternate" hrefLang="x-default" href={(process.env.BASE_URL + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
-        <link rel="alternate" hrefLang="en" href={(process.env.BASE_URL + "/en" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
-        <link rel="alternate" hrefLang="uk" href={(process.env.BASE_URL + "/uk" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
+        <link rel="alternate" hrefLang="x-default" href={(process.env.NEXT_PUBLIC_BASE_URL + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
+        <link rel="alternate" hrefLang="en" href={(process.env.NEXT_PUBLIC_BASE_URL + "/en" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
+        <link rel="alternate" hrefLang="uk" href={(process.env.NEXT_PUBLIC_BASE_URL + "/uk" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
       </>
     );
   },
   footer: {
-    text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. and X-Ray Engine belong to GSC Game World}`,
+    text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. and X-Ray Engine belong to GSC Game World`,
   },
   gitTimestamp({ timestamp }) {
     const { locale } = useRouter();

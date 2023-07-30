@@ -24,7 +24,7 @@ export function CTAButton({
     <div className="relative w-full group">
       <button
         onClick={onClick}
-        className={`flex justify-center lg:min-w-[120px] ${limit ? "lg:max-w-[214px] w-[214px]" : ""} text-base font-medium px-12 py-3 no-underline w-full md:max-w-none ${outline ? outlineClasses : filledClasses
+        className={`flex justify-center lg:min-w-[120px] ${limit ? "lg:max-w-[214px] lg:w-[214px]" : ""} w-full text-base font-medium px-12 py-3 no-underline md:max-w-none ${outline ? outlineClasses : filledClasses
           } rounded-lg md:leading-6 transition-all duration-300 ${monospace ? "font-mono" : ""
           }`}
       >

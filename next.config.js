@@ -14,32 +14,18 @@ module.exports = withNextra({
     locales: ["ru", "en", "uk"],
     defaultLocale: "ru",
   },
+  env: {
+    NEXT_PUBLIC_SITE_NAME: 'STALKER on UE',
+    NEXT_PUBLIC_BASE_URL: 'https://s2ue.org',
+    BASE_URL: 'https://s2ue.org',
+    NEXT_PUBLIC_DISCORD_URL: 'https://discord.gg/red-projects-530968529311367178',
+    NEXT_PUBLIC_BOOSTY_URL: 'https://boosty.to/stalker2ue',
+    NEXT_PUBLIC_MODDB_URL: 'https://www.moddb.com/mods/stalker2ue',
+    NEXT_PUBLIC_SOURCE_CODE_URL: 'https://git.s2ue.org/RedProjects/SonUE',
+    NEXT_PUBLIC_DOCS_SOURCE_CODE_URL: 'https://git.s2ue.org/PSIget/SonUE-Docs',
+  },
   redirects: () => {
     return [
-      // Discord Link
-      {
-        source: "/discord",
-        destination: "https://discord.gg/red-projects-530968529311367178",
-        statusCode: 301,
-      },
-      // ModDB Link
-      {
-        source: "/moddb",
-        destination: "https://www.moddb.com/mods/stalker2ue",
-        statusCode: 301,
-      },
-      // GitHub Link
-      {
-        source: "/github",
-        destination: "https://github.com/RedPandaProjects/Stalker2UE",
-        statusCode: 301,
-      },
-      // Boosty Link
-      {
-        source: "/boosty",
-        destination: "https://boosty.to/stalker2ue",
-        statusCode: 301,
-      },
       // Tech Redirects
       {
         source: "/index",
@@ -56,6 +42,7 @@ module.exports = withNextra({
         destination: "/uk",
         statusCode: 301,
       },
+      // Main Redirects
       {
         source: "/docs",
         destination: "/docs/getting-started",
@@ -82,7 +69,4 @@ module.exports = withNextra({
     ],
   },
   reactStrictMode: true,
-  env: {
-    BASE_URL: 'https://s2ue.org',
-  },
 });

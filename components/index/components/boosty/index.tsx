@@ -23,16 +23,16 @@ export function Boosty() {
         <p>{useLocalesMap(Paragraph3N)}</p>
       </FadeIn>
       <div className={styles.line} />
-      <button className={styles.button}>
-        <a
-          href="/boosty"
-          target="_blank"
-          rel="noreferrer"
-          className="block whitespace-nowrap"
-        >
+      <a
+        href="/boosty"
+        target="_blank"
+        rel="noreferrer"
+        className="block whitespace-nowrap"
+      >
+        <button className={styles.button}>
           {useLocalesMap(Button)}
-        </a>
-      </button>
+        </button>
+      </a>
     </FadeIn>
   );
 }
