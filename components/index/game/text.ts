@@ -12,9 +12,9 @@ export const firstTitle = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const firstTitleSub = {
-  "en": "Welcome to the world of STALKER on UE – a revolutionary modification\nthat ports the original STALKER trilogy and X-Ray Engine logic to the incredibly powerful Unreal Engine 5.",
-  "uk": "Ласкаво просимо до світу STALKER on UE – революційної модифікації,\nяка портує оригінальну трилогію STALKER та логіку X-Ray Engine на неймовірно потужний Unreal Engine 5.",
-  "ru": "Добро пожаловать в мир STALKER on UE – революционной модификации,\nкоторая портирует оригинальную трилогию STALKER и логику X-Ray Engine на невероятно мощный Unreal Engine 5.",
+  "en": "Welcome to the world of STALKER on UE – a revolutionary modification\nthat ports the original STALKER trilogy and X-Ray Engine logic to the incredibly powerful Unreal Engine 5",
+  "uk": "Ласкаво просимо до світу STALKER on UE – революційної модифікації,\nяка портує оригінальну трилогію STALKER та логіку X-Ray Engine на неймовірно потужний Unreal Engine 5",
+  "ru": "Добро пожаловать в мир STALKER on UE – революционной модификации,\nкоторая портирует оригинальную трилогию STALKER и логику X-Ray Engine на невероятно мощный Unreal Engine 5",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
