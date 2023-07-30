@@ -12,8 +12,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "export": "next export",
-    "lint": "next lint",
-    "anal": "ANALYZE=true pnpm build"
+    "lint": "next lint"
   },
   "engines": {
     "node": "18.x"
