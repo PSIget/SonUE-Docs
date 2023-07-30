@@ -14,6 +14,9 @@
     "export": "next export",
     "lint": "next lint"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@vercel/analytics": "^0.1.11",
