@@ -62,18 +62,24 @@ export function ScreenshotsSlider() {
                   alt={`Screenshot of the game - ${image.name}`}
                   width={792}
                   height={444}
-                  quality={100}
+                  quality={80}
                   onClick={() => openLightboxOnSlide(index)}
-                  priority
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
                 <Image
                   src={image.url}
                   alt={`Screenshot of the game - ${image.name}`}
                   width={792}
                   height={444}
-                  quality={100}
+                  quality={80}
                   className={styles.shadow}
-                  priority
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
                 <figcaption>{image.name}</figcaption>
               </figure>
