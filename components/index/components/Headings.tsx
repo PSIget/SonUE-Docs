@@ -47,8 +47,9 @@ export const SectionSubtext: React.FC<SectionSubtextProps> = ({ noWrap = false, 
   const textClasses = cn({
     'text-[20px] lg:text-xl': hero,
     'text-[16px] lg:text-[20px]': !hero,
+    'leading-snug': !noWrap,
     '!whitespace-nowrap leading-10': noWrap,
-    'font-sans font-normal leading-snug dark:text-[#FFFFFFB2] text-[#00000080] text-center': true,
+    'font-sans font-normal dark:text-[#FFFFFFB2] text-[#00000080] text-center': true,
   });
 
   return <p className={cn(textClasses, 'max-w-md md:max-w-xl lg:max-w-[792px]')}>{children}</p>;
