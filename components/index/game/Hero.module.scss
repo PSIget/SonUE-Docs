@@ -1,0 +1,16 @@
+.hero {
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.08);
+  .content {
+    .sub {
+      color: #888;
+      text-align: center;
+      font-size: 0.75rem;
+      font-family: var(--font-inter);
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.125rem; /* 150% */
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+    }
+  }
+}

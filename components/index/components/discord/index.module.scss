@@ -1,0 +1,27 @@
+.button {
+  display: flex;
+  min-width: 7.5rem;
+  padding: 0.75rem 3rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.5rem;
+  background: #5865f2;
+  transition: all 0.2s ease 0s;
+  &:hover {
+    background: #6772e8;
+    box-shadow: 0rem 0.25rem 7.3125rem 0rem rgba(88, 101, 242, 0.25);
+  }
+  @media screen and (max-width: 48rem) {
+    width: 100%;
+  }
+  a {
+    color: #fff;
+    text-align: center;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5rem; /* 150% */
+  }
+}

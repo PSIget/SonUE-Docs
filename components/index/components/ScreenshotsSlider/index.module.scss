@@ -1,0 +1,53 @@
+.slider {
+  & > div > div {
+    overflow: visible;
+  }
+  li {
+    figure {
+      transition: all 0.3s ease 0s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      cursor: pointer;
+      figcaption {
+        color: #888;
+        font-family: var(--font-inter);
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.125rem; /* 150% */
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+        @media screen and (max-width: 48rem) {
+          display: none;
+        }
+      }
+    }
+  }
+  :global(li:not(.is-active) figure) {
+    opacity: 0.5;
+    transition: all 0.3s ease 0s;
+    cursor: inherit;
+    pointer-events: none;
+    figcaption {
+      opacity: 0;
+    }
+  }
+  img {
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.08);
+    display: block;
+    z-index: 5;
+    &.shadow {
+      position: absolute;
+      z-index: 0;
+      filter: blur(3rem);
+      opacity: 0.25;
+      @media screen and (max-device-width: 48rem) {
+        display: none;
+      }
+    }
+  }
+}
