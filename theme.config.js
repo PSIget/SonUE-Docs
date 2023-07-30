@@ -11,6 +11,7 @@ import {
   tableOfContentsTitleMap,
   titleMap,
   build134AndEditor135Release,
+  metaTags,
 } from "./translations/text";
 import Logo from "./components/logo";
 
@@ -135,6 +136,7 @@ const themeConfig = {
           .map((l) => (
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
+        <meta name="keywords" content={useLocalesMap(metaTags)} />
       </>
     );
   },
