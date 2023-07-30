@@ -26,9 +26,9 @@ export const headDescriptionMap = {
 
 /** @type {Readonly<Record<Locale, { utmSource: string; text: string; suffix?: string | undefined }>>} */
 export const footerTextMap = {
-  "en": { utmSource: "s2ue", text: "Powered by" },
-  "uk": { utmSource: "s2ue", text: "Працює на" },
-  "ru": { utmSource: "s2ue", text: "Работает на" },
+  "en": { utmSource: "sonue", text: "Powered by" },
+  "uk": { utmSource: "sonue", text: "Працює на" },
+  "ru": { utmSource: "sonue", text: "Работает на" },
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
