@@ -28,16 +28,16 @@ export function Discord() {
       >
         <SectionHeader>{useLocalesMap(Title)}</SectionHeader>
         <SectionSubtext>{useLocalesMap(SubTitle)}</SectionSubtext>
-        <button className={styles.button}>
-          <a
-            href="/discord"
-            target="_blank"
-            rel="noreferrer"
-            className="block whitespace-nowrap"
-          >
+        <a
+          href="/discord"
+          target="_blank"
+          rel="noreferrer"
+          className="block whitespace-nowrap"
+        >
+          <button className={styles.button}>
             {useLocalesMap(Button)}
-          </a>
-        </button>
+          </button>
+        </a>
       </FadeIn>
     </FadeIn>
   );

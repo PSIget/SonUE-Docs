@@ -6,11 +6,22 @@ import Link from "next/link";
 
 interface BaseProps {
   title: string;
-  buttonText: string;
   subTitle: string;
 }
 
-export function EndBlock({ title, buttonText, subTitle }: BaseProps) {
+interface ButtonProps extends BaseProps {
+  button: JSX.Element;
+}
+
+interface LinkProps extends BaseProps {
+  url: string;
+  buttonText: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+}
+
+export function EndBlock(props: ButtonProps | LinkProps) {
+  const { title, subTitle } = props;
+
   return (
     <FadeIn
       delay={0.3}
@@ -18,15 +29,23 @@ export function EndBlock({ title, buttonText, subTitle }: BaseProps) {
     >
       <SectionHeader>{title}</SectionHeader>
       <div className="flex flex-col w-full md:w-min md:!flex-row">
-        <CTAButton>
-          <Link
-            href="/download"
-            className="block whitespace-nowrap">
-            {buttonText}
-          </Link>
-        </CTAButton>
+        {
+          "button" in props ? (
+            props.button
+          ) : (
+            <Link
+              href={props.url}
+              className="block whitespace-nowrap"
+              {...(props.onClick ? { onClick: props.onClick } : {})}
+            >
+              <CTAButton>
+                {props.buttonText}
+              </CTAButton>
+            </Link>
+          )
+        }
       </div>
-      <p className="text-sm text-[#666666]">{subTitle}</p>
+      <p className="text-sm text-[#666666] text-center">{subTitle}</p>
     </FadeIn>
   );
 }

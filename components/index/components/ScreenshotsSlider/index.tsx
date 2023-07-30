@@ -6,7 +6,7 @@ import "@splidejs/react-splide/css";
 
 import Image from "next/image";
 
-import Data from "./data.json" ;
+import Data from "./data.json";
 
 import styles from "./index.module.scss";
 
@@ -30,11 +30,10 @@ export function ScreenshotsSlider() {
     });
   }
 
-
   return (
     <div className={styles.slider}>
       <Splide
-        aria-label="My Favorite Images"
+        aria-label="Screenshots"
         hasTrack={false}
         options={{
           type: "loop",
@@ -57,27 +56,27 @@ export function ScreenshotsSlider() {
       >
         <SplideTrack>
           {Data.map((image, index) => (
-            <SplideSlide key={image.toString()}>
+            <SplideSlide key={index}>
               <figure>
-              <Image
-                src={image.url}
-                alt={image.name}
-                width={792}
-                height={444}
-                quality={80}
-                priority={false}
-                onClick={() => openLightboxOnSlide(index)}
-              />
-              <Image
-                src={image.url}
-                alt={image.name}
-                width={792}
-                height={444}
-                quality={80}
-                priority={false}
-                className={styles.shadow}
-              />
-              <figcaption>{image.name}</figcaption>
+                <Image
+                  src={image.url}
+                  alt={image.name}
+                  width={792}
+                  height={444}
+                  quality={80}
+                  onClick={() => openLightboxOnSlide(index)}
+                  priority
+                />
+                <Image
+                  src={image.url}
+                  alt={image.name}
+                  width={792}
+                  height={444}
+                  quality={80}
+                  className={styles.shadow}
+                  priority
+                />
+                <figcaption>{image.name}</figcaption>
               </figure>
             </SplideSlide>
           ))}

@@ -1,17 +1,19 @@
+const siteUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://s2ue.org';
+
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.BASE_URL || '',
+  siteUrl: siteUrl,
   generateIndexSitemap: false,
   generateRobotsTxt: true,
   sitemapSize: 7000,
   exclude: ['/*.en', '/*.uk'],
   alternateRefs: [
     {
-      href: process.env.BASE_URL + '/en',
+      href: siteUrl + '/en',
       hreflang: 'en',
     },
     {
-      href: process.env.BASE_URL + '/en',
+      href: siteUrl + '/uk',
       hreflang: 'uk',
     },
   ],

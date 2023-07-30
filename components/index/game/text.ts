@@ -12,9 +12,9 @@ export const firstTitle = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const firstTitleSub = {
-  "en": "Welcome to the world of STALKER2UE – a revolutionary modification\nthat ports the original STALKER trilogy and X-Ray Engine logic to the incredibly powerful Unreal Engine 5.",
-  "uk": "Ласкаво просимо до світу STALKER2UE – революційної модифікації,\nяка портує оригінальну трилогію STALKER та логіку X-Ray Engine на неймовірно потужний Unreal Engine 5.",
-  "ru": "Добро пожаловать в мир STALKER2UE – революционной модификации,\nкоторая портирует оригинальную трилогию STALKER и логику X-Ray Engine на невероятно мощный Unreal Engine 5.",
+  "en": "Welcome to the world of STALKER on UE – a revolutionary modification\nthat ports the original STALKER trilogy and X-Ray Engine logic to the incredibly powerful Unreal Engine 5.",
+  "uk": "Ласкаво просимо до світу STALKER on UE – революційної модифікації,\nяка портує оригінальну трилогію STALKER та логіку X-Ray Engine на неймовірно потужний Unreal Engine 5.",
+  "ru": "Добро пожаловать в мир STALKER on UE – революционной модификации,\nкоторая портирует оригинальную трилогию STALKER и логику X-Ray Engine на невероятно мощный Unreal Engine 5.",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
@@ -148,4 +148,18 @@ export const downText = {
   "en": "Game Build 134 / Download temporarily unavailable",
   "uk": "Game Build 134 / Завантаження тимчасово недоступне",
   "ru": "Game Build 134 / Загрузка временно недоступна",
+};
+
+/** @type {Readonly<Record<Locale, string>>} */
+export const modalTitle = {
+  "en": "Choose a download option",
+  "uk": "Оберіть варіант завантаження",
+  "ru": "Выберите вариант загрузки",
+};
+
+/** @type {Readonly<Record<Locale, string>>} */
+export const modalSubtitle = {
+  "en": "Choose a convenient download option for you",
+  "uk": "Оберіть зручний для вас варіант завантаження",
+  "ru": "Выбери удобный для вас вариант загрузки",
 };

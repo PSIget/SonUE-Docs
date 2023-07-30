@@ -1,0 +1,52 @@
+[
+  {
+    "version": "134",
+    "groups": [
+      {
+        "groupType": "setup",
+        "files": [
+          {
+            "name": "Magnet Link",
+            "description": "Download from BitTorrent",
+            "size": 2663200596,
+            "url": "magnet:?xt=urn:btih:fbdee2a8ab04ed1ab262c60ad2c4418dfb83e0ab&xt=urn:btmh:1220b74c0a22d6d4825213e34b1f1c1b231a2dbec07a8524ef7431c2edc6b5d9f02d&dn=SonUE%20SoC%20Build%20134%20Installer&tr=udp%3a%2f%2ftracker1.bt.moack.co.kr%3a80%2fannounce&tr=udp%3a%2f%2ftracker.dump.cl%3a6969%2fannounce&tr=udp%3a%2f%2fexplodie.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.openbittorrent.com%3a6969%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fuploads.gamecoast.net%3a6969%2fannounce&tr=https%3a%2f%2ftracker1.520.jp%3a443%2fannounce&tr=udp%3a%2f%2ftracker.torrent.eu.org%3a451%2fannounce&tr=http%3a%2f%2ftracker.openbittorrent.com%3a80%2fannounce&tr=udp%3a%2f%2ftracker.tiny-vps.com%3a6969%2fannounce&tr=wss%3a%2f%2ftracker.files.fm%3a7073%2fannounce&tr=udp%3a%2f%2ftracker2.dler.org%3a80%2fannounce&tr=udp%3a%2f%2fv1046920.hosted-by-vdsina.ru%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.moeking.me%3a6969%2fannounce&tr=ws%3a%2f%2ftracker.files.fm%3a7072%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.theoks.net%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=https%3a%2f%2ftracker2.ctix.cn%3a443%2fannounce&tr=udp%3a%2f%2fopen.demonii.com%3a1337%2fannounce&tr=http%3a%2f%2fbt.endpot.com%3a80%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=https%3a%2f%2fopentracker.i2p.rocks%3a443%2fannounce&tr=udp%3a%2f%2f9.rarbg.com%3a2810%2fannounce&tr=udp%3a%2f%2fopen.tracker.cl%3a1337%2fannounce&tr=https%3a%2f%2ftracker.tamersunion.org%3a443%2fannounce&tr=udp%3a%2f%2ftracker-udp.gbitt.info%3a80%2fannounce&tr=https%3a%2f%2ftracker.gbitt.info%3a443%2fannounce&tr=http%3a%2f%2ftracker.gbitt.info%3a80%2fannounce&tr=udp%3a%2f%2ftracker.bitsearch.to%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.altrosky.nl%3a6969%2fannounce&tr=udp%3a%2f%2fmovies.zsw.ca%3a6969%2fannounce",
+            "additional": {
+              "icon": "",
+              "external_link": false
+            }
+          },
+          {
+            "name": "MEGA",
+            "description": "Download from MEGA",
+            "size": 2663200596,
+            "url": "https://mega.nz/folder/jLRR3LQC#3dLpeOjjc0GkCZTMNxXxWQ",
+            "additional": {
+              "icon": "",
+              "external_link": true
+            }
+          },
+          {
+            "name": "Google Drive",
+            "description": "Download from Google Drive",
+            "size": 2663200596,
+            "url": "https://drive.google.com/drive/folders/1-DzPahnDFKR8TlLSJjDYvJV18voIzwoP",
+            "additional": {
+              "icon": "",
+              "external_link": true
+            }
+          },
+          {
+            "name": "Yandex Disk",
+            "description": "Download from Yandex Disk",
+            "size": 2663200596,
+            "url": "https://disk.yandex.ru/d/Nld5SBWNeVijGg",
+            "additional": {
+              "icon": "",
+              "external_link": true
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
