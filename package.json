@@ -9,7 +9,7 @@
     "dev": "next dev",
     "debug": "NODE_OPTIONS='--inspect' next",
     "start": "next start",
-    "build": "next build && next-sitemap",
+    "build": "next build",
     "postbuild": "next-sitemap",
     "export": "next export",
     "lint": "next lint"
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@next/env": "^13.4.12",
+    "@types/fslightbox-react": "^1.7.3",
     "@types/node": "20.4.2",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.2.17",

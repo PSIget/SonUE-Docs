@@ -13,14 +13,14 @@ const Video: React.FC<VideoProps> = ({ src, caption, ratio, className = '' }) =>
   const [inViewRef, inView] = useInView({
     threshold: 1,
   });
+
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const setRefs = useCallback(
     (node: HTMLVideoElement | null) => {
-      videoRef.current = node;
-      inViewRef(node);
-
       if (node) {
+        videoRef.current = node;
+        inViewRef(node);
         node.addEventListener('click', function () {
           if (this.paused) {
             this.play();
@@ -34,14 +34,15 @@ const Video: React.FC<VideoProps> = ({ src, caption, ratio, className = '' }) =>
   );
 
   useEffect(() => {
-    if (!videoRef.current) {
+    const videoElement = videoRef.current;
+    if (!videoElement) {
       return;
     }
 
     if (inView) {
-      videoRef.current.play();
+      videoElement.play();
     } else {
-      videoRef.current.pause();
+      videoElement.pause();
     }
   }, [inView]);
 

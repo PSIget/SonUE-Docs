@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { AnimatePresence } from "framer-motion";
 import DownloadList from "components/DownloadList";
@@ -49,7 +49,20 @@ export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => 
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<Version[] | null>(null);
 
+  const handleOpenModal = useCallback(() => {
+    setIsModalOpen(true);
+    setIsLoading(true);
+  }, []);
+
+  const handleCloseModal = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
+    event.preventDefault();
+    setIsModalOpen(false);
+    setIsLoading(false);
+  }, []);
+
   useEffect(() => {
+    let isMounted = true;  // Добавить эту переменную
+
     const fetchData = async (): Promise<void> => {
       try {
         const res = await fetch('/api/downloads/game');
@@ -57,29 +70,26 @@ export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => 
           throw new Error("An error occurred while fetching the data.");
         }
         const json = await res.json();
-        setData(json);
-        setIsLoading(false);
-      } catch (error) {
-        setError(error.toString());
-        setIsLoading(false);
+        if (isMounted) {
+          setData(json);
+          setIsLoading(false);
+        }
+      } catch (error: unknown) {
+        if (error instanceof Error && isMounted) {
+          setError(error.message);
+          setIsLoading(false);
+        }
       }
     };
 
     if (!data) {
       fetchData();
     }
+
+    return () => {
+      isMounted = false;  // Обновить эту переменную в функции очистки
+    }
   }, [data]);
-
-  const handleOpenModal = (): void => {
-    setIsModalOpen(true);
-    setIsLoading(true);
-  };
-
-  const handleCloseModal = (event: MouseEvent<HTMLDivElement>): void => {
-    event.preventDefault();
-    setIsModalOpen(false);
-    setIsLoading(false);
-  };
 
   return (
     <>

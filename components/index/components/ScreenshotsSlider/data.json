@@ -1,34 +1,26 @@
 [
   {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_2d9b6c473b71f90e7076f50f64ec396a644da452.1920x1080.jpg?t=1685134719"
+    "name": "Радар",
+    "url": "https://static.s2ue.org/screenshots/radar.jpeg"
   },
   {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_15c0d1940c6c3872e0d4e455f4d2da32c2028a18.1920x1080.jpg?t=1685134719"
+    "name": "Зил на Радаре",
+    "url": "https://static.s2ue.org/screenshots/truck.jpeg"
   },
   {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_3b56a4aea69f1d49d4871eeb1913f460f067a138.1920x1080.jpg?t=1685134719"
+    "name": "Бункер на Радаре",
+    "url": "https://static.s2ue.org/screenshots/newbunker.jpeg"
   },
   {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_b9375dc730cb8a050e9da36e4fe779b34e5f44c5.1920x1080.jpg?t=1685134719"
+    "name": "Блокпост военных",
+    "url": "https://static.s2ue.org/screenshots/checkpoint.jpeg"
   },
   {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_98c6c34249e944e42fcb46481cac1f5d43457729.1920x1080.jpg?t=1685134719"
+    "name": "ЧАЭС",
+    "url": "https://static.s2ue.org/screenshots/chaes.jpeg"
   },
   {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_6a0d30d5fad86c12df46e59042efb55c9a4a3b53.1920x1080.jpg?t=1685134719"
-  },
-  {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_1db36cee060cb6b9b468e3f64a3eb354d5a76472.1920x1080.jpg?t=1685134719"
-  },
-  {
-    "name": "Wallpaper",
-    "url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1643320/ss_5daeb8b5e3692e9058b2f56de36aa5e0cf45da24.1920x1080.jpg?t=1685134719"
+    "name": "Бункер на Радаре",
+    "url": "https://static.s2ue.org/screenshots/burner.jpeg"
   }
 ]

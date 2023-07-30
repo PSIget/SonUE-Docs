@@ -1,11 +1,9 @@
-
-import Image from 'next/image';
 import { FadeIn } from "../FadeIn";
-
-import styles from "./index.module.scss"
 import { HeroText } from '../Headings';
 import useLocalesMap from 'utils/use-locales-map';
 import { Button, Paragraph1N, Paragraph2N, Paragraph3N, Title } from './text';
+import Link from "next/link";
+import styles from "./index.module.scss"
 
 export function Boosty() {
   return (
@@ -23,16 +21,14 @@ export function Boosty() {
         <p>{useLocalesMap(Paragraph3N)}</p>
       </FadeIn>
       <div className={styles.line} />
-      <a
+      <Link
         href="/boosty"
         target="_blank"
         rel="noreferrer"
-        className="block whitespace-nowrap"
+        className={`${styles.button} block whitespace-nowrap`}
       >
-        <button className={styles.button}>
-          {useLocalesMap(Button)}
-        </button>
-      </a>
+        {useLocalesMap(Button)}
+      </Link>
     </FadeIn>
   );
 }

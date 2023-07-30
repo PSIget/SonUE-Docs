@@ -3,7 +3,6 @@ import Image from "next/image";
 import { StaticImageData } from 'next/image';
 import { FadeIn } from "../FadeIn";
 
-
 interface BaseProps {
   title: string;
   paragraph: string;
@@ -42,7 +41,7 @@ export function Block({ img, title, paragraph, label }: CardProps) {
             src={img}
             width={384}
             height={262}
-            quality={1}
+            quality={80}
             alt="UE Banner"
             sizes="(max-width: 480px) 480px, (max-width: 768px) 768px, (max-width: 1024px) 1024px, 384px"
             style={{

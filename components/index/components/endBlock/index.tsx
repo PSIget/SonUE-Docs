@@ -35,8 +35,8 @@ export function EndBlock(props: ButtonProps | LinkProps) {
           ) : (
             <Link
               href={props.url}
+              onClick={props.onClick}
               className="block whitespace-nowrap"
-              {...(props.onClick ? { onClick: props.onClick } : {})}
             >
               <CTAButton>
                 {props.buttonText}

@@ -121,27 +121,6 @@ html:not([class~="dark"]) {
   }
 }
 
-/* Video Frame Full Width */
-
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-
-  .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
-
-  iframe {
-    border-radius: 0.75rem;
-  }
-}
-
 /* Custom fslightbox Style */
 .fslightbox-container {
   background: #000000b7 !important;
