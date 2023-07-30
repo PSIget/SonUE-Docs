@@ -71,7 +71,7 @@ export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => 
         }
         const json = await res.json();
         if (isMounted) {
-          setData(json);
+          setData(json.data);  // <-- Изменено с setData(json);
           setIsLoading(false);
         }
       } catch (error: unknown) {

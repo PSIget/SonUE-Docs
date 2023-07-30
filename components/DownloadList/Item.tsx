@@ -36,7 +36,7 @@ export const Item: React.FC<DownloadFile> = ({ name, description, size, url, add
     className={styles.item}
   >
     <div className={styles.icon}>
-      <File size={24} />
+      <File size={24} color="white" />
     </div>
 
     <div className={styles.text}>
@@ -45,7 +45,7 @@ export const Item: React.FC<DownloadFile> = ({ name, description, size, url, add
     </div>
 
     <div className={styles.downIcon}>
-      {additional.external_link ? <ExternalLink size={16} /> : <ArrowDown size={16} />}
+      {additional.external_link ? <ExternalLink size={16} color="white" /> : <ArrowDown size={16} color="white" />}
     </div>
   </Link>
 );
