@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import { useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
 import useLocalesMap from "./utils/use-locales-map";
@@ -90,6 +91,24 @@ const themeConfig = {
     const ogDescription = frontMatter.description || description;
     const ogImage = frontMatter.image || imageUrl.toString();
 
+    const router = useRouter();
+    const { asPath, pathname } = router;
+    const CANONICAL_DOMAIN = process.env.NEXT_PUBLIC_BASE_URL;
+
+    const generateHref = (locale = '', asPath = '') => {
+      const processedPath = (asPath === '/' || asPath.includes('/index.ru') || asPath.includes('/index.en') || asPath.includes('/index.uk')) ? '' : asPath.replace(/\.(en|ru|uk)$/, '');
+      return `${CANONICAL_DOMAIN}${locale}${processedPath}`;
+    }
+
+    const getCanonicalURL = useCallback(() => {
+      if (!CANONICAL_DOMAIN) return '';
+      const _pathSliceLength = Math.min(...[
+        asPath.indexOf('?') > 0 ? asPath.indexOf('?') : asPath.length,
+        asPath.indexOf('#') > 0 ? asPath.indexOf('#') : asPath.length
+      ]);
+      return CANONICAL_DOMAIN + pathname.substring(0, _pathSliceLength).replace(/\.(en|ru|uk)$/, '');
+    }, [asPath, pathname, CANONICAL_DOMAIN]);
+
     return (
       <>
         {/* Favicons, meta */}
@@ -137,6 +156,10 @@ const themeConfig = {
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
         <meta name="keywords" content={useLocalesMap(metaTags)} />
+        <link rel="canonical" href={getCanonicalURL()} />
+        <link rel="alternate" hrefLang="x-default" href={generateHref('', asPath)} />
+        <link rel="alternate" hrefLang="en" href={generateHref('/en', asPath)} />
+        <link rel="alternate" hrefLang="uk" href={generateHref('/uk', asPath)} />
       </>
     );
   },
