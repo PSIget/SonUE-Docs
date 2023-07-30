@@ -1,7 +1,6 @@
 import Link from "next/link";
 import styles from "./Item.module.scss"
 import { ArrowDown, ExternalLink, File } from 'react-feather';
-
 import React from 'react';
 
 interface Additional {
@@ -17,6 +16,7 @@ interface DownloadFile {
   additional: Additional;
 }
 
+// Convert bytes to human readable format
 const formatBytes = (bytes: number, decimals = 2) => {
   if (bytes === 0) return '0 Bytes';
 
@@ -38,10 +38,12 @@ export const Item: React.FC<DownloadFile> = ({ name, description, size, url, add
     <div className={styles.icon}>
       <File size={24} />
     </div>
+
     <div className={styles.text}>
       <h4>{name}</h4>
       <p>{description} · {formatBytes(size)}</p>
     </div>
+
     <div className={styles.downIcon}>
       {additional.external_link ? <ExternalLink size={16} /> : <ArrowDown size={16} />}
     </div>

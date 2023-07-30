@@ -1,12 +1,10 @@
-
 import Image from 'next/image';
 import { FadeIn } from "../FadeIn";
-
 import DiscordBig from "./assets/discord-big.svg"
 import { SectionHeader, SectionSubtext } from '../Headings';
 import useLocalesMap from 'utils/use-locales-map';
 import { Button, SubTitle, Title } from './text';
-
+import Link from "next/link";
 import styles from "./index.module.scss"
 
 export function Discord() {
@@ -28,16 +26,16 @@ export function Discord() {
       >
         <SectionHeader>{useLocalesMap(Title)}</SectionHeader>
         <SectionSubtext>{useLocalesMap(SubTitle)}</SectionSubtext>
-        <a
+
+        <Link
           href="/discord"
           target="_blank"
           rel="noreferrer"
-          className="block whitespace-nowrap"
+          className={styles.button + " block whitespace-nowrap"}
         >
-          <button className={styles.button}>
-            {useLocalesMap(Button)}
-          </button>
-        </a>
+          {useLocalesMap(Button)}
+        </Link>
+
       </FadeIn>
     </FadeIn>
   );

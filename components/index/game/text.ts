@@ -47,9 +47,9 @@ export const screensTitle = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const screensSub = {
-  "en": "Check out these screenshots!",
-  "uk": "Подивіться на ці скріншоти!",
-  "ru": "Посмотрите на эти скриншоты!",
+  "en": "Look at community work!",
+  "uk": "Подивіться на роботи спільноти!",
+  "ru": "Посмотрите на работы сообщества!",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
@@ -145,9 +145,9 @@ export const goBtn = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const downText = {
-  "en": "Game Build 134 / Download temporarily unavailable",
-  "uk": "Game Build 134 / Завантаження тимчасово недоступне",
-  "ru": "Game Build 134 / Загрузка временно недоступна",
+  "en": "Потрібна оригінальна гра",
+  "uk": "Завантаження тимчасово недоступне",
+  "ru": "Требуется оригинальная игра",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */

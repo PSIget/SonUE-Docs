@@ -58,6 +58,10 @@
   );
   box-shadow: 0rem 0.125rem 0.125rem 0rem rgba(0, 0, 0, 0.15);
   position: relative;
+  transition: all 0.2s ease 0s;
+  &:hover {
+    filter: contrast(1.2);
+  }
   &::before {
     content: "";
     width: 64.5625rem;
@@ -76,6 +80,7 @@
       #f15a2c 100%
     );
     filter: blur(15rem);
+    pointer-events: none;
   }
   @media screen and (max-width: 48rem) {
     width: 100%;

@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
-import Logo from "./components/logo";
 import useLocalesMap from "./utils/use-locales-map";
 import {
   editTextMap,
@@ -12,8 +11,8 @@ import {
   tableOfContentsTitleMap,
   titleMap,
   build134AndEditor135Release,
-  reMarkFooter,
 } from "./translations/text";
+import Logo from "./components/logo";
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const themeConfig = {
@@ -79,13 +78,6 @@ const themeConfig = {
     const titleSuffix = useLocalesMap(titleMap);
     const description = useLocalesMap(headDescriptionMap);
 
-    // const imageUrl = new URL("https://og.s2ue.org");
-
-    // if (!/\/index\.+/.test(route)) {
-    //   imageUrl.searchParams.set("title", title || titleSuffix);
-    // }
-
-
     const imageUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL + "/favicon/og-image.jpg");
 
     if (!/\/index\.+/.test(route)) {
@@ -143,9 +135,6 @@ const themeConfig = {
           .map((l) => (
             <meta property="og:locale:alternate" content={l} key={l} />
           ))}
-        <link rel="alternate" hrefLang="x-default" href={(process.env.NEXT_PUBLIC_BASE_URL + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
-        <link rel="alternate" hrefLang="en" href={(process.env.NEXT_PUBLIC_BASE_URL + "/en" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
-        <link rel="alternate" hrefLang="uk" href={(process.env.NEXT_PUBLIC_BASE_URL + "/uk" + useRouter().asPath.replace(/\.(en|ru|uk)$/, ''))} />
       </>
     );
   },

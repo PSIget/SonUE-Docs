@@ -1,29 +1,30 @@
+import React from 'react';
 import cn from "classnames";
 import gradients from "./gradients.module.scss";
 
-export function HeroText({
-  children,
-  className,
-  h2,
-}: {
+interface HeroTextProps {
   children: React.ReactNode;
   className?: string;
   h2?: boolean;
-}) {
+}
+
+export const HeroText: React.FC<HeroTextProps> = ({ children, className, h2 = false }) => {
   const combinedClassname = cn(
     gradients.heroHeading,
     "font-sans font-extrabold tracking-[-0.04em] leading-none text-[40px] md:text-5xl lg:text-[80px] text-center text-transparent",
-    // max-w-lg md:max-w-xl lg:max-w-4xl
     className
   );
 
-  if (h2) {
-    return <h2 className={combinedClassname}>{children}</h2>;
-  }
-  return <h3 className={combinedClassname}>{children}</h3>;
+  const Tag = h2 ? 'h2' : 'h3';
+
+  return <Tag className={combinedClassname}>{children}</Tag>;
 }
 
-export function SectionHeader({ children }: { children: React.ReactNode }) {
+interface SectionHeaderProps {
+  children: React.ReactNode;
+}
+
+export const SectionHeader: React.FC<SectionHeaderProps> = ({ children }) => {
   return (
     <h2
       className={cn(
@@ -36,27 +37,19 @@ export function SectionHeader({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function SectionSubtext({
-  noWrap,
-  hero,
-  children,
-}: {
+interface SectionSubtextProps {
   noWrap?: boolean;
   hero?: boolean;
   children: React.ReactNode;
-}) {
-  const textClasses = hero
-    ? "text-[20px] lg:text-xl"
-    : "text-[16px] lg:text-[20px]";
-  const textNoWrap = noWrap
-    ? "!whitespace-nowrap leading-10"
-    : "";
+}
 
-  return (
-    <p
-      className={`font-sans font-normal leading-snug dark:text-[#FFFFFFB2] text-[#00000080] ${textClasses} ${textNoWrap} max-w-md md:max-w-xl lg:max-w-[792px] text-center`}
-    >
-      {children}
-    </p>
-  );
+export const SectionSubtext: React.FC<SectionSubtextProps> = ({ noWrap = false, hero = false, children }) => {
+  const textClasses = cn({
+    'text-[20px] lg:text-xl': hero,
+    'text-[16px] lg:text-[20px]': !hero,
+    '!whitespace-nowrap leading-10': noWrap,
+    'font-sans font-normal leading-snug dark:text-[#FFFFFFB2] text-[#00000080] text-center': true,
+  });
+
+  return <p className={cn(textClasses, 'max-w-md md:max-w-xl lg:max-w-[792px]')}>{children}</p>;
 }

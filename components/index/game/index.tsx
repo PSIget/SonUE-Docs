@@ -1,7 +1,5 @@
 import styles from "./index.module.scss"
 
-import { downText, firstTitle, goBtn, goTitle } from "./text";
-import useLocalesMap from "utils/use-locales-map";
 import { Discord } from "../components/discord";
 import { Boosty } from "../components/boosty";
 import { EndBlock } from "../components/endBlock";
@@ -13,6 +11,8 @@ import { DownloadModal } from "./DownloadModal";
 import { Inter } from 'next/font/google'
 import classnames from "classnames";
 import Head from "next/head";
+import useLocalesMap from 'utils/use-locales-map';
+import { downText, firstTitle, goBtn, goTitle } from './text';
 
 const inter = Inter({
   subsets: ['latin'],

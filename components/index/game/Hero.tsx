@@ -2,13 +2,13 @@ import styles from "./Hero.module.scss"
 import { FadeIn } from "../components/FadeIn";
 import Image from "next/image";
 import { HeroText, SectionSubtext } from "../components/Headings";
-import useLocalesMap from "utils/use-locales-map";
-import { btnDocs, btnDown, downText, firstTitle, firstTitleSub, modalSubtitle, modalTitle } from "./text";
+import { btnDocs, btnDown, downText, firstTitle, firstTitleSub } from "./text";
 import logo from "../assets/logo.png"
 import IndexBG from "../assets/index-bg.png"
 import { CTAButton } from "../components/CTAButton";
 import Link from "next/link";
 import { DownloadModal } from "./DownloadModal";
+import useLocalesMap from 'utils/use-locales-map';
 
 export default function Hero() {
   const buttonText = useLocalesMap(btnDown);
@@ -21,10 +21,10 @@ export default function Hero() {
     <>
       <FadeIn
         noVertical
-        className={`${styles.hero} hero font-sans w-auto pb-16 pt-[48px] md:pb-24 lg:pb-32 md:pt-16 lg:pt-20 flex justify-between gap-8 items-center flex-col relative`}
+        className={`hero font-sans w-auto pb-16 pt-[48px] md:pb-24 lg:pb-32 md:pt-16 lg:pt-20 flex justify-between gap-8 items-center flex-col relative ${styles.hero}`}
       >
-        <div className={`${styles.content} flex flex-col gap-6 z-10`}>
-          <FadeIn className={`${styles.logo} flex flex-col items-center justify-center gap-4 w-full`}>
+        <div className={`flex flex-col gap-6 ${styles.content}`}>
+          <FadeIn className="flex flex-col items-center justify-center gap-4 w-full">
             <Image
               src={logo}
               alt="Logo"
@@ -33,7 +33,7 @@ export default function Hero() {
               priority
               className="light:invert"
             />
-            <p className={`${styles.sub} font-sans`}>WORK IN PROGRESS</p>
+            <p className={`font-sans ${styles.sub}`}>WORK IN PROGRESS</p>
           </FadeIn>
           <FadeIn
             delay={0.15}
@@ -45,7 +45,7 @@ export default function Hero() {
         </div>
         <FadeIn
           delay={0.3}
-          className="flex flex-col items-center w-full gap-5 px-6 z-10"
+          className="flex flex-col items-center w-full gap-5 px-6"
         >
           <div className="flex flex-col gap-3 w-full md:w-min md:!flex-row">
             <DownloadModal buttonText={buttonText} />
@@ -69,6 +69,7 @@ export default function Hero() {
           sizes="100vw"
           style={{
             objectFit: 'cover',
+            zIndex: '-1'
           }}
           priority
           className="light:invert"

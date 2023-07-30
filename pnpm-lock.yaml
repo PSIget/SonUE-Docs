@@ -67,6 +67,9 @@ devDependencies:
   '@next/env':
     specifier: ^13.4.12
     version: 13.4.12
+  '@types/fslightbox-react':
+    specifier: ^1.7.3
+    version: 1.7.3
   '@types/node':
     specifier: 20.4.2
     version: 20.4.2
@@ -582,6 +585,12 @@ packages:
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: false
+
+  /@types/fslightbox-react@1.7.3:
+    resolution: {integrity: sha512-6q1n54suIR77dTkvXDNBsd3YNK9k71T7AHgKORybi76i+Un2xYaK27bhcWyH1W/4YK/RUDHLIse1Yl8VnzPVlg==}
+    dependencies:
+      '@types/react': 18.2.17
+    dev: true
 
   /@types/hast@2.3.5:
     resolution: {integrity: sha512-SvQi0L/lNpThgPoleH53cdjB3y9zpLlVjRbqB3rH8hx1jiRSBGAhyjV3H+URFjNVRqt2EdYNrbZE5IsGlNfpRg==}

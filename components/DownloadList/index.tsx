@@ -1,5 +1,5 @@
-import styles from "./index.module.scss"
-import React from 'react';
+import styles from "./index.module.scss";
+import React, { useEffect, useMemo, useState } from 'react';
 import { Item } from './Item';
 import useLocalesMap from "utils/use-locales-map";
 import { setup, unpacked } from "./text";
@@ -28,6 +28,14 @@ interface Version {
   groups: Group[];
 }
 
+interface FormattedVersion extends Version {
+  groups: FormattedGroup[];
+}
+
+interface FormattedGroup extends Group {
+  groupType: string;
+}
+
 interface DownloadListProps {
   data: Version[];
 }
@@ -51,23 +59,35 @@ const item = {
 };
 
 const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
-  const groupTypeMapping = {
+  const groupTypeMapping: {
+    [key: string]: string; // This allows any string key with a string value
+  } = {
     "setup": useLocalesMap(setup),
     "unpacked": useLocalesMap(unpacked),
     // добавьте сюда другие строки при необходимости
   };
 
+  const formattedData = useMemo(() => {
+    return data.map(version => ({
+      ...version,
+      groups: version.groups.map(group => ({
+        ...group,
+        groupType: groupTypeMapping[group.groupType] || group.groupType,
+      })),
+    }));
+  }, [data, groupTypeMapping]);
+
   return (
     <MotionDiv variants={container} initial="hidden" animate="show">
-      {data.map((version) => (
-        <MotionDiv className={styles.verison} key={version.version} variants={item}>
+      {formattedData.map((version) => (
+        <MotionDiv key={version.version} variants={item} className={styles.verison}>
           <h2>Версия {version.version}</h2>
           {version.groups.map((group) => (
-            <div className={styles.group} key={group.groupType}>
-              <h3>{groupTypeMapping[group.groupType] || group.groupType}</h3>
-              <MotionDiv className={styles.items} variants={item}>
-                {group.files.map((file, i) => (
-                  <Item {...file} key={i} />
+            <div key={group.groupType} className={styles.group}>
+              <h3>{group.groupType}</h3>
+              <MotionDiv variants={item} className={styles.items}>
+                {group.files.map((file) => (
+                  <Item {...file} key={file.name} />  // используйте уникальный ключ, если возможно
                 ))}
               </MotionDiv>
             </div>
