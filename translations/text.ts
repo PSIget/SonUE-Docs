@@ -11,6 +11,13 @@ export const languageMap = {
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
+export const metaTags = {
+  "en": "STALKER, Unreal Engine 5, X-Ray Engine, X-Ray SDK, porting, game modification, STALKER trilogy, gamedev, games, STALKER modification, game engine, video games, graphic engine, transition to another engine, game logic, STALKER UE5, STALKER on UE, STALKER2UE",
+  "uk": "STALKER, Unreal Engine 5, X-Ray Engine, X-Ray SDK, портування, гейм модифікація, трилогія STALKER, геймдев, ігри, модифікація STALKER, ігровий двигун, відеоігри, графічний двигун, перехід на інший двигун, логіка гри, STALKER UE5, STALKER on UE, STALKER2UE",
+  "ru": "STALKER, Unreal Engine 5, X-Ray Engine, X-Ray SDK, портирование, игровая модификация, трилогия STALKER, геймдев, игры, модификация STALKER, игровой движок, видеоигры, графический движок, переход на другой движок, игровая логика, STALKER UE5, STALKER on UE, STALKER2UE",
+};
+
+/** @type {Readonly<Record<Locale, string>>} */
 export const titleMap = {
   "en": "Port of the original STALKER game trilogy to UE5",
   "uk": "Порт оригінальної трилогії ігор STALKER на UE5",
