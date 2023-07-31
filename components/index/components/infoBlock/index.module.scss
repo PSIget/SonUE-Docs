@@ -16,6 +16,7 @@
     justify-content: start;
     img {
       max-width: 12.5rem;
+      border-right: 1px solid #333;
     }
   }
   @media screen and (max-width: 48rem) {
@@ -35,7 +36,12 @@
       margin-bottom: 100%;
       width: calc(100% - 3rem);
       color: transparent;
-      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(
+        270deg,
+        rgba(255, 255, 255, 0) 0%,
+        #fff 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
     }
   }
   .label {
