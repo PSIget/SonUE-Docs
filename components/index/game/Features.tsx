@@ -5,9 +5,9 @@ import { SectionHeader } from "../components/Headings";
 import { techBlock1, techBlock1Sub, techBlock2, techBlock2Sub, techBlock3, techBlock3Sub, techTitle } from "./text";
 import { Block } from "../components/infoBlock";
 import UeBanner from "../assets/ue-banner.svg"
-import UeBanner1 from "../assets/banner-graphic.png"
-import UeBanner2 from "../assets/banner-light.png"
-import UeBanner3 from "../assets/banner-sound.png"
+import UeBanner1 from "../assets/banner-graphic.svg"
+import UeBanner2 from "../assets/banner-light.svg"
+import UeBanner3 from "../assets/banner-sound.svg"
 import useLocalesMap from 'utils/use-locales-map';
 
 export default function Features() {
