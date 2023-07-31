@@ -4,11 +4,11 @@ import Image from "next/image";
 import { HeroText, SectionSubtext } from "../components/Headings";
 import { btnDocs, btnDown, downText, firstTitle, firstTitleSub } from "./text";
 import logo from "../assets/logo.png"
-import IndexBG from "../assets/index-bg.png"
 import { CTAButton } from "../components/CTAButton";
 import Link from "next/link";
 import { DownloadModal } from "./DownloadModal";
 import useLocalesMap from 'utils/use-locales-map';
+import { AnimatedBackground } from "../components/AnimatedBackground";
 
 export default function Hero() {
   const buttonText = useLocalesMap(btnDown);
@@ -61,7 +61,7 @@ export default function Hero() {
           </div>
           <p className="text-sm text-[#666666]">{downloadText}</p>
         </FadeIn>
-        <Image src={IndexBG}
+        {/* <Image src={IndexBG}
           alt="BG"
           quality={100}
           placeholder="blur"
@@ -73,7 +73,8 @@ export default function Hero() {
           }}
           priority
           className="light:invert"
-        />
+        /> */}
+        <AnimatedBackground />
       </FadeIn>
     </>
   );
