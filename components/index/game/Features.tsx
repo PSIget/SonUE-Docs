@@ -29,7 +29,7 @@ export default function Features() {
         <FadeIn delay={0.3} className={`${styles.ueBanner} flex gap-6 items-center justify-center w-full flex-col lg:!flex-row`}>
           <Block title={useLocalesMap(techBlock1)} paragraph={useLocalesMap(techBlock1Sub)} img={UeBanner1} />
           <Block title={useLocalesMap(techBlock2)} paragraph={useLocalesMap(techBlock2Sub)} img={UeBanner2} />
-          <Block title={useLocalesMap(techBlock3)} paragraph={useLocalesMap(techBlock3Sub)} img={UeBanner3} />
+          <Block title={useLocalesMap(techBlock3)} paragraph={useLocalesMap(techBlock3Sub)} img={UeBanner3} label="Soon" />
         </FadeIn>
       </FadeIn>
     </>
