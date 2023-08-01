@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import React, { ReactNode, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface ModalProps {
   title?: string;
@@ -10,26 +10,29 @@ interface ModalProps {
   hideCloseButton?: boolean;
 }
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
 const MotionDiv = motion.div;
 
-const Header = ({ title, subTitle }: Pick<ModalProps, 'title' | 'subTitle'>) => (
-  (title || subTitle) && (
+const Header = ({ title, subTitle }: Pick<ModalProps, 'title' | 'subTitle'>) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  const item = {
+    hidden: { opacity: shouldReduceMotion ? 1 : 0, y: shouldReduceMotion ? 0 : 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
+  return (title || subTitle) && (
     <div className={styles.header}>
       <MotionDiv variants={item} className={styles.text}>
         {title && <h2 className={styles.title}>{title}</h2>}
         {subTitle && <p className={styles.subTitle}>{subTitle}</p>}
       </MotionDiv>
     </div>
-  )
-)
+  );
+};
 
 export const Modal: React.FC<ModalProps> = ({ title, subTitle, children, onClose, hideCloseButton = false }) => {
   const modalContentRef = useRef<HTMLDivElement | null>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const prevOverflow = document.body.style.overflow;
@@ -58,17 +61,17 @@ export const Modal: React.FC<ModalProps> = ({ title, subTitle, children, onClose
     <MotionDiv
       className={styles.modal}
       onClick={onClose}
-      initial={{ opacity: 0 }}
+      initial={{ opacity: shouldReduceMotion ? 1 : 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      exit={{ opacity: shouldReduceMotion ? 1 : 0 }}
     >
       <MotionDiv
         className={styles.modalContent}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: shouldReduceMotion ? 1 : 0, y: shouldReduceMotion ? 0 : 50 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 50 }}
-        transition={{ duration: 0.2 }}
+        exit={{ opacity: shouldReduceMotion ? 1 : 0, y: shouldReduceMotion ? 0 : 50 }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
         ref={modalContentRef}
       >
         <Header title={title} subTitle={subTitle} />
