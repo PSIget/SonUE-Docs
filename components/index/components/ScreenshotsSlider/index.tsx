@@ -44,6 +44,11 @@ export function ScreenshotsSlider() {
           pagination: false,
           arrows: false,
           autoplay: true,
+          reducedMotion: {
+            speed: 0,
+            rewindSpeed: 0,
+            autoplay: 'pause',
+          },
           breakpoints: {
             768: {
               perPage: 1,
