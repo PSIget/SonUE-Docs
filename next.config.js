@@ -19,6 +19,7 @@ const i18n = {
 };
 
 const images = {
+  minimumCacheTTL: 86400,
   formats: ['image/avif', 'image/webp'],
   domains: ['i.imgur.com', 'cdn.cloudflare.steamstatic.com'],
   remotePatterns: [
