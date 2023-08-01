@@ -5,11 +5,7 @@ export function AnimatedBackground(): JSX.Element {
   return (
     <>
       <div
-        className="-z-10 absolute inset-0 [--gradient-stop-1:0px] [--gradient-stop-2:50%]"
-        style={{
-          background:
-            "linear-gradient(to top, rgba(0,0,0,0) 0px, #000 50%)",
-        }}
+        className={`${styles.gradient} -z-10 absolute inset-0 [--gradient-stop-1:0px] [--gradient-stop-2:50%]`}
       />
       <div
         className={cn(
