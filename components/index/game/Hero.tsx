@@ -3,7 +3,7 @@ import { FadeIn } from "../components/FadeIn";
 import Image from "next/image";
 import { HeroText, SectionSubtext } from "../components/Headings";
 import { btnDocs, btnDown, downText, firstTitle, firstTitleSub } from "./text";
-import logo from "../assets/logo.png"
+import logo from "../assets/UELogo.svg"
 import { CTAButton } from "../components/CTAButton";
 import Link from "next/link";
 import { DownloadModal } from "./DownloadModal";
@@ -28,8 +28,8 @@ export default function Hero() {
             <Image
               src={logo}
               alt="Logo"
-              width={588}
-              quality={100}
+              width={320}
+              quality={320}
               priority
               className="light:invert"
             />
