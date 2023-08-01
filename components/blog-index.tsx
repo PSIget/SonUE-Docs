@@ -37,7 +37,7 @@ function generateJSONLD(page: Page) {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://s2ue.org${page.route}`
+      "@id": `${process.env.NEXT_PUBLIC_BASE_URL}${page.route}`
     },
     "headline": title,
     "description": description,
