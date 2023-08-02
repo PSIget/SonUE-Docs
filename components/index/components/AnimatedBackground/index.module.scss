@@ -1,5 +1,5 @@
 .gradient{
-  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0px, #ffffff 50%);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0px, #ffffff 40%);
 
   :global(.dark) & {
     filter: invert(1) hue-rotate(180deg);

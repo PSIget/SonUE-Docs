@@ -5,7 +5,7 @@ export function AnimatedBackground(): JSX.Element {
   return (
     <>
       <div
-        className={`${styles.gradient} -z-10 absolute inset-0 [--gradient-stop-1:0px] [--gradient-stop-2:50%]`}
+        className={`${styles.gradient} -z-10 absolute inset-0`}
       />
       <div
         className={cn(
