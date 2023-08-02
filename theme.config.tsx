@@ -28,6 +28,12 @@ function getCategory(pathname: string): string {
 const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
   project: {
     link: process.env.NEXT_PUBLIC_SOURCE_CODE_URL,
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M4.333 5.667c-1.102 0-2-.898-2-2 0-1.103.898-2 2-2 1.103 0 2 .897 2 2 0 1.102-.897 2-2 2Zm7.334 0c-1.103 0-2-.898-2-2 0-1.103.897-2 2-2 1.102 0 2 .897 2 2 0 1.102-.898 2-2 2Zm-7.334 8.666c-1.102 0-2-.897-2-2 0-1.102.898-2 2-2 1.103 0 2 .898 2 2 0 1.103-.897 2-2 2Z" />
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.333" d="M4.333 12.333V3.667m7.334 0V5.5c0 5.045-7.334 2.197-7.334 5" />
+      </svg>
+    )
   },
   docsRepositoryBase: process.env.NEXT_PUBLIC_DOCS_SOURCE_CODE_URL + '/src/branch/main/',
   chat: {
@@ -72,7 +78,7 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
     const title = useLocalesMap(titleMap);
     return (
       <>
-        <Logo height={24} showText/>
+        <Logo height={24} showText />
       </>
     );
   },
