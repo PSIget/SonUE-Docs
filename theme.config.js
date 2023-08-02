@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
 import { useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
+import { useMemo } from 'react';
+
 import useLocalesMap from "./utils/use-locales-map";
 import {
   editTextMap,
@@ -15,6 +17,14 @@ import {
   metaTags,
 } from "./translations/text";
 import Logo from "./components/logo";
+
+
+function getCategory(pathname) {
+  if (pathname.startsWith("/blog")) return "blog";
+  if (pathname.startsWith("/docs")) return "docs";
+  if (pathname.startsWith("/roadmap")) return "roadmap";
+  return "";
+}
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
 const themeConfig = {
@@ -109,6 +119,25 @@ const themeConfig = {
       return CANONICAL_DOMAIN + pathname.substring(0, _pathSliceLength).replace(/\.(en|ru|uk)$/, '');
     }, [asPath, pathname, CANONICAL_DOMAIN]);
 
+    const ogUrl = useMemo(() => {
+      const category = getCategory(router.pathname);
+
+      let defaultTitle = ogTitle;
+      const siteNameWithHyphen = ` – ${process.env.NEXT_PUBLIC_SITE_NAME}`;
+      if (defaultTitle.endsWith(siteNameWithHyphen)) {
+        defaultTitle = defaultTitle.substring(0, defaultTitle.length - siteNameWithHyphen.length);
+      }
+
+      let url = `/api/og?title=${encodeURIComponent(defaultTitle)}`;
+
+      // If category exists, add it to the url
+      if (category) {
+        url += `&cat=${category}`;
+      }
+
+      return url;
+    }, [router.pathname, frontMatter]);
+
     return (
       <>
         {/* Favicons, meta */}
@@ -145,10 +174,10 @@ const themeConfig = {
         <meta name="apple-mobile-web-app-title" content={process.env.NEXT_PUBLIC_SITE_NAME} />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image" content={ogUrl} />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={ogUrl} />
         <meta property="og:locale" content={locale} />
         {locales
           .filter((l) => l !== locale)
