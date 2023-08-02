@@ -11,18 +11,6 @@ const DEFAULT_TITLE = '';
 const DEFAULT_CATEGORY = '';
 
 // Styles
-const containerStyle: CSSProperties = {
-  display: "flex",
-  width: "100%",
-  height: "100%",
-  padding: '64px',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  gap: '24px',
-  background: '#000',
-};
-
 const logoContainerStyle: CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
@@ -134,8 +122,22 @@ export default async function handler(request: NextRequest) {
       fetch(new URL('./Inter-Bold.ttf', import.meta.url)).then((res) => res.arrayBuffer()),
     ]);
 
+    const base64PngBg = await fetchImageAsBase64(new URL('./BG.jpg', import.meta.url), 'image/jpeg');
     const base64PngIcon = await fetchImageAsBase64(new URL('./Icon.png', import.meta.url), 'image/png');
     const base64SvgIcon = await fetchImageAsBase64(new URL('./Text.svg', import.meta.url), 'image/svg+xml');
+
+    const containerStyle: CSSProperties = {
+      display: "flex",
+      width: "100%",
+      height: "100%",
+      padding: '64px',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '24px',
+      background: '#000',
+      backgroundImage: `url(${base64PngBg})`,
+    };
 
     return new ImageResponse(
       (
