@@ -1,4 +1,3 @@
-// import { ImageResponse } from '@vercel/og';
 import { ImageResponse, NextRequest } from 'next/server';
 import { CSSProperties } from 'react';
 
@@ -99,8 +98,6 @@ function getCategoryNameBySlug(slug: string | null): string {
       return 'Блог';
     case 'docs':
       return 'Документация';
-    case 'roadmap':
-      return 'Дорожная карта';
     default:
       return '';
   }
@@ -115,12 +112,6 @@ export default async function handler(request: NextRequest) {
     const category = searchParams.get('cat') ?? DEFAULT_CATEGORY;
 
     const categoryName = getCategoryNameBySlug(category);
-
-    const [fontDataRegular, fontDataMedium, fontDataBold] = await Promise.all([
-      fetch(new URL('./Inter-Regular.woff', import.meta.url)).then((res) => res.arrayBuffer()),
-      fetch(new URL('./Inter-Medium.woff', import.meta.url)).then((res) => res.arrayBuffer()),
-      fetch(new URL('./Inter-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer()),
-    ]);
 
     const base64PngBg = await fetchImageAsBase64(new URL('./BG.jpg', import.meta.url), 'image/jpeg');
     const base64PngIcon = await fetchImageAsBase64(new URL('./Icon.png', import.meta.url), 'image/png');
@@ -149,26 +140,6 @@ export default async function handler(request: NextRequest) {
       {
         width: 1200,
         height: 630,
-        fonts: [
-          {
-            name: 'Inter',
-            data: fontDataRegular,
-            weight: 400,
-            style: 'normal',
-          },
-          {
-            name: 'Inter',
-            data: fontDataMedium,
-            weight: 500,
-            style: 'normal',
-          },
-          {
-            name: 'Inter',
-            data: fontDataBold,
-            weight: 700,
-            style: 'normal',
-          },
-        ],
       },
     );
   } catch (e: any) {
