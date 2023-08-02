@@ -4,12 +4,15 @@
   }
   li {
     figure {
-      transition: all 0.3s ease 0s;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
       cursor: pointer;
+      transition: all 0.3s ease 0s;
+      @media (prefers-reduced-motion) {
+        transition: none;
+      }
       figcaption {
         color: #888;
         font-family: var(--font-inter);
@@ -27,11 +30,16 @@
   }
   :global(li:not(.is-active) figure) {
     opacity: 0.5;
-    transition: all 0.3s ease 0s;
     cursor: inherit;
     pointer-events: none;
+    @media (prefers-reduced-motion) {
+      opacity: inherit;
+    }
     figcaption {
       opacity: 0;
+      @media (prefers-reduced-motion) {
+        opacity: inherit;
+      }
     }
   }
   img {

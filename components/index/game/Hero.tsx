@@ -1,14 +1,13 @@
 import styles from "./Hero.module.scss"
 import { FadeIn } from "../components/FadeIn";
-import Image from "next/image";
 import { HeroText, SectionSubtext } from "../components/Headings";
 import { btnDocs, btnDown, downText, firstTitle, firstTitleSub } from "./text";
-import logo from "../assets/logo.png"
-import IndexBG from "../assets/index-bg.png"
 import { CTAButton } from "../components/CTAButton";
 import Link from "next/link";
 import { DownloadModal } from "./DownloadModal";
 import useLocalesMap from 'utils/use-locales-map';
+import { AnimatedBackground } from "../components/AnimatedBackground";
+import Logo from "components/Logo";
 
 export default function Hero() {
   const buttonText = useLocalesMap(btnDown);
@@ -25,14 +24,7 @@ export default function Hero() {
       >
         <div className={`flex flex-col gap-6 ${styles.content}`}>
           <FadeIn className="flex flex-col items-center justify-center gap-4 w-full">
-            <Image
-              src={logo}
-              alt="Logo"
-              width={588}
-              quality={100}
-              priority
-              className="light:invert"
-            />
+            <Logo height={320} className={styles.mainLogo} />
             <p className={`font-sans ${styles.sub}`}>WORK IN PROGRESS</p>
           </FadeIn>
           <FadeIn
@@ -61,7 +53,7 @@ export default function Hero() {
           </div>
           <p className="text-sm text-[#666666]">{downloadText}</p>
         </FadeIn>
-        <Image src={IndexBG}
+        {/* <Image src={IndexBG}
           alt="BG"
           quality={100}
           placeholder="blur"
@@ -73,7 +65,8 @@ export default function Hero() {
           }}
           priority
           className="light:invert"
-        />
+        /> */}
+        <AnimatedBackground />
       </FadeIn>
     </>
   );

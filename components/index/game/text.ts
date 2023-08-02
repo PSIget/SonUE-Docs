@@ -7,7 +7,7 @@
 export const firstTitle = {
   "en": "Open Chernobyl\na new way",
   "uk": "Відкрий Чорнобиль заново",
-  "ru": "Открой чернобыль\nпо новому",
+  "ru": "Открой Чернобыль\nпо новому",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
