@@ -1,11 +1,10 @@
-const withNextra = require("nextra")("nextra-theme-docs", "./theme.config.js");
+const withNextra = require("nextra")("nextra-theme-docs", "./theme.config.tsx");
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 const env = {
   NEXT_PUBLIC_SITE_NAME: 'STALKER on UE',
   NEXT_PUBLIC_BASE_URL: 'https://s2ue.org',
-  BASE_URL: 'https://s2ue.org',
   NEXT_PUBLIC_DISCORD_URL: 'https://discord.gg/red-projects-530968529311367178',
   NEXT_PUBLIC_BOOSTY_URL: 'https://boosty.to/stalker2ue',
   NEXT_PUBLIC_MODDB_URL: 'https://www.moddb.com/mods/stalker2ue',
@@ -19,6 +18,7 @@ const i18n = {
 };
 
 const images = {
+  minimumCacheTTL: 86400,
   formats: ['image/avif', 'image/webp'],
   domains: ['i.imgur.com', 'cdn.cloudflare.steamstatic.com'],
   remotePatterns: [

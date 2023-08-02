@@ -1,0 +1,24 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+  :global(html:not([class~=dark])) & {
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hideOnMobile {
+  @media (max-width: 873px) {
+    display: none;
+  }
+}

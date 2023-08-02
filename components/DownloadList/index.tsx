@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Item } from './Item';
 import useLocalesMap from "utils/use-locales-map";
 import { setup, unpacked } from "./text";
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 interface Additional {
   icon: string;
@@ -42,29 +42,30 @@ interface DownloadListProps {
 
 const MotionDiv = motion.div;
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2
-    }
-  }
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
 const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
+  const shouldReduceMotion = useReducedMotion();
   const groupTypeMapping: {
     [key: string]: string; // This allows any string key with a string value
   } = {
     "setup": useLocalesMap(setup),
     "unpacked": useLocalesMap(unpacked),
     // добавьте сюда другие строки при необходимости
+  };
+
+  const container = {
+    hidden: { opacity: shouldReduceMotion ? 1 : 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.3,
+        delayChildren: shouldReduceMotion ? 0 : 0.2
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: shouldReduceMotion ? 1 : 0, y: shouldReduceMotion ? 0 : 20 },
+    show: { opacity: 1, y: 0 }
   };
 
   const formattedData = useMemo(() => {

@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 interface FadeInProps {
@@ -22,10 +22,12 @@ export const FadeIn: React.FC<FadeInProps> = ({
     margin: viewTriggerOffset ? "-128px" : "0px",
   });
 
+  const shouldReduceMotion = useReducedMotion();
+
   const fadeUpVariants = {
     initial: {
-      opacity: 0,
-      y: noVertical ? 0 : 24,
+      opacity: shouldReduceMotion ? 1 : 0,
+      y: shouldReduceMotion ? 0 : (noVertical ? 0 : 24),
     },
     animate: {
       opacity: 1,
@@ -39,9 +41,9 @@ export const FadeIn: React.FC<FadeInProps> = ({
       animate={inView ? "animate" : "initial"}
       variants={fadeUpVariants}
       className={className}
-      initial={false}
+      initial="initial"
       transition={{
-        duration: 1,
+        duration: shouldReduceMotion ? 0 : 1,
         delay: delay,
         ease: [0.21, 0.47, 0.32, 0.98],
       }}

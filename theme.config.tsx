@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react';
-import { useRouter } from "next/router";
+import React, { useCallback, useMemo, FC, ReactElement } from 'react';
+import { NextRouter, useRouter } from 'next/router';
 import { useConfig } from "nextra-theme-docs";
+
 import useLocalesMap from "./utils/use-locales-map";
 import {
   editTextMap,
@@ -14,30 +15,43 @@ import {
   build134AndEditor135Release,
   metaTags,
 } from "./translations/text";
-import Logo from "./components/logo";
+import Logo from "./components/Logo";
+
+function getCategory(pathname: string): string {
+  if (pathname.startsWith("/blog")) return "blog";
+  if (pathname.startsWith("/docs")) return "docs";
+  if (pathname.startsWith("/roadmap")) return "roadmap";
+  return "";
+}
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
-const themeConfig = {
+const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
   project: {
     link: process.env.NEXT_PUBLIC_SOURCE_CODE_URL,
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 16 16">
+        <path fill="currentColor" d="M4.333 5.667c-1.102 0-2-.898-2-2 0-1.103.898-2 2-2 1.103 0 2 .897 2 2 0 1.102-.897 2-2 2Zm7.334 0c-1.103 0-2-.898-2-2 0-1.103.897-2 2-2 1.102 0 2 .897 2 2 0 1.102-.898 2-2 2Zm-7.334 8.666c-1.102 0-2-.897-2-2 0-1.102.898-2 2-2 1.103 0 2 .898 2 2 0 1.103-.897 2-2 2Z" />
+        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.333" d="M4.333 12.333V3.667m7.334 0V5.5c0 5.045-7.334 2.197-7.334 5" />
+      </svg>
+    )
   },
   docsRepositoryBase: process.env.NEXT_PUBLIC_DOCS_SOURCE_CODE_URL + '/src/branch/main/',
   chat: {
     link: process.env.NEXT_PUBLIC_DISCORD_URL,
   },
-  banner: {
-    key: 'build-134-and-editor-135-release',
-    text: () => {
-      const text = useLocalesMap(build134AndEditor135Release);
-      return (
-        <>
-          <a href="/blog/devlog-1">
-            {text}
-          </a>
-        </>
-      );
-    }
-  },
+  // banner: {
+  //   key: 'build-134-and-editor-135-release',
+  //   text: (): ReactElement => {
+  //     const text = useLocalesMap(build134AndEditor135Release);
+  //     return (
+  //       <>
+  //         <a href="/blog/devlog-1">
+  //           {text}
+  //         </a>
+  //       </>
+  //     );
+  //   }
+  // },
   primaryHue: {
     dark: 41,
     light: 41,
@@ -64,34 +78,21 @@ const themeConfig = {
     const title = useLocalesMap(titleMap);
     return (
       <>
-        <Logo height={24} />
-        <span
-          className="mx-4 font-bold hidden md:inline select-none"
-          title={`${process.env.NEXT_PUBLIC_SITE_NAME}: ${title}`}
-        >
-          {process.env.NEXT_PUBLIC_SITE_NAME}
-        </span>
+        <Logo height={24} showText />
       </>
     );
   },
-  head: () => {
-    const { route, locales, locale } = useRouter();
+  head: (): ReactElement => {
+    const router: NextRouter = useRouter();
+    const { route, locales, locale } = router;
     const { frontMatter, title } = useConfig();
     const titleSuffix = useLocalesMap(titleMap);
     const description = useLocalesMap(headDescriptionMap);
 
-    const imageUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL + "/favicon/og-image.jpg");
-
-    if (!/\/index\.+/.test(route)) {
-      imageUrl;
-    }
-
-    const contentLanguage = locales.join(", ");
+    const contentLanguage = (locales ?? []).join(", ");
     const ogTitle = title ? `${title} – ${process.env.NEXT_PUBLIC_SITE_NAME}` : `${process.env.NEXT_PUBLIC_SITE_NAME}: ${titleSuffix}`;
     const ogDescription = frontMatter.description || description;
-    const ogImage = frontMatter.image || imageUrl.toString();
 
-    const router = useRouter();
     const { asPath, pathname } = router;
     const CANONICAL_DOMAIN = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -108,6 +109,25 @@ const themeConfig = {
       ]);
       return CANONICAL_DOMAIN + pathname.substring(0, _pathSliceLength).replace(/\.(en|ru|uk)$/, '');
     }, [asPath, pathname, CANONICAL_DOMAIN]);
+
+    const ogUrl = useMemo(() => {
+      const category = getCategory(router.pathname);
+
+      let defaultTitle = ogTitle;
+      const siteNameWithHyphen = ` – ${process.env.NEXT_PUBLIC_SITE_NAME}`;
+      if (defaultTitle.endsWith(siteNameWithHyphen)) {
+        defaultTitle = defaultTitle.substring(0, defaultTitle.length - siteNameWithHyphen.length);
+      }
+
+      let url = `/api/og?title=${encodeURIComponent(defaultTitle)}`;
+
+      // If category exists, add it to the url
+      if (category) {
+        url += `&cat=${category}`;
+      }
+
+      return url;
+    }, [router.pathname, frontMatter]);
 
     return (
       <>
@@ -145,16 +165,17 @@ const themeConfig = {
         <meta name="apple-mobile-web-app-title" content={process.env.NEXT_PUBLIC_SITE_NAME} />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image" content={ogUrl} />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={ogUrl} />
         <meta property="og:locale" content={locale} />
-        {locales
-          .filter((l) => l !== locale)
-          .map((l) => (
-            <meta property="og:locale:alternate" content={l} key={l} />
-          ))}
+        {
+          (locales ?? []).filter((l) => l !== locale)
+            .map((l) => (
+              <meta property="og:locale:alternate" content={l} key={l} />
+            ))
+        }
         <meta name="keywords" content={useLocalesMap(metaTags)} />
         <link rel="canonical" href={getCanonicalURL()} />
         <link rel="alternate" hrefLang="x-default" href={generateHref('', asPath)} />
@@ -166,10 +187,9 @@ const themeConfig = {
   footer: {
     text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. and X-Ray Engine belong to GSC Game World`,
   },
-  gitTimestamp({ timestamp }) {
+  gitTimestamp: ({ timestamp }: { timestamp: Date }): ReactElement => {
     const { locale } = useRouter();
     const lastUpdatedOn = useLocalesMap(gitTimestampMap);
-
     return (
       <>
         {lastUpdatedOn}{" "}
