@@ -1,6 +1,11 @@
 .hero {
   border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.08);
   .content {
+    .mainLogo {
+      @media screen and (max-width: 768px) {
+        max-width: 256px;
+      }
+    }
     .sub {
       color: #888;
       text-align: center;

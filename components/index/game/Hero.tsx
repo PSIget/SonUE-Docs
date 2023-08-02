@@ -24,7 +24,7 @@ export default function Hero() {
       >
         <div className={`flex flex-col gap-6 ${styles.content}`}>
           <FadeIn className="flex flex-col items-center justify-center gap-4 w-full">
-            <Logo height={320} />
+            <Logo height={320} className={styles.mainLogo} />
             <p className={`font-sans ${styles.sub}`}>WORK IN PROGRESS</p>
           </FadeIn>
           <FadeIn
