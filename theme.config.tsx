@@ -1,7 +1,6 @@
-import React, { useCallback } from 'react';
-import { useRouter } from "next/router";
+import React, { useCallback, useMemo, FC, ReactElement } from 'react';
+import { NextRouter, useRouter } from 'next/router';
 import { useConfig } from "nextra-theme-docs";
-import { useMemo } from 'react';
 
 import useLocalesMap from "./utils/use-locales-map";
 import {
@@ -16,10 +15,9 @@ import {
   build134AndEditor135Release,
   metaTags,
 } from "./translations/text";
-import Logo from "./components/logo";
+import Logo from "./components/Logo";
 
-
-function getCategory(pathname) {
+function getCategory(pathname: string): string {
   if (pathname.startsWith("/blog")) return "blog";
   if (pathname.startsWith("/docs")) return "docs";
   if (pathname.startsWith("/roadmap")) return "roadmap";
@@ -27,7 +25,7 @@ function getCategory(pathname) {
 }
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
-const themeConfig = {
+const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
   project: {
     link: process.env.NEXT_PUBLIC_SOURCE_CODE_URL,
   },
@@ -37,7 +35,7 @@ const themeConfig = {
   },
   banner: {
     key: 'build-134-and-editor-135-release',
-    text: () => {
+    text: (): ReactElement => {
       const text = useLocalesMap(build134AndEditor135Release);
       return (
         <>
@@ -74,18 +72,13 @@ const themeConfig = {
     const title = useLocalesMap(titleMap);
     return (
       <>
-        <Logo height={24} />
-        <span
-          className="mx-4 font-bold hidden md:inline select-none"
-          title={`${process.env.NEXT_PUBLIC_SITE_NAME}: ${title}`}
-        >
-          {process.env.NEXT_PUBLIC_SITE_NAME}
-        </span>
+        <Logo height={24} showText/>
       </>
     );
   },
-  head: () => {
-    const { route, locales, locale } = useRouter();
+  head: (): ReactElement => {
+    const router: NextRouter = useRouter();
+    const { route, locales, locale } = router;
     const { frontMatter, title } = useConfig();
     const titleSuffix = useLocalesMap(titleMap);
     const description = useLocalesMap(headDescriptionMap);
@@ -96,12 +89,11 @@ const themeConfig = {
       imageUrl;
     }
 
-    const contentLanguage = locales.join(", ");
+    const contentLanguage = (locales ?? []).join(", ");
     const ogTitle = title ? `${title} – ${process.env.NEXT_PUBLIC_SITE_NAME}` : `${process.env.NEXT_PUBLIC_SITE_NAME}: ${titleSuffix}`;
     const ogDescription = frontMatter.description || description;
     const ogImage = frontMatter.image || imageUrl.toString();
 
-    const router = useRouter();
     const { asPath, pathname } = router;
     const CANONICAL_DOMAIN = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -179,11 +171,12 @@ const themeConfig = {
         <meta property="og:description" content={ogDescription} />
         <meta property="og:image" content={ogUrl} />
         <meta property="og:locale" content={locale} />
-        {locales
-          .filter((l) => l !== locale)
-          .map((l) => (
-            <meta property="og:locale:alternate" content={l} key={l} />
-          ))}
+        {
+          (locales ?? []).filter((l) => l !== locale)
+            .map((l) => (
+              <meta property="og:locale:alternate" content={l} key={l} />
+            ))
+        }
         <meta name="keywords" content={useLocalesMap(metaTags)} />
         <link rel="canonical" href={getCanonicalURL()} />
         <link rel="alternate" hrefLang="x-default" href={generateHref('', asPath)} />
@@ -195,10 +188,9 @@ const themeConfig = {
   footer: {
     text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. and X-Ray Engine belong to GSC Game World`,
   },
-  gitTimestamp({ timestamp }) {
+  gitTimestamp: ({ timestamp }: { timestamp: Date }): ReactElement => {
     const { locale } = useRouter();
     const lastUpdatedOn = useLocalesMap(gitTimestampMap);
-
     return (
       <>
         {lastUpdatedOn}{" "}
