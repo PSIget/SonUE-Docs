@@ -83,16 +83,9 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
     const titleSuffix = useLocalesMap(titleMap);
     const description = useLocalesMap(headDescriptionMap);
 
-    const imageUrl = new URL(process.env.NEXT_PUBLIC_BASE_URL + "/favicon/og-image.jpg");
-
-    if (!/\/index\.+/.test(route)) {
-      imageUrl;
-    }
-
     const contentLanguage = (locales ?? []).join(", ");
     const ogTitle = title ? `${title} – ${process.env.NEXT_PUBLIC_SITE_NAME}` : `${process.env.NEXT_PUBLIC_SITE_NAME}: ${titleSuffix}`;
     const ogDescription = frontMatter.description || description;
-    const ogImage = frontMatter.image || imageUrl.toString();
 
     const { asPath, pathname } = router;
     const CANONICAL_DOMAIN = process.env.NEXT_PUBLIC_BASE_URL;
