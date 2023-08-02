@@ -117,9 +117,9 @@ export default async function handler(request: NextRequest) {
     const categoryName = getCategoryNameBySlug(category);
 
     const [fontDataRegular, fontDataMedium, fontDataBold] = await Promise.all([
-      fetch(new URL('./Inter-Regular.ttf', import.meta.url)).then((res) => res.arrayBuffer()),
-      fetch(new URL('./Inter-Medium.ttf', import.meta.url)).then((res) => res.arrayBuffer()),
-      fetch(new URL('./Inter-Bold.ttf', import.meta.url)).then((res) => res.arrayBuffer()),
+      fetch(new URL('./Inter-Regular.woff', import.meta.url)).then((res) => res.arrayBuffer()),
+      fetch(new URL('./Inter-Medium.woff', import.meta.url)).then((res) => res.arrayBuffer()),
+      fetch(new URL('./Inter-Bold.woff', import.meta.url)).then((res) => res.arrayBuffer()),
     ]);
 
     const base64PngBg = await fetchImageAsBase64(new URL('./BG.jpg', import.meta.url), 'image/jpeg');
