@@ -1,14 +1,13 @@
 import styles from "./Hero.module.scss"
 import { FadeIn } from "../components/FadeIn";
-import Image from "next/image";
 import { HeroText, SectionSubtext } from "../components/Headings";
 import { btnDocs, btnDown, downText, firstTitle, firstTitleSub } from "./text";
-import logo from "components/images/Icon.svg"
 import { CTAButton } from "../components/CTAButton";
 import Link from "next/link";
 import { DownloadModal } from "./DownloadModal";
 import useLocalesMap from 'utils/use-locales-map';
 import { AnimatedBackground } from "../components/AnimatedBackground";
+import Logo from "components/Logo";
 
 export default function Hero() {
   const buttonText = useLocalesMap(btnDown);
@@ -25,14 +24,7 @@ export default function Hero() {
       >
         <div className={`flex flex-col gap-6 ${styles.content}`}>
           <FadeIn className="flex flex-col items-center justify-center gap-4 w-full">
-            <Image
-              src={logo}
-              alt="Logo"
-              width={320}
-              quality={320}
-              priority
-              className="light:invert"
-            />
+            <Logo height={320} />
             <p className={`font-sans ${styles.sub}`}>WORK IN PROGRESS</p>
           </FadeIn>
           <FadeIn
