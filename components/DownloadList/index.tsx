@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Item } from './Item';
 import useLocalesMap from "utils/use-locales-map";
 import { setup, unpacked } from "./text";
-import { motion, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 
 interface Additional {
   icon: string;
@@ -40,7 +40,7 @@ interface DownloadListProps {
   data: Version[];
 }
 
-const MotionDiv = motion.div;
+const MotionDiv = m.div;
 
 const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
   const shouldReduceMotion = useReducedMotion();

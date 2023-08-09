@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import React, { ReactNode, useRef, useEffect } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 
 interface ModalProps {
   title?: string;
@@ -10,7 +10,7 @@ interface ModalProps {
   hideCloseButton?: boolean;
 }
 
-const MotionDiv = motion.div;
+const MotionDiv = m.div;
 
 const Header = ({ title, subTitle }: Pick<ModalProps, 'title' | 'subTitle'>) => {
   const shouldReduceMotion = useReducedMotion();

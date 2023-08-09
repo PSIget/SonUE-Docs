@@ -13,6 +13,7 @@ import classnames from "classnames";
 import Head from "next/head";
 import useLocalesMap from 'utils/use-locales-map';
 import { downText, firstTitle, goBtn, goTitle } from './text';
+import { LazyMotion, domAnimation } from "framer-motion"
 
 const inter = Inter({
   subsets: ['latin'],
@@ -53,13 +54,15 @@ export default function Home() {
       </Head>
       <main className={classnames(inter.className, inter.variable, styles.game) + " relative place-content-center"} id="game-index">
         <h1 className="hidden">{title}</h1>
-        <Hero />
-        <Screenshots />
-        <Features />
-        <OriginalStory />
-        <Discord />
-        <Boosty />
-        <EndBlock title={useLocalesMap(goTitle)} subTitle={subtitle} button={<DownloadModal buttonText={buttonText} limit={false} />} />
+        <LazyMotion features={domAnimation}>
+          <Hero />
+          <Screenshots />
+          <Features />
+          <OriginalStory />
+          <Discord />
+          <Boosty />
+          <EndBlock title={useLocalesMap(goTitle)} subTitle={subtitle} button={<DownloadModal buttonText={buttonText} limit={false} />} />
+        </LazyMotion>
       </main>
     </>
   );

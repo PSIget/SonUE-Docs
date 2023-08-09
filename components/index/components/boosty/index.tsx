@@ -10,6 +10,7 @@ export function Boosty() {
     <FadeIn
       delay={0.3}
       className={styles.boosty + " font-sans w-auto py-20 flex justify-between items-center flex-col relative z-0 px-6 gap-12 overflow-hidden"}
+      section
     >
       <HeroText>{useLocalesMap(Title)}</HeroText>
       <FadeIn

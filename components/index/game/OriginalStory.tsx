@@ -21,7 +21,7 @@ export default function OriginalStory() {
 
   return (
     <>
-      <FadeIn noVertical viewTriggerOffset className={styles.rad + " font-sans w-auto mx-auto px-6 pb-16 pt-[48px] md:pb-24 lg:pb-20 md:pt-16 lg:pt-20 flex flex-col items-center justify-center relative overflow-hidden"}>
+      <FadeIn noVertical viewTriggerOffset className={styles.rad + " font-sans w-auto mx-auto px-6 pb-16 pt-[48px] md:pb-24 lg:pb-20 md:pt-16 lg:pt-20 flex flex-col items-center justify-center relative overflow-hidden"} section>
         <FadeIn
           delay={0.3}
           className="flex flex-col lg:!flex-row items-center justify-center lg:gap-16 md:gap-0 w-full"

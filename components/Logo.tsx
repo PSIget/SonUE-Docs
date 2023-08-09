@@ -17,8 +17,8 @@ const Logo: React.FC<LogoProps> = ({ height, showText, column, className }) => {
 
   return (
     <div className={`${column ? styles.column : styles.row} ${className}`}>
-      <Image src={Image1} alt="STALKER on UE Icon" height={height} width={height} />
-      {showText && <Image src={Image2} alt="STALKER on UE Logo" height={adjustedHeight} className={styles.hideOnMobile} />}
+      <Image src={Image1} alt="STALKER on UE Icon" height={height} width={height} priority />
+      {showText && <Image src={Image2} alt="STALKER on UE Logo" height={adjustedHeight} className={styles.hideOnMobile} priority />}
     </div>
   );
 };

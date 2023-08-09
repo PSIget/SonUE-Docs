@@ -21,6 +21,7 @@ export default function Hero() {
       <FadeIn
         noVertical
         className={`hero font-sans w-auto pb-16 pt-[48px] md:pb-24 lg:pb-32 md:pt-16 lg:pt-20 flex justify-between gap-8 items-center flex-col relative ${styles.hero}`}
+        section
       >
         <div className={`flex flex-col gap-6 ${styles.content}`}>
           <FadeIn className="flex flex-col items-center justify-center gap-4 w-full">
@@ -53,19 +54,6 @@ export default function Hero() {
           </div>
           <p className="text-sm text-[#666666]">{downloadText}</p>
         </FadeIn>
-        {/* <Image src={IndexBG}
-          alt="BG"
-          quality={100}
-          placeholder="blur"
-          fill
-          sizes="100vw"
-          style={{
-            objectFit: 'cover',
-            zIndex: '-1'
-          }}
-          priority
-          className="light:invert"
-        /> */}
         <AnimatedBackground />
       </FadeIn>
     </>

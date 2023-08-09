@@ -1,11 +1,11 @@
 import styles from "./index.module.scss";
 import React, { useCallback, useState } from "react";
-import FsLightbox from "fslightbox-react";
 
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 import Data from "./data.json";
 
@@ -13,6 +13,10 @@ interface ImageData {
   name: string;
   url: string;
 }
+
+const DynamicFsLightbox = dynamic(() => import("fslightbox-react"), {
+  ssr: false,
+});
 
 export function ScreenshotsSlider() {
   const [lightboxController, setLightboxController] = useState({
@@ -98,7 +102,7 @@ export function ScreenshotsSlider() {
           <span className="splide__toggle__pause">Pause</span>
         </button>
       </Splide>
-      <FsLightbox
+      <DynamicFsLightbox
         toggler={lightboxController.toggler}
         sources={urls}
         sourceIndex={lightboxController.sourceIndex}
