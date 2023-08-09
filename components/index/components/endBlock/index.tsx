@@ -26,6 +26,7 @@ export function EndBlock(props: ButtonProps | LinkProps) {
     <FadeIn
       delay={0.3}
       className={"font-sans w-auto py-20 flex justify-between items-center flex-col relative px-6 gap-6"}
+      section
     >
       <SectionHeader>{title}</SectionHeader>
       <div className="flex flex-col w-full md:w-min md:!flex-row">

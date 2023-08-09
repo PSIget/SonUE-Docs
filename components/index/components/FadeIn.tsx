@@ -1,4 +1,4 @@
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 interface FadeInProps {
@@ -7,6 +7,7 @@ interface FadeInProps {
   noVertical?: boolean;
   delay?: number;
   viewTriggerOffset?: boolean;
+  section?: boolean;
 }
 
 export const FadeIn: React.FC<FadeInProps> = ({
@@ -15,6 +16,7 @@ export const FadeIn: React.FC<FadeInProps> = ({
   noVertical = false,
   delay = 0,
   viewTriggerOffset = false,
+  section = false,
 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, {
@@ -35,8 +37,10 @@ export const FadeIn: React.FC<FadeInProps> = ({
     },
   };
 
+  const Component = section ? m.section : m.div;
+
   return (
-    <motion.div
+    <Component
       ref={ref}
       animate={inView ? "animate" : "initial"}
       variants={fadeUpVariants}
@@ -49,6 +53,6 @@ export const FadeIn: React.FC<FadeInProps> = ({
       }}
     >
       {children}
-    </motion.div>
+    </Component>
   );
 };
