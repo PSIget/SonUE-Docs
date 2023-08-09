@@ -71,7 +71,7 @@ export function ScreenshotsSlider() {
                   alt={`Screenshot of the game - ${image.name}`}
                   width={792}
                   height={444}
-                  quality={90}
+                  quality={100}
                   onClick={() => openLightboxOnSlide(index)}
                   sizes="(max-width: 768px) 294px, (max-width: 916px) 600px, 828px"
                   style={{
@@ -84,7 +84,7 @@ export function ScreenshotsSlider() {
                   alt={`Screenshot of the game - ${image.name}`}
                   width={792}
                   height={444}
-                  quality={90}
+                  quality={100}
                   className={styles.shadow}
                   sizes="(max-width: 768px) 294px, (max-width: 916px) 600px, 828px"
                   style={{
