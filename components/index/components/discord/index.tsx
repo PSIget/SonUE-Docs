@@ -12,6 +12,7 @@ export function Discord() {
     <FadeIn
       delay={0.3}
       className={"font-sans w-auto py-20 flex justify-between items-center flex-col relative z-0 px-6"}
+      section
     >
       <Image
         src={DiscordBig}

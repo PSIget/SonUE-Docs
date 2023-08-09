@@ -13,7 +13,7 @@ import useLocalesMap from 'utils/use-locales-map';
 export default function Features() {
   return (
     <>
-      <FadeIn noVertical viewTriggerOffset className={`${styles.tech} font-sans w-auto px-6 pb-16 pt-[48px] md:pb-24 lg:pb-20 md:pt-16 lg:pt-20 flex flex-col items-center justify-center relative overflow-hidden`}>
+      <FadeIn noVertical viewTriggerOffset className={`${styles.tech} font-sans w-auto px-6 pb-16 pt-[48px] md:pb-24 lg:pb-20 md:pt-16 lg:pt-20 flex flex-col items-center justify-center relative overflow-hidden`} section>
         <FadeIn delay={0.3} className="flex flex-col items-center w-full">
           <div className="pb-6 md:pb-24">
             <SectionHeader>{useLocalesMap(techTitle)}</SectionHeader>

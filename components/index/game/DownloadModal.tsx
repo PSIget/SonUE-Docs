@@ -93,11 +93,9 @@ export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => 
 
   return (
     <>
-      <a onClick={handleOpenModal} className="block whitespace-nowrap">
-        <CTAButton limit={limit}>  {/* Используем limit проп здесь */}
-          {isLoading ? <Loader /> : buttonText}
-        </CTAButton>
-      </a>
+      <CTAButton limit={limit} onClick={handleOpenModal}>
+        {isLoading ? <Loader /> : buttonText}
+      </CTAButton>
       <AnimatePresence>
         {isModalOpen && (
           <DynamicModal
