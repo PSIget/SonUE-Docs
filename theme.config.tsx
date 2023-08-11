@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useCallback, useMemo, FC, ReactElement } from 'react';
 import { NextRouter, useRouter } from 'next/router';
 import { useConfig } from "nextra-theme-docs";
@@ -39,19 +40,6 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
   chat: {
     link: process.env.NEXT_PUBLIC_DISCORD_URL,
   },
-  // banner: {
-  //   key: 'build-134-and-editor-135-release',
-  //   text: (): ReactElement => {
-  //     const text = useLocalesMap(build134AndEditor135Release);
-  //     return (
-  //       <>
-  //         <a href="/blog/devlog-1">
-  //           {text}
-  //         </a>
-  //       </>
-  //     );
-  //   }
-  // },
   primaryHue: {
     dark: 41,
     light: 41,
