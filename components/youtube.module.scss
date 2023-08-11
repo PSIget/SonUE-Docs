@@ -39,11 +39,15 @@
     }
   }
 
+  &:hover .YoutubeIconPlay {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
   .YoutubeIconPlay {
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-in-out;
     &:hover {
-      transform: translate(-50%, -50%) scale(1.2);
+      transform: translate(-50%, -50%) scale(1.3);
     }
   }
 }
