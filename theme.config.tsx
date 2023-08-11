@@ -13,7 +13,6 @@ import {
   searchPlaceholderMap,
   tableOfContentsTitleMap,
   titleMap,
-  build134AndEditor135Release,
   metaTags,
 } from "./translations/text";
 import Logo from "./components/Logo";
@@ -63,7 +62,6 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
     content: () => useLocalesMap(feedbackLinkMap),
   },
   logo: () => {
-    const title = useLocalesMap(titleMap);
     return (
       <>
         <Logo height={24} showText />
@@ -72,7 +70,7 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
   },
   head: (): ReactElement => {
     const router: NextRouter = useRouter();
-    const { route, locales, locale } = router;
+    const { locales, locale } = router;
     const { frontMatter, title } = useConfig();
     const titleSuffix = useLocalesMap(titleMap);
     const description = useLocalesMap(headDescriptionMap);
@@ -109,13 +107,12 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
 
       let url = `/api/og?title=${encodeURIComponent(defaultTitle)}`;
 
-      // If category exists, add it to the url
       if (category) {
         url += `&cat=${category}`;
       }
 
       return url;
-    }, [router.pathname, frontMatter]);
+    }, [router.pathname, ogTitle]);
 
     return (
       <>
