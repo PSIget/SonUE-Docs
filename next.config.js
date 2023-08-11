@@ -1,7 +1,14 @@
-const withNextra = require("nextra")("nextra-theme-docs", "./theme.config.tsx");
+const withNextra = require('nextra')({
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.tsx',
+  staticImage: true,
+  defaultShowCopyCode: true,
+})
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+
 const env = {
   NEXT_PUBLIC_SITE_NAME: 'STALKER on UE',
   NEXT_PUBLIC_BASE_URL: 'https://s2ue.org',
