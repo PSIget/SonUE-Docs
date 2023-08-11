@@ -50,6 +50,7 @@ export default function Home() {
             }
           `}
         </style>
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
       </Head>
       <main className={classnames(styles.game) + " relative place-content-center"} id="game-index">
         <h1 className="hidden">{title}</h1>
