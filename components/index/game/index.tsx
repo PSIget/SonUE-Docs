@@ -27,11 +27,16 @@ export default function Home() {
             footer {
               background-color: white !important;
             }
-            .dark footer,
-            .dark body {
+
+            .dark footer {
               background-color: black !important;
               --tw-border-opacity: 1;
               border-top: 1px solid rgba(38,38,38,var(--tw-border-opacity));
+            }
+
+            .dark body {
+              background-color: black !important;
+              --tw-border-opacity: 1;
             }
 
             .dark .nextra-nav-container .nextra-nav-container-blur  {
