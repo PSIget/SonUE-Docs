@@ -1,7 +1,3 @@
 {
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "plugins": ["react"]
+  "extends": "next/core-web-vitals"
 }
