@@ -39,7 +39,7 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
       router.events.off('routeChangeComplete', handleRouteChangeComplete);
       router.events.off('routeChangeError', handleRouteChangeError);
     };
-  }, []);
+  }, [router.events]);
 
   return (
     <>
