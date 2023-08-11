@@ -44,13 +44,14 @@ const MotionDiv = m.div;
 
 const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
   const shouldReduceMotion = useReducedMotion();
-  const groupTypeMapping: {
-    [key: string]: string; // This allows any string key with a string value
-  } = {
-    "setup": useLocalesMap(setup),
-    "unpacked": useLocalesMap(unpacked),
-    // добавьте сюда другие строки при необходимости
-  };
+
+  const setupTranslation = useLocalesMap(setup);
+  const unpackedTranslation = useLocalesMap(unpacked);
+
+  const groupTypeMapping: { [key: string]: string } = useMemo(() => ({
+    "setup": setupTranslation,
+    "unpacked": unpackedTranslation,
+  }), [setupTranslation, unpackedTranslation]);
 
   const container = {
     hidden: { opacity: shouldReduceMotion ? 1 : 0 },
@@ -88,7 +89,7 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
               <h3>{group.groupType}</h3>
               <MotionDiv variants={item} className={styles.items}>
                 {group.files.map((file) => (
-                  <Item {...file} key={file.name} />  // используйте уникальный ключ, если возможно
+                  <Item {...file} key={file.name} />
                 ))}
               </MotionDiv>
             </div>

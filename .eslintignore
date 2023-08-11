@@ -3,3 +3,4 @@ target/
 .next/
 build/
 dist/
+pages/api/og/

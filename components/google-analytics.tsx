@@ -4,7 +4,7 @@ const Analytics: React.FC = () => (
   <>
     {/* Google tag (gtag.js) */}
     <Script async src="https://www.googletagmanager.com/gtag/js?id=G-55PM901V2S" />
-    <Script strategy="afterInteractive">
+    <Script id="gtag" strategy="afterInteractive">
       {`
         window.dataLayer = window.dataLayer || [];
         const gtag = (...args) => dataLayer.push(args);
