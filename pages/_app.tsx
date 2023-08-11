@@ -7,6 +7,12 @@ import Analytics from "components/google-analytics";
 import { useRouter } from "next/router";
 import { useEffect } from 'react';
 import NProgress from 'nprogress';
+import { Inter } from 'next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
 type NextraAppProps = AppProps & {
   Component: AppProps["Component"] & {
@@ -37,6 +43,11 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
 
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${inter.style.fontFamily};
+        }
+      `}</style>
       <Component {...pageProps} />
       <Analytics />
     </>

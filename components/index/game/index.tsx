@@ -8,17 +8,11 @@ import Screenshots from "./Screenshots";
 import Features from "./Features";
 import OriginalStory from "./OriginalStory";
 import { DownloadModal } from "./DownloadModal";
-import { Inter } from 'next/font/google'
 import classnames from "classnames";
 import Head from "next/head";
 import useLocalesMap from 'utils/use-locales-map';
 import { downText, firstTitle, goBtn, goTitle } from './text';
 import { LazyMotion, domAnimation } from "framer-motion"
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
 
 export default function Home() {
   const title = useLocalesMap(firstTitle);
@@ -52,7 +46,7 @@ export default function Home() {
           `}
         </style>
       </Head>
-      <main className={classnames(inter.className, inter.variable, styles.game) + " relative place-content-center"} id="game-index">
+      <main className={classnames(styles.game) + " relative place-content-center"} id="game-index">
         <h1 className="hidden">{title}</h1>
         <LazyMotion features={domAnimation}>
           <Hero />
