@@ -35,7 +35,7 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
       </svg>
     )
   },
-  docsRepositoryBase: process.env.NEXT_PUBLIC_DOCS_SOURCE_CODE_URL + '/src/branch/main/',
+  docsRepositoryBase: process.env.NEXT_PUBLIC_DOCS_SOURCE_CODE_URL + '/tree/main',
   chat: {
     link: process.env.NEXT_PUBLIC_DISCORD_URL,
   },
