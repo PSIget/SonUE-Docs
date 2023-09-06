@@ -16,7 +16,7 @@ const env = {
   NEXT_PUBLIC_BOOSTY_URL: 'https://boosty.to/stalker2ue',
   NEXT_PUBLIC_MODDB_URL: 'https://www.moddb.com/mods/stalker2ue',
   NEXT_PUBLIC_SOURCE_CODE_URL: 'https://git.s2ue.org/RedProjects/SonUE',
-  NEXT_PUBLIC_DOCS_SOURCE_CODE_URL: 'https://git.s2ue.org/PSIget/SonUE-Docs',
+  NEXT_PUBLIC_DOCS_SOURCE_CODE_URL: 'https://github.com/PSIget/SonUE-Docs',
 };
 
 const i18n = {
