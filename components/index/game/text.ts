@@ -32,13 +32,6 @@ export const btnDocs = {
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
-export const btnsSub = {
-  "en": "Original game required",
-  "uk": "Потрібна оригінальна гра",
-  "ru": "Требуется оригинальная игра",
-};
-
-/** @type {Readonly<Record<Locale, string>>} */
 export const screensTitle = {
   "en": "Doubts?",
   "uk": "Сумніваєтеся?",
@@ -145,8 +138,8 @@ export const goBtn = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const downText = {
-  "en": "Потрібна оригінальна гра",
-  "uk": "Завантаження тимчасово недоступне",
+  "en": "Original game required",
+  "uk": "Потрібна оригінальна гра",
   "ru": "Требуется оригинальная игра",
 };
 
