@@ -11,3 +11,5 @@ public/*.toml
 public/.nextra
 .vercel
 out
+
+analyze
