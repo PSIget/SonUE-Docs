@@ -2,7 +2,7 @@ import type { AppProps } from "next/app";
 import { ReactNode } from "react";
 import "nextra-theme-docs/style.css";
 import "nprogress/nprogress.css";
-import "../styles.scss";
+import "../styles/global.scss";
 import Analytics from "components/google-analytics";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
