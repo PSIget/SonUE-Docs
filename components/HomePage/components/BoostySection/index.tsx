@@ -5,7 +5,7 @@ import { Button, Paragraph1N, Paragraph2N, Paragraph3N, Title } from "./text";
 import Link from "next/link";
 import styles from "./index.module.scss";
 
-export function Boosty() {
+export function BoostySection() {
   return (
     <FadeIn
       delay={0.3}

@@ -1,4 +1,4 @@
-import styles from "./Features.module.scss";
+import styles from "./FeaturesSection.module.scss";
 import Image from "next/image";
 import { FadeIn } from "../components/FadeIn";
 import { SectionHeader } from "../components/Headings";
@@ -11,14 +11,14 @@ import {
   techBlock3Sub,
   techTitle,
 } from "./text";
-import { Block } from "../components/infoBlock";
+import { Card } from "../components/Card";
 import UeBanner from "../assets/ue-banner.svg";
 import UeBanner1 from "../assets/banner-graphic.svg";
 import UeBanner2 from "../assets/banner-light.svg";
 import UeBanner3 from "../assets/banner-sound.svg";
 import useLocalesMap from "utils/use-locales-map";
 
-export default function Features() {
+export default function FeaturesSection() {
   return (
     <>
       <FadeIn
@@ -43,17 +43,17 @@ export default function Features() {
           delay={0.3}
           className={`${styles.ueBanner} flex gap-6 items-center justify-center w-full flex-col lg:!flex-row`}
         >
-          <Block
+          <Card
             title={useLocalesMap(techBlock1)}
             paragraph={useLocalesMap(techBlock1Sub)}
             img={UeBanner1}
           />
-          <Block
+          <Card
             title={useLocalesMap(techBlock2)}
             paragraph={useLocalesMap(techBlock2Sub)}
             img={UeBanner2}
           />
-          <Block
+          <Card
             title={useLocalesMap(techBlock3)}
             paragraph={useLocalesMap(techBlock3Sub)}
             img={UeBanner3}

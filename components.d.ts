@@ -1,3 +1,3 @@
-declare module "components/google-analytics";
+declare module "components/GoogleAnalytics";
 declare module "framer-motion";
 declare module "@vercel/og";

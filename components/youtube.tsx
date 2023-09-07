@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef, SVGProps } from "react";
-import styles from "./youtube.module.scss";
+import styles from "./YouTube.module.scss";
 import Script from "next/script";
 import Image from "next/image";
-import { Loader } from "./loader";
+import { Loader } from "./Loader";
 
 declare global {
   interface Window {

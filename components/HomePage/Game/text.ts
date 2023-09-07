@@ -32,20 +32,6 @@ export const btnDocs = {
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
-export const screensTitle = {
-  en: "Doubts?",
-  uk: "Сумніваєтеся?",
-  ru: "Сомневаетесь?",
-};
-
-/** @type {Readonly<Record<Locale, string>>} */
-export const screensSub = {
-  en: "Look at community work!",
-  uk: "Подивіться на роботи спільноти!",
-  ru: "Посмотрите на работы сообщества!",
-};
-
-/** @type {Readonly<Record<Locale, string>>} */
 export const techTitle = {
   en: "Technologies beyond our comprehension",
   uk: "Технології, які виходять за межі нашого розуміння",

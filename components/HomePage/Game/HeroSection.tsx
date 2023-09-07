@@ -1,4 +1,4 @@
-import styles from "./Hero.module.scss";
+import styles from "./HeroSection.module.scss";
 import { FadeIn } from "../components/FadeIn";
 import { HeroText, SectionSubtext } from "../components/Headings";
 import { btnDocs, btnDown, downText, firstTitle, firstTitleSub } from "./text";
@@ -9,7 +9,7 @@ import useLocalesMap from "utils/use-locales-map";
 import { AnimatedBackground } from "../components/AnimatedBackground";
 import Logo from "components/Logo";
 
-export default function Hero() {
+export default function HeroSection() {
   const buttonText = useLocalesMap(btnDown);
   const downloadText = useLocalesMap(downText);
   const firstTitleText = useLocalesMap(firstTitle);

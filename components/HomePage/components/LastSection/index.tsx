@@ -18,7 +18,7 @@ interface LinkProps extends BaseProps {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-export function EndBlock(props: ButtonProps | LinkProps) {
+export function LastSection(props: ButtonProps | LinkProps) {
   const { title, subTitle } = props;
 
   return (

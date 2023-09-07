@@ -1,4 +1,4 @@
-import styles from "./OriginalStory.module.scss";
+import styles from "./OriginalStorySection.module.scss";
 
 import Image from "next/image";
 import { FadeIn } from "../components/FadeIn";
@@ -18,7 +18,7 @@ interface ListItemProps {
 
 const ListItem: React.FC<ListItemProps> = ({ text }) => <li>{text}</li>;
 
-export default function OriginalStory() {
+export default function OriginalStorySection() {
   const origTitleText = useLocalesMap(origTitle);
   const origTitleSubText = useLocalesMap(origTitleSub);
   const origTitleList1Text = useLocalesMap(origTitleList1);

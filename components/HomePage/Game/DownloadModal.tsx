@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import DownloadList from "components/DownloadList";
-import { Loader } from "components/loader";
+import { Loader } from "components/Loader";
 import { modalSubtitle, modalTitle } from "./text";
 import { CTAButton } from "../components/CTAButton";
 import useLocalesMap from "utils/use-locales-map";

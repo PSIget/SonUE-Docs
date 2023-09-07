@@ -7,7 +7,7 @@ import { Button, SubTitle, Title } from "./text";
 import Link from "next/link";
 import styles from "./index.module.scss";
 
-export function Discord() {
+export function DiscordSection() {
   return (
     <FadeIn
       delay={0.3}

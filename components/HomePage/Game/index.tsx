@@ -1,12 +1,12 @@
 import styles from "./index.module.scss";
 
-import { Discord } from "../components/discord";
-import { Boosty } from "../components/boosty";
-import { EndBlock } from "../components/endBlock";
-import Hero from "./Hero";
-import Screenshots from "./Screenshots";
-import Features from "./Features";
-import OriginalStory from "./OriginalStory";
+import { DiscordSection } from "../components/DiscordSection";
+import { BoostySection } from "../components/BoostySection";
+import { LastSection } from "../components/LastSection";
+import HeroSection from "./HeroSection";
+import ScreenshotsSection from "../components/ScreenshotsSection";
+import FeaturesSection from "./FeaturesSection";
+import OriginalStorySection from "./OriginalStorySection";
 import { DownloadModal } from "./DownloadModal";
 import classnames from "classnames";
 import Head from "next/head";
@@ -62,13 +62,13 @@ export default function Home() {
       >
         <h1 className="hidden">{title}</h1>
         <LazyMotion features={domAnimation}>
-          <Hero />
-          <Screenshots />
-          <Features />
-          <OriginalStory />
-          <Discord />
-          <Boosty />
-          <EndBlock
+          <HeroSection />
+          <ScreenshotsSection />
+          <FeaturesSection />
+          <OriginalStorySection />
+          <DiscordSection />
+          <BoostySection />
+          <LastSection
             title={useLocalesMap(goTitle)}
             subTitle={subtitle}
             button={<DownloadModal buttonText={buttonText} limit={false} />}

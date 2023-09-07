@@ -28,7 +28,7 @@ type CardProps =
   | PropsWithImgWithoutLabel
   | PropsWithoutImgAndLabel;
 
-export function Block({ img, title, paragraph, label }: CardProps) {
+export function Card({ img, title, paragraph, label }: CardProps) {
   if (img === undefined && label !== undefined) {
     throw new Error("Cannot use 'label' without 'img'.");
   }
@@ -39,7 +39,7 @@ export function Block({ img, title, paragraph, label }: CardProps) {
         "flex gap-6 items-center h-full justify-center w-full flex-col lg:!flex-row"
       }
     >
-      <article className={styles.block + " light:invert"}>
+      <article className={styles.card + " light:invert"}>
         {img && (
           <Image
             src={img}

@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "./ScreenshotsSlider.module.scss";
 import React, { useCallback, useState } from "react";
 
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";

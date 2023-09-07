@@ -1,12 +1,12 @@
-import styles from "./Screenshots.module.scss";
+import styles from "./index.module.scss";
 
 import useLocalesMap from "utils/use-locales-map";
-import { FadeIn } from "../components/FadeIn";
-import { SectionHeader, SectionSubtext } from "../components/Headings";
 import { screensSub, screensTitle } from "./text";
-import { ScreenshotsSlider } from "../components/ScreenshotsSlider";
+import { ScreenshotsSlider } from "./ScreenshotsSlider";
+import { FadeIn } from "../FadeIn";
+import { SectionHeader, SectionSubtext } from "../Headings";
 
-export default function Screenshots() {
+export default function ScreenshotsSection() {
   const screensTitleText = useLocalesMap(screensTitle);
   const screensSubText = useLocalesMap(screensSub);
 

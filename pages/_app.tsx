@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import "nextra-theme-docs/style.css";
 import "nprogress/nprogress.css";
 import "../styles/global.scss";
-import Analytics from "components/google-analytics";
+import Analytics from "components/GoogleAnalytics";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import NProgress from "nprogress";
