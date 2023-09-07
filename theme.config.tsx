@@ -29,17 +29,23 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
   project: {
     link: process.env.NEXT_PUBLIC_SOURCE_CODE_URL,
     icon: (
-      <svg width="24" height="24" viewBox="0 0 16 16">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 48 48"
+      >
         <path
           fill="currentColor"
-          d="M4.333 5.667c-1.102 0-2-.898-2-2 0-1.103.898-2 2-2 1.103 0 2 .897 2 2 0 1.102-.897 2-2 2Zm7.334 0c-1.103 0-2-.898-2-2 0-1.103.897-2 2-2 1.102 0 2 .897 2 2 0 1.102-.898 2-2 2Zm-7.334 8.666c-1.102 0-2-.897-2-2 0-1.102.898-2 2-2 1.103 0 2 .898 2 2 0 1.103-.897 2-2 2Z"
+          d="M13 17c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6Zm22 0c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6ZM13 43c-3.308 0-6-2.692-6-6s2.692-6 6-6 6 2.692 6 6-2.692 6-6 6Z"
         />
         <path
           stroke="currentColor"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth="1.333"
-          d="M4.333 12.333V3.667m7.334 0V5.5c0 5.045-7.334 2.197-7.334 5"
+          strokeWidth="4"
+          d="M13 37V11m22 0v5.5c0 15.136-22 6.591-22 15"
         />
       </svg>
     ),
