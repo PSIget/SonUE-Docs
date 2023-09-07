@@ -39,8 +39,7 @@ export function Block({ img, title, paragraph, label }: CardProps) {
         "flex gap-6 items-center h-full justify-center w-full flex-col lg:!flex-row"
       }
     >
-      <div className={styles.block + " light:invert"}>
-        {label && img && <div className={styles.label}>{label}</div>}
+      <article className={styles.block + " light:invert"}>
         {img && (
           <Image
             src={img}
@@ -55,11 +54,12 @@ export function Block({ img, title, paragraph, label }: CardProps) {
             }}
           />
         )}
+        {label && img && <div className={styles.label}>{label}</div>}
         <div className={styles.content}>
           <h3>{title}</h3>
           <p>{paragraph}</p>
         </div>
-      </div>
+      </article>
     </FadeIn>
   );
 }
