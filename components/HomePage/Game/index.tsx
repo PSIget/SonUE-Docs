@@ -11,13 +11,31 @@ import { DownloadModal } from "./DownloadModal";
 import classnames from "classnames";
 import Head from "next/head";
 import useLocalesMap from "utils/use-locales-map";
-import { downText, firstTitle, goBtn, goTitle } from "./text";
+import { downText, firstTitle, firstTitleSub, goBtn, goTitle } from "./text";
 import { LazyMotion, domAnimation } from "framer-motion";
 
 export default function Home() {
   const title = useLocalesMap(firstTitle);
+  const titleSub = useLocalesMap(firstTitleSub);
   const subtitle = useLocalesMap(downText);
   const buttonText = useLocalesMap(goBtn);
+
+  const jsonldData = {
+    "@context": "http://schema.org",
+    "@type": "VideoGame",
+    name: process.env.NEXT_PUBLIC_SITE_NAME,
+    description: titleSub,
+    operatingSystem: "Windows",
+    gamePlatform: "PC",
+    applicationCategory: "Game",
+    genre: "Action, First-Person Shooter",
+    image: "/favicon/apple-touch-icon.png",
+    url: "/",
+    publisher: {
+      "@type": "Organization",
+      name: "Red Projects",
+    },
+  };
 
   return (
     <>
@@ -54,6 +72,10 @@ export default function Home() {
           name="theme-color"
           content="#000000"
           media="(prefers-color-scheme: dark)"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonldData) }}
         />
       </Head>
       <main
