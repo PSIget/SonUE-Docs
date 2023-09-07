@@ -104,14 +104,14 @@ html:not([class~="dark"]) {
 
 #nprogress .bar {
   background: hsl(var(--nextra-primary-hue) 100% 45% / var(--tw-text-opacity));
-  transition: width 0.1s ease-out 0s, opacity 0.5s ease 0.2s !important;
+  transition: transform 0.1s ease-out 0s, width 0.1s ease-out 0s,
+    opacity 0.5s ease 0.2s !important;
   box-shadow: none;
 
   & .peg {
     box-shadow: none;
-    transition: width 0.05s ease-out 0s, opacity 0.2s ease 0.1s;
-    transform: none;
-    opacity: 0.1 !important;
+    transition: transform 0.1s ease-out 0s, width 0.05s ease-out 0s,
+      opacity 0.2s ease 0.1s;
   }
 }
 
