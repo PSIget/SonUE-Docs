@@ -18,15 +18,23 @@ const isObject = (item: any): item is ILocaleMap<any> => {
   return item && typeof item === "object" && !Array.isArray(item);
 };
 
-export default function useLocalesMap<T>(localesMap: ILocaleMap<T>): T {
+export default function useLocalesMap<T>(localesMap: ILocaleMap<T> | T[]): T {
   const router = useRouter() as ITypedRouter;
   const { locale = "", defaultLocale = "" } = router;
 
-  if (!localesMap || !isObject(localesMap)) {
-    throw new TypeError("Locales map must be an object");
+  if (!localesMap || (!isObject(localesMap) && !Array.isArray(localesMap))) {
+    throw new TypeError("Locales map must be an object or an array");
   }
 
-  if (defaultLocale && !localesMap.hasOwnProperty(defaultLocale)) {
+  if (Array.isArray(localesMap)) {
+    return localesMap as T;
+  }
+
+  if (
+    defaultLocale &&
+    isObject(localesMap) &&
+    !localesMap.hasOwnProperty(defaultLocale)
+  ) {
     throw new Error(
       `Locales map must contain default locale "${defaultLocale}"`
     );
@@ -34,6 +42,7 @@ export default function useLocalesMap<T>(localesMap: ILocaleMap<T>): T {
 
   if (
     locale &&
+    isObject(localesMap) &&
     localesMap.hasOwnProperty(locale) &&
     typeof localesMap[locale] !== typeof localesMap[defaultLocale]
   ) {
@@ -43,6 +52,7 @@ export default function useLocalesMap<T>(localesMap: ILocaleMap<T>): T {
   }
 
   if (
+    isObject(localesMap) &&
     ["string", "number", "symbol"].includes(typeof localesMap[defaultLocale])
   ) {
     return localesMap[locale] || localesMap[defaultLocale];
