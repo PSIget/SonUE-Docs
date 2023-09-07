@@ -1,30 +1,29 @@
-import Image from 'next/image';
+import Image from "next/image";
 import { FadeIn } from "../FadeIn";
-import DiscordBig from "./assets/discord-big.svg"
-import { SectionHeader, SectionSubtext } from '../Headings';
-import useLocalesMap from 'utils/use-locales-map';
-import { Button, SubTitle, Title } from './text';
+import DiscordBig from "./assets/discord-big.svg";
+import { SectionHeader, SectionSubtext } from "../Headings";
+import useLocalesMap from "utils/use-locales-map";
+import { Button, SubTitle, Title } from "./text";
 import Link from "next/link";
-import styles from "./index.module.scss"
+import styles from "./index.module.scss";
 
 export function Discord() {
   return (
     <FadeIn
       delay={0.3}
-      className={"font-sans w-auto py-20 flex justify-between items-center flex-col relative z-0 px-6"}
+      className={
+        "font-sans w-auto py-20 flex justify-between items-center flex-col relative z-0 px-6"
+      }
       section
     >
       <Image
         src={DiscordBig}
         width={800}
         alt="Discord Logo"
-        className='light:invert'
+        className="light:invert"
       />
 
-      <FadeIn
-        delay={0.3}
-        className="flex flex-col items-center gap-6 w-full"
-      >
+      <FadeIn delay={0.3} className="flex flex-col items-center gap-6 w-full">
         <SectionHeader>{useLocalesMap(Title)}</SectionHeader>
         <SectionSubtext>{useLocalesMap(SubTitle)}</SectionSubtext>
 
@@ -36,7 +35,6 @@ export function Discord() {
         >
           {useLocalesMap(Button)}
         </Link>
-
       </FadeIn>
     </FadeIn>
   );

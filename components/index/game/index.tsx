@@ -1,4 +1,4 @@
-import styles from "./index.module.scss"
+import styles from "./index.module.scss";
 
 import { Discord } from "../components/discord";
 import { Boosty } from "../components/boosty";
@@ -10,9 +10,9 @@ import OriginalStory from "./OriginalStory";
 import { DownloadModal } from "./DownloadModal";
 import classnames from "classnames";
 import Head from "next/head";
-import useLocalesMap from 'utils/use-locales-map';
-import { downText, firstTitle, goBtn, goTitle } from './text';
-import { LazyMotion, domAnimation } from "framer-motion"
+import useLocalesMap from "utils/use-locales-map";
+import { downText, firstTitle, goBtn, goTitle } from "./text";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 export default function Home() {
   const title = useLocalesMap(firstTitle);
@@ -50,9 +50,16 @@ export default function Home() {
             }
           `}
         </style>
-        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+        <meta
+          name="theme-color"
+          content="#000000"
+          media="(prefers-color-scheme: dark)"
+        />
       </Head>
-      <main className={classnames(styles.game) + " relative place-content-center"} id="game-index">
+      <main
+        className={classnames(styles.game) + " relative place-content-center"}
+        id="game-index"
+      >
         <h1 className="hidden">{title}</h1>
         <LazyMotion features={domAnimation}>
           <Hero />
@@ -61,7 +68,11 @@ export default function Home() {
           <OriginalStory />
           <Discord />
           <Boosty />
-          <EndBlock title={useLocalesMap(goTitle)} subTitle={subtitle} button={<DownloadModal buttonText={buttonText} limit={false} />} />
+          <EndBlock
+            title={useLocalesMap(goTitle)}
+            subTitle={subtitle}
+            button={<DownloadModal buttonText={buttonText} limit={false} />}
+          />
         </LazyMotion>
       </main>
     </>

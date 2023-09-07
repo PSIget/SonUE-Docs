@@ -1,16 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import dynamic from 'next/dynamic';
+import React, { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 import DownloadList from "components/DownloadList";
 import { Loader } from "components/loader";
 import { modalSubtitle, modalTitle } from "./text";
 import { CTAButton } from "../components/CTAButton";
-import useLocalesMap from 'utils/use-locales-map';
+import useLocalesMap from "utils/use-locales-map";
 
-const DynamicModal = dynamic(
-  () => import('components/Modal'),
-  { ssr: false }
-);
+const DynamicModal = dynamic(() => import("components/Modal"), { ssr: false });
 
 interface Additional {
   icon: string;
@@ -38,10 +35,13 @@ interface Version {
 interface Props {
   data?: Version[] | null;
   buttonText: string;
-  limit?: boolean;  // Обновленный тип пропсов
+  limit?: boolean; // Обновленный тип пропсов
 }
 
-export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => {
+export const DownloadModal: React.FC<Props> = ({
+  buttonText,
+  limit = true,
+}) => {
   const modalTitleText = useLocalesMap(modalTitle);
   const modalSubtitleText = useLocalesMap(modalSubtitle);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -54,24 +54,27 @@ export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => 
     setIsLoading(true);
   }, []);
 
-  const handleCloseModal = useCallback((event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
-    event.preventDefault();
-    setIsModalOpen(false);
-    setIsLoading(false);
-  }, []);
+  const handleCloseModal = useCallback(
+    (event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
+      event.preventDefault();
+      setIsModalOpen(false);
+      setIsLoading(false);
+    },
+    []
+  );
 
   useEffect(() => {
-    let isMounted = true;  // Добавить эту переменную
+    let isMounted = true; // Добавить эту переменную
 
     const fetchData = async (): Promise<void> => {
       try {
-        const res = await fetch('/api/downloads/game');
+        const res = await fetch("/api/downloads/game");
         if (!res.ok) {
           throw new Error("An error occurred while fetching the data.");
         }
         const json = await res.json();
         if (isMounted) {
-          setData(json.data);  // <-- Изменено с setData(json);
+          setData(json.data); // <-- Изменено с setData(json);
           setIsLoading(false);
         }
       } catch (error: unknown) {
@@ -87,8 +90,8 @@ export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => 
     }
 
     return () => {
-      isMounted = false;  // Обновить эту переменную в функции очистки
-    }
+      isMounted = false; // Обновить эту переменную в функции очистки
+    };
   }, [data]);
 
   return (
@@ -104,11 +107,13 @@ export const DownloadModal: React.FC<Props> = ({ buttonText, limit = true }) => 
             onClose={handleCloseModal}
           >
             <div>
-              {
-                error ? <div>Error: {error}</div> :
-                  data ? <DownloadList data={data} /> :
-                    <Loader />
-              }
+              {error ? (
+                <div>Error: {error}</div>
+              ) : data ? (
+                <DownloadList data={data} />
+              ) : (
+                <Loader />
+              )}
             </div>
           </DynamicModal>
         )}

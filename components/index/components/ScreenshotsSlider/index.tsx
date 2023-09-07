@@ -26,12 +26,15 @@ export function ScreenshotsSlider() {
 
   const urls: string[] = Data.map((item: ImageData) => item.url);
 
-  const openLightboxOnSlide = useCallback((index: number) => {
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      sourceIndex: index,
-    });
-  }, [lightboxController]);
+  const openLightboxOnSlide = useCallback(
+    (index: number) => {
+      setLightboxController({
+        toggler: !lightboxController.toggler,
+        sourceIndex: index,
+      });
+    },
+    [lightboxController]
+  );
 
   return (
     <div className={styles.slider}>
@@ -51,7 +54,7 @@ export function ScreenshotsSlider() {
           reducedMotion: {
             speed: 0,
             rewindSpeed: 0,
-            autoplay: 'pause',
+            autoplay: "pause",
           },
           breakpoints: {
             768: {
@@ -75,8 +78,8 @@ export function ScreenshotsSlider() {
                   onClick={() => openLightboxOnSlide(index)}
                   sizes="(max-width: 768px) 294px, (max-width: 916px) 600px, 828px"
                   style={{
-                    width: '100%',
-                    height: 'auto',
+                    width: "100%",
+                    height: "auto",
                   }}
                 />
                 <Image
@@ -88,8 +91,8 @@ export function ScreenshotsSlider() {
                   className={styles.shadow}
                   sizes="(max-width: 768px) 294px, (max-width: 916px) 600px, 828px"
                   style={{
-                    width: '100%',
-                    height: 'auto',
+                    width: "100%",
+                    height: "auto",
                   }}
                 />
                 <figcaption>{image.name}</figcaption>

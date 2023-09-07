@@ -1,9 +1,9 @@
 import styles from "./index.module.scss";
-import React, { useEffect, useMemo, useState } from 'react';
-import { Item } from './Item';
+import React, { useMemo } from "react";
+import { Item } from "./Item";
 import useLocalesMap from "utils/use-locales-map";
 import { setup, unpacked } from "./text";
-import { m, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from "framer-motion";
 
 interface Additional {
   icon: string;
@@ -28,14 +28,6 @@ interface Version {
   groups: Group[];
 }
 
-interface FormattedVersion extends Version {
-  groups: FormattedGroup[];
-}
-
-interface FormattedGroup extends Group {
-  groupType: string;
-}
-
 interface DownloadListProps {
   data: Version[];
 }
@@ -48,10 +40,13 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
   const setupTranslation = useLocalesMap(setup);
   const unpackedTranslation = useLocalesMap(unpacked);
 
-  const groupTypeMapping: { [key: string]: string } = useMemo(() => ({
-    "setup": setupTranslation,
-    "unpacked": unpackedTranslation,
-  }), [setupTranslation, unpackedTranslation]);
+  const groupTypeMapping: { [key: string]: string } = useMemo(
+    () => ({
+      setup: setupTranslation,
+      unpacked: unpackedTranslation,
+    }),
+    [setupTranslation, unpackedTranslation]
+  );
 
   const container = {
     hidden: { opacity: shouldReduceMotion ? 1 : 0 },
@@ -59,20 +54,23 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
       opacity: 1,
       transition: {
         staggerChildren: shouldReduceMotion ? 0 : 0.3,
-        delayChildren: shouldReduceMotion ? 0 : 0.2
-      }
-    }
+        delayChildren: shouldReduceMotion ? 0 : 0.2,
+      },
+    },
   };
 
   const item = {
-    hidden: { opacity: shouldReduceMotion ? 1 : 0, y: shouldReduceMotion ? 0 : 20 },
-    show: { opacity: 1, y: 0 }
+    hidden: {
+      opacity: shouldReduceMotion ? 1 : 0,
+      y: shouldReduceMotion ? 0 : 20,
+    },
+    show: { opacity: 1, y: 0 },
   };
 
   const formattedData = useMemo(() => {
-    return data.map(version => ({
+    return data.map((version) => ({
       ...version,
-      groups: version.groups.map(group => ({
+      groups: version.groups.map((group) => ({
         ...group,
         groupType: groupTypeMapping[group.groupType] || group.groupType,
       })),
@@ -82,7 +80,11 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
   return (
     <MotionDiv variants={container} initial="hidden" animate="show">
       {formattedData.map((version) => (
-        <MotionDiv key={version.version} variants={item} className={styles.verison}>
+        <MotionDiv
+          key={version.version}
+          variants={item}
+          className={styles.verison}
+        >
           <h2>Версия {version.version}</h2>
           {version.groups.map((group) => (
             <div key={group.groupType} className={styles.group}>

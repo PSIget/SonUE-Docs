@@ -1,4 +1,3 @@
-import styles from "./index.module.scss";
 import { FadeIn } from "../FadeIn";
 import { SectionHeader } from "../Headings";
 import { CTAButton } from "../CTAButton";
@@ -25,26 +24,24 @@ export function EndBlock(props: ButtonProps | LinkProps) {
   return (
     <FadeIn
       delay={0.3}
-      className={"font-sans w-auto py-20 flex justify-between items-center flex-col relative px-6 gap-6"}
+      className={
+        "font-sans w-auto py-20 flex justify-between items-center flex-col relative px-6 gap-6"
+      }
       section
     >
       <SectionHeader>{title}</SectionHeader>
       <div className="flex flex-col w-full md:w-min md:!flex-row">
-        {
-          "button" in props ? (
-            props.button
-          ) : (
-            <Link
-              href={props.url}
-              onClick={props.onClick}
-              className="block whitespace-nowrap"
-            >
-              <CTAButton>
-                {props.buttonText}
-              </CTAButton>
-            </Link>
-          )
-        }
+        {"button" in props ? (
+          props.button
+        ) : (
+          <Link
+            href={props.url}
+            onClick={props.onClick}
+            className="block whitespace-nowrap"
+          >
+            <CTAButton>{props.buttonText}</CTAButton>
+          </Link>
+        )}
       </div>
       <p className="text-sm text-[#666666] text-center">{subTitle}</p>
     </FadeIn>

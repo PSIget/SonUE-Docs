@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useCallback, useMemo, FC, ReactElement } from 'react';
-import { NextRouter, useRouter } from 'next/router';
+import React, { useCallback, useMemo, FC, ReactElement } from "react";
+import { NextRouter, useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
 
 import useLocalesMap from "./utils/use-locales-map";
@@ -25,17 +25,27 @@ function getCategory(pathname: string): string {
 }
 
 /** @type {import('nextra-theme-docs').DocsThemeConfig} */
-const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
+const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
   project: {
     link: process.env.NEXT_PUBLIC_SOURCE_CODE_URL,
     icon: (
       <svg width="24" height="24" viewBox="0 0 16 16">
-        <path fill="currentColor" d="M4.333 5.667c-1.102 0-2-.898-2-2 0-1.103.898-2 2-2 1.103 0 2 .897 2 2 0 1.102-.897 2-2 2Zm7.334 0c-1.103 0-2-.898-2-2 0-1.103.897-2 2-2 1.102 0 2 .897 2 2 0 1.102-.898 2-2 2Zm-7.334 8.666c-1.102 0-2-.897-2-2 0-1.102.898-2 2-2 1.103 0 2 .898 2 2 0 1.103-.897 2-2 2Z" />
-        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.333" d="M4.333 12.333V3.667m7.334 0V5.5c0 5.045-7.334 2.197-7.334 5" />
+        <path
+          fill="currentColor"
+          d="M4.333 5.667c-1.102 0-2-.898-2-2 0-1.103.898-2 2-2 1.103 0 2 .897 2 2 0 1.102-.897 2-2 2Zm7.334 0c-1.103 0-2-.898-2-2 0-1.103.897-2 2-2 1.102 0 2 .897 2 2 0 1.102-.898 2-2 2Zm-7.334 8.666c-1.102 0-2-.897-2-2 0-1.102.898-2 2-2 1.103 0 2 .898 2 2 0 1.103-.897 2-2 2Z"
+        />
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.333"
+          d="M4.333 12.333V3.667m7.334 0V5.5c0 5.045-7.334 2.197-7.334 5"
+        />
       </svg>
-    )
+    ),
   },
-  docsRepositoryBase: process.env.NEXT_PUBLIC_DOCS_SOURCE_CODE_URL + '/tree/main',
+  docsRepositoryBase:
+    process.env.NEXT_PUBLIC_DOCS_SOURCE_CODE_URL + "/tree/main",
   chat: {
     link: process.env.NEXT_PUBLIC_DISCORD_URL,
   },
@@ -76,24 +86,37 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
     const description = useLocalesMap(headDescriptionMap);
 
     const contentLanguage = (locales ?? []).join(", ");
-    const ogTitle = title ? `${title} – ${process.env.NEXT_PUBLIC_SITE_NAME}` : `${process.env.NEXT_PUBLIC_SITE_NAME}: ${titleSuffix}`;
+    const ogTitle = title
+      ? `${title} – ${process.env.NEXT_PUBLIC_SITE_NAME}`
+      : `${process.env.NEXT_PUBLIC_SITE_NAME}: ${titleSuffix}`;
     const ogDescription = frontMatter.description || description;
 
     const { asPath, pathname } = router;
     const CANONICAL_DOMAIN = process.env.NEXT_PUBLIC_BASE_URL;
 
-    const generateHref = (locale = '', asPath = '') => {
-      const processedPath = (asPath === '/' || asPath.includes('/index.ru') || asPath.includes('/index.en') || asPath.includes('/index.uk')) ? '' : asPath.replace(/\.(en|ru|uk)$/, '');
+    const generateHref = (locale = "", asPath = "") => {
+      const processedPath =
+        asPath === "/" ||
+        asPath.includes("/index.ru") ||
+        asPath.includes("/index.en") ||
+        asPath.includes("/index.uk")
+          ? ""
+          : asPath.replace(/\.(en|ru|uk)$/, "");
       return `${CANONICAL_DOMAIN}${locale}${processedPath}`;
-    }
+    };
 
     const getCanonicalURL = useCallback(() => {
-      if (!CANONICAL_DOMAIN) return '';
-      const _pathSliceLength = Math.min(...[
-        asPath.indexOf('?') > 0 ? asPath.indexOf('?') : asPath.length,
-        asPath.indexOf('#') > 0 ? asPath.indexOf('#') : asPath.length
-      ]);
-      return CANONICAL_DOMAIN + pathname.substring(0, _pathSliceLength).replace(/\.(en|ru|uk)$/, '');
+      if (!CANONICAL_DOMAIN) return "";
+      const _pathSliceLength = Math.min(
+        ...[
+          asPath.indexOf("?") > 0 ? asPath.indexOf("?") : asPath.length,
+          asPath.indexOf("#") > 0 ? asPath.indexOf("#") : asPath.length,
+        ]
+      );
+      return (
+        CANONICAL_DOMAIN +
+        pathname.substring(0, _pathSliceLength).replace(/\.(en|ru|uk)$/, "")
+      );
     }, [asPath, pathname, CANONICAL_DOMAIN]);
 
     const ogUrl = useMemo(() => {
@@ -102,7 +125,10 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
       let defaultTitle = ogTitle;
       const siteNameWithHyphen = ` – ${process.env.NEXT_PUBLIC_SITE_NAME}`;
       if (defaultTitle.endsWith(siteNameWithHyphen)) {
-        defaultTitle = defaultTitle.substring(0, defaultTitle.length - siteNameWithHyphen.length);
+        defaultTitle = defaultTitle.substring(
+          0,
+          defaultTitle.length - siteNameWithHyphen.length
+        );
       }
 
       let url = `/api/og?title=${encodeURIComponent(defaultTitle)}`;
@@ -142,12 +168,26 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
           href="/favicon/safari-pinned-tab.svg"
           color="#000000"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=0.86"></meta>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=0.86"
+        ></meta>
         <meta httpEquiv="Content-Language" content={contentLanguage} />
         <meta name="msapplication-TileColor" content="#000000" />
-        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)" />
-        <meta name="apple-mobile-web-app-title" content={process.env.NEXT_PUBLIC_SITE_NAME} />
+        <meta
+          name="theme-color"
+          content="#ffffff"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="theme-color"
+          content="#111111"
+          media="(prefers-color-scheme: dark)"
+        />
+        <meta
+          name="apple-mobile-web-app-title"
+          content={process.env.NEXT_PUBLIC_SITE_NAME}
+        />
         <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogUrl} />
@@ -155,17 +195,28 @@ const themeConfig: import('nextra-theme-docs').DocsThemeConfig = {
         <meta property="og:description" content={ogDescription} />
         <meta property="og:image" content={ogUrl} />
         <meta property="og:locale" content={locale} />
-        {
-          (locales ?? []).filter((l) => l !== locale)
-            .map((l) => (
-              <meta property="og:locale:alternate" content={l} key={l} />
-            ))
-        }
+        {(locales ?? [])
+          .filter((l) => l !== locale)
+          .map((l) => (
+            <meta property="og:locale:alternate" content={l} key={l} />
+          ))}
         <meta name="keywords" content={useLocalesMap(metaTags)} />
         <link rel="canonical" href={getCanonicalURL()} />
-        <link rel="alternate" hrefLang="x-default" href={generateHref('', asPath)} />
-        <link rel="alternate" hrefLang="en" href={generateHref('/en', asPath)} />
-        <link rel="alternate" hrefLang="uk" href={generateHref('/uk', asPath)} />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={generateHref("", asPath)}
+        />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={generateHref("/en", asPath)}
+        />
+        <link
+          rel="alternate"
+          hrefLang="uk"
+          href={generateHref("/uk", asPath)}
+        />
       </>
     );
   },

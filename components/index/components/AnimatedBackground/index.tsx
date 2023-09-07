@@ -4,9 +4,7 @@ import styles from "./index.module.scss";
 export function AnimatedBackground(): JSX.Element {
   return (
     <>
-      <div
-        className={`${styles.gradient} -z-10 absolute inset-0`}
-      />
+      <div className={`${styles.gradient} -z-10 absolute inset-0`} />
       <div
         className={cn(
           "![perspective:1000px] sm:![perspective:1000px] md:![perspective:1000px] lg:![perspective:1000px]",

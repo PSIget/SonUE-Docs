@@ -4,10 +4,9 @@
   align-items: center;
   gap: 10px;
 
-  :global(html:not([class~=dark])) & {
+  :global(html:not([class~="dark"])) & {
     filter: invert(1) hue-rotate(180deg);
   }
-
 }
 
 .column {

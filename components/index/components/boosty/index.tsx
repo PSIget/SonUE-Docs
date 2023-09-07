@@ -1,15 +1,18 @@
 import { FadeIn } from "../FadeIn";
-import { HeroText } from '../Headings';
-import useLocalesMap from 'utils/use-locales-map';
-import { Button, Paragraph1N, Paragraph2N, Paragraph3N, Title } from './text';
+import { HeroText } from "../Headings";
+import useLocalesMap from "utils/use-locales-map";
+import { Button, Paragraph1N, Paragraph2N, Paragraph3N, Title } from "./text";
 import Link from "next/link";
-import styles from "./index.module.scss"
+import styles from "./index.module.scss";
 
 export function Boosty() {
   return (
     <FadeIn
       delay={0.3}
-      className={styles.boosty + " font-sans w-auto py-20 flex justify-between items-center flex-col relative z-0 px-6 gap-12 overflow-hidden"}
+      className={
+        styles.boosty +
+        " font-sans w-auto py-20 flex justify-between items-center flex-col relative z-0 px-6 gap-12 overflow-hidden"
+      }
       section
     >
       <HeroText>{useLocalesMap(Title)}</HeroText>

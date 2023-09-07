@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface AuthorsProps {
   date: string;
@@ -6,7 +6,7 @@ interface AuthorsProps {
   by?: string;
 }
 
-const Authors: React.FC<AuthorsProps> = ({ date, children, by = 'Автор:' }) => {
+const Authors: React.FC<AuthorsProps> = ({ date, children, by = "Автор:" }) => {
   return (
     <div className="mt-4 mb-16 text-gray-500 text-sm">
       {date} {by} {children}

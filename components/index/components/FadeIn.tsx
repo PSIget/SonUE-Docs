@@ -29,7 +29,7 @@ export const FadeIn: React.FC<FadeInProps> = ({
   const fadeUpVariants = {
     initial: {
       opacity: shouldReduceMotion ? 1 : 0,
-      y: shouldReduceMotion ? 0 : (noVertical ? 0 : 24),
+      y: shouldReduceMotion ? 0 : noVertical ? 0 : 24,
     },
     animate: {
       opacity: 1,

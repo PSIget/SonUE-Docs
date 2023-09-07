@@ -1,1 +1,1 @@
-declare module "nextra/filter-route-locale"
+declare module "nextra/filter-route-locale";

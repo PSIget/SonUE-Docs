@@ -22,8 +22,8 @@ module.exports = {
         ],
       },
       lineHeight: {
-        '20': '5rem',
-      }
+        20: "5rem",
+      },
     },
   },
   darkMode: "class",
