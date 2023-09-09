@@ -16,6 +16,7 @@ import {
   metaTags,
 } from "./translations/text";
 import Logo from "./components/Logo";
+import { Footer } from "components/Footer";
 
 function getCategory(pathname: string): string {
   if (pathname.startsWith("/blog")) return "blog";
@@ -227,7 +228,7 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
     );
   },
   footer: {
-    text: `${new Date().getFullYear()} © Red Projects | All rights to the S.T.A.L.K.E.R. and X-Ray Engine belong to GSC Game World`,
+    component: Footer,
   },
   gitTimestamp: ({ timestamp }: { timestamp: Date }): ReactElement => {
     const { locale } = useRouter();
