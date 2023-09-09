@@ -33,20 +33,28 @@ function FooterLink({
   );
 }
 
-function FooterHeader({ children }: { children: ReactNode }) {
-  return <h3 className="text-sm text-black dark:text-white">{children}</h3>;
+function FooterHeader({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  const classNames = `text-sm text-black dark:text-white ${className || ""}`;
+  return <h3 className={classNames}>{children}</h3>;
 }
 
 function FooterHeaderLocalized({
   children,
+  className,
 }: {
   children: Record<Locale, string>;
+  className?: string;
 }) {
   const localizedHeader = useLocalesMap(children);
+  const classNames = `text-sm text-black dark:text-white ${className || ""}`;
 
-  return (
-    <h3 className="text-sm text-black dark:text-white">{localizedHeader}</h3>
-  );
+  return <h3 className={classNames}>{localizedHeader}</h3>;
 }
 
 const navigation = [
@@ -307,7 +315,7 @@ export function FooterContent() {
             .map((page: Page) => (
               <Link key={page.route} href={page.route}>
                 <div className="mt-12 xl:!mt-0 p-6 overflow-hidden no-underline rounded-lg transition-all hover:opacity-80 border dark:border-neutral-400 dark:text-neutral-200 dark:hover:border-white dark:hover:text-white border-[#EAEAEA] text-neutral-800 hover:border-black hover:text-black">
-                  <FooterHeader>
+                  <FooterHeader className="font-bold">
                     {page.meta.title || page.frontMatter.title || page.name}
                   </FooterHeader>
                   <p className="mt-4 text-sm text-gray-600 dark:text-[#888888] line-clamp-2  overflow-hidden">
