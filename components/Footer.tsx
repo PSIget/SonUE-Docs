@@ -314,7 +314,7 @@ export function FooterContent() {
             .slice(0, 1)
             .map((page: Page) => (
               <Link key={page.route} href={page.route}>
-                <div className="mt-12 xl:!mt-0 p-6 overflow-hidden no-underline rounded-lg transition-all hover:opacity-80 border dark:border-neutral-400 dark:text-neutral-200 dark:hover:border-white dark:hover:text-white border-[#EAEAEA] text-neutral-800 hover:border-black hover:text-black">
+                <div className="dark:bg-neutral-950 bg-neutral-100 mt-12 xl:!mt-0 p-6 overflow-hidden no-underline rounded-lg transition-all hover:opacity-80 border dark:border-neutral-400 dark:text-neutral-200 dark:hover:border-white dark:hover:text-white border-[#EAEAEA] text-neutral-800 hover:border-black hover:text-black">
                   <FooterHeader className="font-bold">
                     {page.meta.title || page.frontMatter.title || page.name}
                   </FooterHeader>
