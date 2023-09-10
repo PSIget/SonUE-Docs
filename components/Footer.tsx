@@ -162,7 +162,7 @@ const navigation = [
           en: "Getting Started",
           uk: "Початок роботи",
         },
-        href: "/add/getting-started",
+        href: "/filling/getting-started",
       },
       {
         name: {
@@ -170,7 +170,7 @@ const navigation = [
           en: "Markdown",
           uk: "Markdown",
         },
-        href: "/add/blocs/markdown",
+        href: "/filling/blocs/markdown",
       },
       {
         name: {
@@ -178,7 +178,7 @@ const navigation = [
           en: "Publishing",
           uk: "Публікація",
         },
-        href: "/add/public",
+        href: "/filling/public",
       },
     ],
   },
