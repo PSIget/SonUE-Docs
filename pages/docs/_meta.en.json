@@ -6,12 +6,5 @@
     "title": "Editor"
   },
   "editor": "Editor Usage",
-  "examples": "Examples",
-  "-- wiki": {
-    "type": "separator",
-    "title": "Documentation Content"
-  },
-  "doc-start": "Getting Started",
-  "doc-blocs": "Blocks",
-  "doc-public": "Publication"
+  "examples": "Examples"
 }

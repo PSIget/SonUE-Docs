@@ -22,5 +22,10 @@
   "roadmap": {
     "title": "Roadmap",
     "type": "page"
+  },
+  "filling": {
+    "title": "Filling",
+    "type": "page",
+    "display": "hidden"
   }
 }

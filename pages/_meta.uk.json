@@ -22,5 +22,10 @@
   "roadmap": {
     "title": "Дорожня карта",
     "type": "page"
+  },
+  "filling": {
+    "title": "Наповнення",
+    "type": "page",
+    "display": "hidden"
   }
 }
