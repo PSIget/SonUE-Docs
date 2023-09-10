@@ -21,7 +21,7 @@ function FooterLink({
 
   if (href.startsWith("http")) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} target="_blank" rel="noreferrer">
         {localizedNames}
       </a>
     );
