@@ -17,6 +17,8 @@ import {
 } from "./translations/text";
 import Logo from "./components/Logo";
 import { Footer } from "components/Footer";
+import Navigation from "components/Navigation";
+import HeaderLogo from "components/HeaderLogo";
 
 function getCategory(pathname: string): string {
   if (pathname.startsWith("/blog")) return "blog";
@@ -78,13 +80,8 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
   feedback: {
     content: () => useLocalesMap(feedbackLinkMap),
   },
-  logo: () => {
-    return (
-      <>
-        <Logo height={24} showText />
-      </>
-    );
-  },
+  logo: HeaderLogo,
+  logoLink: false,
   head: (): ReactElement => {
     const router: NextRouter = useRouter();
     const { locales, locale } = router;
@@ -227,6 +224,9 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
       </>
     );
   },
+  navbar: {
+    component: Navigation,
+  },
   footer: {
     component: Footer,
   },
@@ -250,6 +250,9 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
     locale,
     text,
   })),
+  nextThemes: {
+    defaultTheme: "dark",
+  },
 };
 
 export default themeConfig;

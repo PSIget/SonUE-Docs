@@ -1,4 +1,7 @@
 {
+  "*": {
+    "type": "page"
+  },
   "index": {
     "title": "Главная",
     "display": "hidden",
@@ -8,9 +11,11 @@
       "toc": true
     }
   },
-  "docs": {
-    "title": "Документация",
-    "type": "page"
+  "game": {
+    "title": "Игра"
+  },
+  "editor": {
+    "title": "Редактор"
   },
   "blog": {
     "title": "Блог",

@@ -1,0 +1,14 @@
+.desktopLogo {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.siteSwitcher {
+  margin-left: 12px;
+  position: relative;
+  left: 0;
+  transform: none;
+}

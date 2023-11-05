@@ -68,6 +68,22 @@ const redirects = async () => {
       destination: "/uk",
       statusCode: 301,
     },
+    // Tech Switcher Redirects
+    {
+      source: "/game",
+      destination: "/",
+      statusCode: 301,
+    },
+    {
+      source: "/game/docs",
+      destination: "/game/docs/getting-started",
+      statusCode: 301,
+    },
+    {
+      source: "/editor/docs",
+      destination: "/editor/docs/getting-started",
+      statusCode: 301,
+    },
     // Main Redirects
     {
       source: "/docs",

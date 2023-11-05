@@ -1,4 +1,7 @@
 {
+  "*": {
+    "type": "page"
+  },
   "index": {
     "title": "Home",
     "display": "hidden",
@@ -8,9 +11,11 @@
       "toc": true
     }
   },
-  "docs": {
-    "title": "Documentation",
-    "type": "page"
+  "game": {
+    "title": "Game"
+  },
+  "editor": {
+    "title": "Editor"
   },
   "blog": {
     "title": "Blog",
