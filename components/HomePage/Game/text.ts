@@ -25,10 +25,10 @@ export const btnDown = {
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
-export const btnDocs = {
-  en: "Documentation",
-  uk: "Документація",
-  ru: "Документация",
+export const btnInfo = {
+  en: "Information",
+  uk: "Інформація",
+  ru: "Информация",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */

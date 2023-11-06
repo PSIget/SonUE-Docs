@@ -76,7 +76,7 @@ const redirects = async () => {
     },
     {
       source: "/game/docs",
-      destination: "/game/docs/getting-started",
+      destination: "/game/docs/install",
       statusCode: 301,
     },
     {

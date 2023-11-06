@@ -1,7 +1,7 @@
 import styles from "./HeroSection.module.scss";
 import { FadeIn } from "../components/FadeIn";
 import { HeroText, SectionSubtext } from "../components/Headings";
-import { btnDocs, btnDown, downText, firstTitle, firstTitleSub } from "./text";
+import { btnInfo, btnDown, downText, firstTitle, firstTitleSub } from "./text";
 import { CTAButton } from "../components/CTAButton";
 import Link from "next/link";
 import { DownloadModal } from "./DownloadModal";
@@ -14,7 +14,7 @@ export default function HeroSection() {
   const downloadText = useLocalesMap(downText);
   const firstTitleText = useLocalesMap(firstTitle);
   const firstTitleSubText = useLocalesMap(firstTitleSub);
-  const btnDocsText = useLocalesMap(btnDocs);
+  const btnInfoText = useLocalesMap(btnInfo);
 
   return (
     <>
@@ -44,11 +44,11 @@ export default function HeroSection() {
             <DownloadModal buttonText={buttonText} />
 
             <Link
-              href="/docs/getting-started"
+              href="/game/docs"
               className="block whitespace-nowrap"
             >
               <CTAButton outline limit>
-                {btnDocsText}
+                {btnInfoText}
               </CTAButton>
             </Link>
           </div>
