@@ -1,0 +1,24 @@
+# Рекомендации по оптимизации
+
+Для комфортной игры в Full HD рекомендуется видеокарта не ниже **RTX 3060 Ti**.
+
+## Изменение настроек
+
+Если ваше железо слабое, можно запустить игру в окне вместо полноэкранного режима или внести изменения в файл настроек для повышения производительности:
+
+```ini filename="{game}\Stalker\Saved\Config\Windows\GameUserSettings.ini" {5-7,10-12}
+[ScalabilityGroups]
+sg.ResolutionQuality=100
+sg.ViewDistanceQuality=3
+sg.AntiAliasingQuality=3
+sg.ShadowQuality=3
+sg.GlobalIlluminationQuality=3
+sg.ReflectionQuality=3
+sg.PostProcessQuality=3
+sg.TextureQuality=3
+sg.EffectsQuality=3
+sg.FoliageQuality=3
+sg.ShadingQuality=2
+```
+
+Заменить в них `3` на `2` или ниже. Это позволит выиграть в производительности. Плюс, еще можно отключить сглаживание (если ваши глазки не как у младенца и не болят от лесенок). Для этого достаточно в строчке `sg.AntiAliasingQuality=3`, `3` заменить на `0`.
