@@ -72,7 +72,7 @@ function SiteSwitcher() {
           "indeterminate:after:hidden",
           {
             "after:hidden": !site,
-            "after:w-[45px]": site === "game",
+            "after:w-[44px]": site === "game",
             "after:translate-x-[48px]": site === "editor",
           }
         )}
