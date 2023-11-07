@@ -12,10 +12,16 @@
     }
   },
   "game": {
-    "title": "Game"
+    "title": "Game",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "editor": {
-    "title": "Editor"
+    "title": "Editor",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "blog": {
     "title": "Blog",

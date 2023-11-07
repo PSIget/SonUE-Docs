@@ -9,7 +9,10 @@
     }
   },
   "docs": {
-    "title": "Game",
-    "display": "children"
+    "title": "Information",
+    "display": "children",
+    "theme": {
+      "layout": "default"
+    }
   }
 }

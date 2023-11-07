@@ -12,10 +12,16 @@
     }
   },
   "game": {
-    "title": "Игра"
+    "title": "Игра",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "editor": {
-    "title": "Редактор"
+    "title": "Редактор",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "blog": {
     "title": "Блог",

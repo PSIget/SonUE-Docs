@@ -9,7 +9,10 @@
     }
   },
   "docs": {
-    "title": "Гра",
-    "display": "children"
+    "title": "Інформація",
+    "display": "children",
+    "theme": {
+      "layout": "default"
+    }
   }
 }

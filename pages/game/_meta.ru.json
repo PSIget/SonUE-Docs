@@ -9,7 +9,10 @@
     }
   },
   "docs": {
-    "title": "Игра",
-    "display": "children"
+    "title": "Информация",
+    "display": "children",
+    "theme": {
+      "layout": "default"
+    }
   }
 }
