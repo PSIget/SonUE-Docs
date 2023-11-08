@@ -5,7 +5,7 @@ import { BoostySection } from "../components/BoostySection";
 import { LastSection } from "../components/LastSection";
 import HeroSection from "./HeroSection";
 import ScreenshotsSection from "../components/ScreenshotsSection";
-import FeaturesSection from "./FeaturesSection";
+import FeaturesSection from "../components/FeaturesSection";
 import OriginalStorySection from "./OriginalStorySection";
 import { DownloadModal } from "./DownloadModal";
 import classnames from "classnames";
@@ -13,6 +13,60 @@ import Head from "next/head";
 import useLocalesMap from "utils/use-locales-map";
 import { downText, firstTitle, firstTitleSub, goBtn, goTitle } from "./text";
 import { LazyMotion, domAnimation } from "framer-motion";
+
+import UeBanner1 from "../assets/banner-graphic.svg";
+import UeBanner2 from "../assets/banner-light.svg";
+import UeBanner3 from "../assets/banner-sound.svg";
+
+const featuresContent = {
+  techTitle: {
+    en: "Technologies beyond our comprehension",
+    uk: "Технології, які виходять за межі нашого розуміння",
+    ru: "Технологии, которые за гранью нашего понимания",
+  },
+  features: [
+    {
+      title: {
+        en: "Incredible graphics",
+        uk: "Неймовірна графіка",
+        ru: "Невероятная графика",
+      },
+      paragraph: {
+        en: "Every pixel is saturated with the Zone atmosphere, bringing the game world to life before your eyes.",
+        uk: "Кожен піксель насичений атмосферою Зони, оживляючи гру перед вашими очима.",
+        ru: "Каждый пиксель пропитан атмосферой Зоны, оживляя игровой мир перед вашими глазами.",
+      },
+      img: UeBanner1,
+    },
+    {
+      title: {
+        en: "Realistic lighting",
+        uk: "Реалістичне освітлення",
+        ru: "Реалистичное освещение",
+      },
+      paragraph: {
+        en: "Lumen's global illumination system creates impressive and vibrant game worlds.",
+        uk: "Система глобального освітлення Lumen створює вражаючі і живі ігрові світи.",
+        ru: "Система глобального освещения Lumen создает впечатляющие и живые игровые миры.",
+      },
+      img: UeBanner2,
+    },
+    {
+      title: {
+        en: "Immersive sound",
+        uk: "Занурювальний звук",
+        ru: "Иммерсивный звук",
+      },
+      paragraph: {
+        en: "Unreal Engine 5 provides access to advanced computational audio technologies.",
+        uk: "Unreal Engine 5 надає доступ до передових обчислювальних аудіотехнологій.",
+        ru: "Unreal Engine 5 открывает доступ к передовым вычислительным аудиотехнологиям.",
+      },
+      img: UeBanner3,
+      label: "Soon",
+    },
+  ],
+};
 
 export default function Home() {
   const title = useLocalesMap(firstTitle);
@@ -86,7 +140,10 @@ export default function Home() {
         <LazyMotion features={domAnimation}>
           <HeroSection />
           <ScreenshotsSection />
-          <FeaturesSection />
+          <FeaturesSection
+            techTitle={featuresContent.techTitle}
+            features={featuresContent.features}
+          />
           <OriginalStorySection />
           <DiscordSection />
           <BoostySection />
