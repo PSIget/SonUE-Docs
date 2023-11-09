@@ -5,7 +5,7 @@ import { BoostySection } from "../components/BoostySection";
 import { LastSection } from "../components/LastSection";
 import HeroSection from "./HeroSection";
 import ScreenshotsSection from "../components/ScreenshotsSection";
-import FeaturesSection from "../components/FeaturesSection";
+import FeaturesSection from "./FeaturesSection";
 import OriginalStorySection from "./OriginalStorySection";
 import { DownloadModal } from "./DownloadModal";
 import classnames from "classnames";
