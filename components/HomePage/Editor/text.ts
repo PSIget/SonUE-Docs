@@ -5,16 +5,16 @@
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const firstTitle = {
-  en: "Open Chernobyl\na new way",
-  uk: "Відкрий Чорнобиль заново",
+  en: "Create Chernobyl\nanew",
+  uk: "Створюй Чорнобиль\nпо новому",
   ru: "Создавай Чернобыль\nпо новому",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const firstTitleSub = {
-  en: "Welcome to the world of STALKER on UE – a revolutionary modification\nthat ports the original STALKER trilogy and X-Ray Engine logic to the incredibly powerful Unreal Engine 5",
-  uk: "Ласкаво просимо до світу STALKER on UE – революційної модифікації,\nяка портує оригінальну трилогію STALKER та логіку X-Ray Engine на неймовірно потужний Unreal Engine 5",
-  ru: "Откройте для себя STALKER on UE — редактор нового поколения, который трансформирует легендарное наследие STALKER и механики X-Ray Engine с помощью невероятного Unreal Engine 5, открывая безграничные возможности для творчества и созидания",
+  en: "Discover a next-generation editor that transforms the legendary STALKER legacy and X-Ray Engine mechanics with the incredible Unreal Engine 5, opening up limitless possibilities for creativity and creation",
+  uk: "Відкрийте для себе редактор нового покоління, який трансформує легендарну спадщину STALKER і механіки X-Ray Engine за допомогою неймовірного Unreal Engine 5, відкриваючи безмежні можливості для творчості та творення",
+  ru: "Откройте для себя редактор нового поколения, который трансформирует легендарное наследие STALKER и механики X-Ray Engine с помощью невероятного Unreal Engine 5, открывая безграничные возможности для творчества и созидания",
 };
 
 /** @type {Readonly<Record<Locale, string>>} */
@@ -26,8 +26,8 @@ export const btnDown = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const btnInfo = {
-  en: "Information",
-  uk: "Інформація",
+  en: "Documentation",
+  uk: "Документація",
   ru: "Документация",
 };
 
