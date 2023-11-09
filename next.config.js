@@ -1,22 +1,22 @@
-const withNextra = require('nextra')({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.tsx',
+const withNextra = require("nextra")({
+  theme: "nextra-theme-docs",
+  themeConfig: "./theme.config.tsx",
   staticImage: true,
   defaultShowCopyCode: true,
-})
+});
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 });
 
 const env = {
-  NEXT_PUBLIC_SITE_NAME: 'STALKER on UE',
-  NEXT_PUBLIC_BASE_URL: 'https://s2ue.org',
-  NEXT_PUBLIC_DISCORD_URL: 'https://discord.gg/red-projects-530968529311367178',
-  NEXT_PUBLIC_BOOSTY_URL: 'https://boosty.to/stalker2ue',
-  NEXT_PUBLIC_MODDB_URL: 'https://www.moddb.com/mods/stalker2ue',
-  NEXT_PUBLIC_SOURCE_CODE_URL: 'https://git.s2ue.org/RedProjects/SonUE',
-  NEXT_PUBLIC_DOCS_SOURCE_CODE_URL: 'https://github.com/PSIget/SonUE-Docs',
+  NEXT_PUBLIC_SITE_NAME: "STALKER on UE",
+  NEXT_PUBLIC_BASE_URL: "https://s2ue.org",
+  NEXT_PUBLIC_DISCORD_URL: "https://discord.gg/red-projects-530968529311367178",
+  NEXT_PUBLIC_BOOSTY_URL: "https://boosty.to/stalker2ue",
+  NEXT_PUBLIC_MODDB_URL: "https://www.moddb.com/mods/stalker2ue",
+  NEXT_PUBLIC_SOURCE_CODE_URL: "https://git.s2ue.org/RedProjects/SonUE",
+  NEXT_PUBLIC_DOCS_SOURCE_CODE_URL: "https://github.com/PSIget/SonUE-Docs",
 };
 
 const i18n = {
@@ -26,26 +26,26 @@ const i18n = {
 
 const images = {
   minimumCacheTTL: 86400,
-  formats: ['image/avif', 'image/webp'],
-  domains: ['i.imgur.com', 'cdn.cloudflare.steamstatic.com'],
+  formats: ["image/avif", "image/webp"],
+  domains: ["i.imgur.com", "cdn.cloudflare.steamstatic.com"],
   remotePatterns: [
     {
-      protocol: 'https',
-      hostname: '*.s2ue.org',
-      port: '',
-      pathname: '/**'
+      protocol: "https",
+      hostname: "*.s2ue.org",
+      port: "",
+      pathname: "/**",
     },
     {
-      protocol: 'https',
-      hostname: 'img.youtube.com',
-      port: '',
-      pathname: '/vi/**'
+      protocol: "https",
+      hostname: "img.youtube.com",
+      port: "",
+      pathname: "/vi/**",
     },
     {
-      protocol: 'https',
-      hostname: 'i.ytimg.com',
-      port: '',
-      pathname: '/vi/**'
+      protocol: "https",
+      hostname: "i.ytimg.com",
+      port: "",
+      pathname: "/vi/**",
     },
   ],
 };
@@ -66,6 +66,22 @@ const redirects = async () => {
     {
       source: "/uk/index",
       destination: "/uk",
+      statusCode: 301,
+    },
+    // Tech Switcher Redirects
+    {
+      source: "/game",
+      destination: "/",
+      statusCode: 301,
+    },
+    {
+      source: "/game/docs",
+      destination: "/game/docs/install",
+      statusCode: 301,
+    },
+    {
+      source: "/editor/docs",
+      destination: "/editor/docs/getting-started",
       statusCode: 301,
     },
     // Main Redirects

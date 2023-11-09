@@ -1,0 +1,10 @@
+{
+  "getting-started": "Getting Started",
+  "install-and-build": "Installation and Build",
+  "-- editor": {
+    "type": "separator",
+    "title": "Editor"
+  },
+  "editor": "Editor Usage",
+  "examples": "Examples"
+}

@@ -1,4 +1,7 @@
 {
+  "*": {
+    "type": "page"
+  },
   "index": {
     "title": "Головна",
     "display": "hidden",
@@ -8,9 +11,17 @@
       "toc": true
     }
   },
-  "docs": {
-    "title": "Документація",
-    "type": "page"
+  "game": {
+    "title": "Гра",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "editor": {
+    "title": "Редактор",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "blog": {
     "title": "Блог",
@@ -22,5 +33,19 @@
   "roadmap": {
     "title": "Дорожня карта",
     "type": "page"
+  },
+  "filling": {
+    "title": "Наповнення",
+    "type": "page",
+    "display": "hidden"
+  },
+  "legal": {
+    "title": "Документи",
+    "display": "hidden",
+    "type": "page",
+    "theme": {
+      "sidebar": false,
+      "toc": false
+    }
   }
 }

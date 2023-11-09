@@ -1,0 +1,10 @@
+{
+  "getting-started": "Начало работы",
+  "install-and-build": "Установка и сборка",
+  "-- editor": {
+    "type": "separator",
+    "title": "Редактор"
+  },
+  "editor": "Работа с редактором",
+  "examples": "Примеры"
+}

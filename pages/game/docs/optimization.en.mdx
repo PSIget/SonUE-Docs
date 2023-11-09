@@ -1,0 +1,24 @@
+# Optimization Recommendations
+
+For comfortable gaming in Full HD, it is recommended to use a video card not lower than **RTX 3060 Ti**.
+
+## Changing Settings
+
+If your hardware is weak, you can run the game in windowed mode instead of fullscreen or make changes in the settings file to improve performance:
+
+```ini filename="{game}\Stalker\Saved\Config\Windows\GameUserSettings.ini" {5-7,10-12}
+[ScalabilityGroups]
+sg.ResolutionQuality=100
+sg.ViewDistanceQuality=3
+sg.AntiAliasingQuality=3
+sg.ShadowQuality=3
+sg.GlobalIlluminationQuality=3
+sg.ReflectionQuality=3
+sg.PostProcessQuality=3
+sg.TextureQuality=3
+sg.EffectsQuality=3
+sg.FoliageQuality=3
+sg.ShadingQuality=2
+```
+
+Replace the `3` with `2` or lower. This will help gain performance. Plus, you can also disable anti-aliasing (if your eyes are not like a baby's and do not hurt from the staircases). To do this, simply replace the `3` with `0` in the line `sg.AntiAliasingQuality=3`.

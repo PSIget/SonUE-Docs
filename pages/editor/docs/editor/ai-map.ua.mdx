@@ -1,0 +1,38 @@
+# Робота з AI Map
+
+## Створення AI Map
+Створення та редагування AI Map подібне до оригінального редактора GSC. Спочатку потрібно вибрати режим редагування AI Map у редакторі.
+
+![AI Map](./ai-map.ru/img/ai-map.png)
+
+### Опис вікна редактора AI Map
+
+![AI Map Window](./ai-map.ru/img/ai-map-window.png)
+
+### Примітки
+
+- Генерація працює лише у межах StalkerAIMapBoundsVolume.
+
+![AI Map Addict](./ai-map.ru/img/ai-map-addict.png)
+* Генерація не буде працювати за межами StalkerAIMapBoundsVolume. Також їх може бути кілька.
+
+## Приклади роботи з AI Map
+
+### Генерація AI Map
+import { Youtube } from 'components/YouTube'
+
+<Youtube code="aqi7WYrc2XE" />
+
+## Додаткова інформація
+
+UnrealEditor автоматично позначає, що стек AI потребує перебудови.
+
+![UE Warn Rebuild](./ai-map.ru/img/ue-warn-rebuild.png)
+
+Перебудову можна автоматично виконати перед запуском PIE (Play In Editor), якщо це необхідно.
+
+![UE Auto Rebuild](./ai-map.ru/img/ue-auto-build.png)
+
+Відображення AI Map можна включити навіть без режиму редагування AI Map у меню "show".
+
+![Without AI Map Mode](./ai-map.ru/img/without-aimap-mode.png)

@@ -1,0 +1,52 @@
+[
+  {
+    "version": "362",
+    "groups": [
+      {
+        "groupType": "unpacked",
+        "files": [
+          {
+            "name": "Boosty",
+            "description": "Download from Boosty",
+            "size": 10869286654,
+            "url": "https://boosty.to/stalker2ue/posts/028cf8f0-b19d-431d-9046-a3d92cfff01c",
+            "additional": {
+              "icon": "",
+              "external_link": true
+            }
+          },
+          {
+            "name": "Patreon",
+            "description": "Download from Patreon",
+            "size": 10869286654,
+            "url": "https://www.patreon.com/STALKERonUE/posts",
+            "additional": {
+              "icon": "",
+              "external_link": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "version": "135",
+    "groups": [
+      {
+        "groupType": "unpacked",
+        "files": [
+          {
+            "name": "Direct Link",
+            "description": "Download from CDN",
+            "size": 349561971,
+            "url": "https://cdn.s2ue.org/builds/editor/135/SonUE_Editor_Build_135.zip",
+            "additional": {
+              "icon": "",
+              "external_link": false
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

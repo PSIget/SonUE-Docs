@@ -1,0 +1,10 @@
+{
+  "getting-started": "Початок роботи",
+  "install-and-build": "Встановлення та збірка",
+  "-- editor": {
+    "type": "separator",
+    "title": "Редактор"
+  },
+  "editor": "Робота з редактором",
+  "examples": "Приклади"
+}

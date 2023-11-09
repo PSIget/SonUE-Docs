@@ -4,6 +4,6 @@
   justify-content: center;
 }
 
-html:not([class~=dark]) img.logo_center {
+html:not([class~="dark"]) img.logo_center {
   filter: invert(100) hue-rotate(180deg);
 }

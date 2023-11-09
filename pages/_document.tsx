@@ -1,4 +1,10 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
 import { SkipNavLink } from "nextra-theme-docs";
 
 class MyDocument extends Document {
@@ -21,4 +27,4 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument
+export default MyDocument;

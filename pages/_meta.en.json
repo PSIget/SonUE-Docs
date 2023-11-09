@@ -1,4 +1,7 @@
 {
+  "*": {
+    "type": "page"
+  },
   "index": {
     "title": "Home",
     "display": "hidden",
@@ -8,9 +11,17 @@
       "toc": true
     }
   },
-  "docs": {
-    "title": "Documentation",
-    "type": "page"
+  "game": {
+    "title": "Game",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "editor": {
+    "title": "Editor",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "blog": {
     "title": "Blog",
@@ -22,5 +33,19 @@
   "roadmap": {
     "title": "Roadmap",
     "type": "page"
+  },
+  "filling": {
+    "title": "Filling",
+    "type": "page",
+    "display": "hidden"
+  },
+  "legal": {
+    "title": "Legal",
+    "display": "hidden",
+    "type": "page",
+    "theme": {
+      "sidebar": false,
+      "toc": false
+    }
   }
 }
