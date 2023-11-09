@@ -38,5 +38,14 @@
     "title": "Filling",
     "type": "page",
     "display": "hidden"
+  },
+  "legal": {
+    "title": "Legal",
+    "display": "hidden",
+    "type": "page",
+    "theme": {
+      "sidebar": false,
+      "toc": false
+    }
   }
 }

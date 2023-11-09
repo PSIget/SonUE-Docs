@@ -38,5 +38,14 @@
     "title": "Наповнення",
     "type": "page",
     "display": "hidden"
+  },
+  "legal": {
+    "title": "Документи",
+    "display": "hidden",
+    "type": "page",
+    "theme": {
+      "sidebar": false,
+      "toc": false
+    }
   }
 }
