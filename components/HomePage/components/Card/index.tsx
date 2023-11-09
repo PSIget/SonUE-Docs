@@ -3,35 +3,14 @@ import Image from "next/image";
 import { StaticImageData } from "next/image";
 import { FadeIn } from "../FadeIn";
 
-interface BaseProps {
+interface CardProps {
   title: string;
   paragraph: string;
-}
-
-interface PropsWithImgAndLabel extends BaseProps {
   img: StaticImageData | string;
   label: string;
 }
 
-interface PropsWithImgWithoutLabel extends BaseProps {
-  img: StaticImageData | string;
-  label?: never;
-}
-
-interface PropsWithoutImgAndLabel extends BaseProps {
-  img?: never;
-  label?: never;
-}
-
-type CardProps =
-  | PropsWithImgAndLabel
-  | PropsWithImgWithoutLabel
-  | PropsWithoutImgAndLabel;
-
 export function Card({ img, title, paragraph, label }: CardProps) {
-  if (img === undefined && label !== undefined) {
-    throw new Error("Cannot use 'label' without 'img'.");
-  }
   return (
     <FadeIn
       delay={0.3}
@@ -54,7 +33,7 @@ export function Card({ img, title, paragraph, label }: CardProps) {
             }}
           />
         )}
-        {label && img && <div className={styles.label}>{label}</div>}
+        {label && <div className={styles.label}>{label}</div>}
         <div className={styles.content}>
           <h3>{title}</h3>
           <p>{paragraph}</p>

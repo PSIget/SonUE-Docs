@@ -1,8 +1,8 @@
 import styles from "./FeaturesSection.module.scss";
 import Image from "next/image";
-import { FadeIn } from "./FadeIn";
-import { SectionHeader } from "./Headings";
-import { Card as CardComponent } from "./Card";
+import { FadeIn } from "../components/FadeIn";
+import { SectionHeader } from "../components/Headings";
+import { Card as CardComponent } from "../components/Card";
 import UeBanner from "../assets/ue-banner.svg";
 import useLocalesMap from "utils/use-locales-map";
 
@@ -57,28 +57,18 @@ export default function FeaturesSection({
         section
       >
         <FadeIn delay={0.3} className="flex flex-col items-center w-full">
-          <div className="pb-6 md:pb-24">
+          <div className="pb-6 md:pb-12">
             <SectionHeader>{localizedTechTitle}</SectionHeader>
           </div>
-          <Image
-            src={UeBanner}
-            width={818}
-            height={224}
-            alt="UE Banner"
-            className="max-[1280px]:hidden light:invert"
-          />
         </FadeIn>
         <FadeIn
           delay={0.3}
           className={`${styles.ueBanner} grid grid-cols-1 lg:grid-cols-3 gap-6 w-full `}
         >
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <Card
-              key={index}
-              title={feature.title}
-              paragraph={feature.paragraph}
-              img={feature.img}
-              label={feature.label}
+              key={feature.title.en} // Assuming the title in English is unique, otherwise use a proper unique id
+              {...feature}
             />
           ))}
         </FadeIn>
