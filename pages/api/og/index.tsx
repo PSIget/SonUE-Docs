@@ -128,7 +128,7 @@ export default async function handler(request: NextRequest) {
       "image/png"
     );
     const base64SvgIcon = await fetchImageAsBase64(
-      new URL("./text.svg", import.meta.url),
+      new URL("./Text.svg", import.meta.url),
       "image/svg+xml"
     );
 
