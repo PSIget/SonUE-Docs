@@ -18,4 +18,21 @@
       text-transform: uppercase;
     }
   }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -400px;
+    height: 400px;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(255, 255, 255, 0.01) 30%,
+      rgba(255, 255, 255, 0.01) 65%,
+      rgba(255, 255, 255, 0) 80%,
+      rgba(255, 255, 255, 0) 90%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
 }

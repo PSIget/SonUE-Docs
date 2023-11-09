@@ -1,5 +1,3 @@
-import styles from "./index.module.scss";
-
 import useLocalesMap from "utils/use-locales-map";
 import { screensSub, screensTitle } from "./text";
 import { ScreenshotsSlider } from "./ScreenshotsSlider";
@@ -14,7 +12,7 @@ export default function ScreenshotsSection() {
     <FadeIn
       noVertical
       viewTriggerOffset
-      className={`${styles.whiteShadow} font-sans w-auto px-6 pb-16 pt-[48px] md:pb-24 lg:pb-20 md:pt-16 lg:pt-20 flex flex-col gap-8 items-center relative overflow-hidden`}
+      className={`font-sans w-auto px-6 pb-16 pt-[48px] md:pb-24 lg:pb-20 md:pt-16 lg:pt-20 flex flex-col gap-8 items-center relative overflow-hidden`}
       section
     >
       <FadeIn
