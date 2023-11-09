@@ -36,10 +36,10 @@ export const Item: React.FC<DownloadFile> = ({
   additional,
 }) => {
   // Проверяем, содержит ли url подстроку "https://boosty.to/"
-  const isBoosty = url.includes("https://boosty.to/");
+  const isBoosty = url.includes("boosty.to");
 
   // Проверяем, содержит ли url подстроку "https://www.patreon.com/"
-  const isPatreon = url.includes("https://www.patreon.com/");
+  const isPatreon = url.includes("www.patreon.com");
 
   // Создаем классы для элемента в зависимости от условий
   const itemClasses = `${styles.item} ${isBoosty ? styles.boosty : ""} ${
