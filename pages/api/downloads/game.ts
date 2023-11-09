@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import gameData from "data/downloads.json";
+import gameData from "data/downloads/game.json";
 
 // Define the type for your data
 type GameDataType = typeof gameData;
