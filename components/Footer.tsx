@@ -73,14 +73,14 @@ const navigation = [
         },
         href: "/blog",
       },
-      {
-        name: {
-          ru: "Релизы",
-          en: "Releases",
-          uk: "Релізи",
-        },
-        href: "/releases",
-      },
+      // {
+      //   name: {
+      //     ru: "Релизы",
+      //     en: "Releases",
+      //     uk: "Релізи",
+      //   },
+      //   href: "/releases",
+      // },
     ],
   },
   {
