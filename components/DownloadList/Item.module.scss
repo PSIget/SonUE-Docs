@@ -6,10 +6,31 @@
   width: 100%;
 
   border-radius: 8px;
-  border: 1px solid #333;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: #000;
 
   transition: all 0.2s ease 0s;
+
+  &.boosty {
+    background: linear-gradient(
+        194deg,
+        #ef7829 16.85%,
+        #f07529 22.12%,
+        #f0672b 52.92%,
+        #f15e2c 84.65%,
+        #f15a2c 118.45%
+      ),
+      #000;
+  }
+
+  &.patreon {
+    background: linear-gradient(
+        194deg,
+        #9a7963 16.85%,
+        #3c4152 118.45%
+      ),
+      #000;
+  }
 
   &:hover {
     border-color: #fff;
@@ -44,7 +65,7 @@
       white-space: nowrap;
     }
     p {
-      color: #888;
+      color: rgba(255, 255, 255, 0.8);
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
