@@ -38,5 +38,13 @@
     "title": "Наполнение",
     "type": "page",
     "display": "hidden"
+  },
+  "legal": {
+    "title": "Документы",
+    "type": "page",
+    "theme": {
+      "sidebar": false,
+      "toc": false
+    }
   }
 }
