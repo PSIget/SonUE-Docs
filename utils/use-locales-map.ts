@@ -3,7 +3,7 @@ import { NextRouter, useRouter } from "next/router";
 type DefaultLocale = "ru";
 type Locale = DefaultLocale | "uk" | "en";
 
-interface ILocaleMap<T> {
+export interface ILocaleMap<T> {
   [key: string]: T;
 }
 
