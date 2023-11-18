@@ -1,26 +1,50 @@
 [
   {
-    "name": "Радар",
+    "name": {
+      "ru": "Радар",
+      "en": "Radar",
+      "uk": "Радар"
+    },
     "url": "https://cdn.s2ue.org/screenshots/radar.jpeg"
   },
   {
-    "name": "Зил на Радаре",
+    "name": {
+      "ru": "Зил на Радаре",
+      "en": "Truck on Radar",
+      "uk": "Зіл на Радарі"
+    },
     "url": "https://cdn.s2ue.org/screenshots/truck.jpeg"
   },
   {
-    "name": "Бункер на Радаре",
+    "name": {
+      "ru": "Бункер на Радаре",
+      "en": "Bunker on Radar",
+      "uk": "Бункер на Радарі"
+    },
     "url": "https://cdn.s2ue.org/screenshots/newbunker.jpeg"
   },
   {
-    "name": "Блокпост военных",
+    "name": {
+      "ru": "Блокпост военных",
+      "en": "Military Checkpoint",
+      "uk": "Військовий блокпост"
+    },
     "url": "https://cdn.s2ue.org/screenshots/checkpoint.jpeg"
   },
   {
-    "name": "ЧАЭС",
+    "name": {
+      "ru": "ЧАЭС",
+      "en": "Chernobyl NPP",
+      "uk": "Чорнобильська АЕС"
+    },
     "url": "https://cdn.s2ue.org/screenshots/chaes.jpeg"
   },
   {
-    "name": "Бункер на Радаре",
+    "name": {
+      "ru": "Бункер на Радаре",
+      "en": "Bunker on Radar",
+      "uk": "Бункер на Радарі"
+    },
     "url": "https://cdn.s2ue.org/screenshots/burner.jpeg"
   }
 ]

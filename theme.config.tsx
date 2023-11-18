@@ -192,11 +192,8 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
           name="apple-mobile-web-app-title"
           content={process.env.NEXT_PUBLIC_SITE_NAME}
         />
-        <meta name="description" content={ogDescription} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={ogUrl} />
-        <meta property="og:title" content={ogTitle} />
-        <meta property="og:description" content={ogDescription} />
         <meta property="og:image" content={ogUrl} />
         <meta property="og:locale" content={locale} />
         {(locales ?? [])
