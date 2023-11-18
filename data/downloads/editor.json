@@ -6,23 +6,13 @@
         "groupType": "unpacked",
         "files": [
           {
-            "name": "Boosty",
-            "description": "Download from Boosty",
-            "size": 10869286654,
-            "url": "https://boosty.to/stalker2ue/posts/028cf8f0-b19d-431d-9046-a3d92cfff01c",
+            "name": "Direct Link",
+            "description": "Unreal Engine 5.2.1",
+            "size": 378438794,
+            "url": "https://cdn.s2ue.org/builds/editor/362/SonUE_Editor_Build_362.zip",
             "additional": {
               "icon": "",
-              "external_link": true
-            }
-          },
-          {
-            "name": "Patreon",
-            "description": "Download from Patreon",
-            "size": 10869286654,
-            "url": "https://www.patreon.com/STALKERonUE/posts",
-            "additional": {
-              "icon": "",
-              "external_link": true
+              "external_link": false
             }
           }
         ]
@@ -37,7 +27,7 @@
         "files": [
           {
             "name": "Direct Link",
-            "description": "Download from CDN",
+            "description": "Unreal Engine 5.1.1",
             "size": 349561971,
             "url": "https://cdn.s2ue.org/builds/editor/135/SonUE_Editor_Build_135.zip",
             "additional": {
