@@ -27,25 +27,36 @@ const i18n = {
 const images = {
   minimumCacheTTL: 86400,
   formats: ["image/avif", "image/webp"],
-  domains: ["i.imgur.com", "cdn.cloudflare.steamstatic.com"],
   remotePatterns: [
     {
       protocol: "https",
-      hostname: "*.s2ue.org",
+      hostname: "**.s2ue.org",
       port: "",
       pathname: "/**",
     },
     {
       protocol: "https",
-      hostname: "img.youtube.com",
+      hostname: "**.youtube.com",
       port: "",
       pathname: "/vi/**",
     },
     {
       protocol: "https",
-      hostname: "i.ytimg.com",
+      hostname: "**.ytimg.com",
       port: "",
       pathname: "/vi/**",
+    },
+    {
+      protocol: "https",
+      hostname: "**.imgur.com",
+      port: "",
+      pathname: "/**",
+    },
+    {
+      protocol: "https",
+      hostname: "**.steamstatic.com",
+      port: "",
+      pathname: "/**",
     },
   ],
 };
