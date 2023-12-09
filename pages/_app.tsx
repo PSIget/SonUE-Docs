@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ReactNode } from "react";
 import "nextra-theme-docs/style.css";
 import "nprogress/nprogress.css";
@@ -49,6 +50,7 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
         }
       `}</style>
       <Component {...pageProps} />
+      <SpeedInsights />
       <Analytics />
     </>
   );
