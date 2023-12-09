@@ -15,7 +15,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": "21.x"
+    "node": "18.x"
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
