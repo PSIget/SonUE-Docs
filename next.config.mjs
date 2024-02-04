@@ -72,22 +72,6 @@ const images = {
 
 const redirects = async () => {
   return [
-    // Tech Redirects
-    {
-      source: "/index",
-      destination: "/",
-      statusCode: 301,
-    },
-    {
-      source: "/en/index",
-      destination: "/en",
-      statusCode: 301,
-    },
-    {
-      source: "/uk/index",
-      destination: "/uk",
-      statusCode: 301,
-    },
     // Tech Switcher Redirects
     {
       source: "/game",
