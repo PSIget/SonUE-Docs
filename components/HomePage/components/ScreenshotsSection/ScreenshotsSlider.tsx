@@ -40,7 +40,7 @@ const ImageSlide: FC<ImageSlideProps> = ({
       <figure>
         <Image
           src={image.url}
-          alt={`Screenshot of the game - ${localizedName}`}
+          alt={localizedName}
           width={792}
           height={444}
           quality={100}
