@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useCallback, useState, FC } from "react";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
@@ -36,7 +38,7 @@ const ImageSlide: FC<ImageSlideProps> = ({
   const localizedName = useLocalesMap<string>(image.name);
 
   return (
-    <SplideSlide key={`${image.name}-${index}`}>
+    <SplideSlide key={`${image.name.en}-${index}`}>
       <figure>
         <Image
           src={image.url}
@@ -108,7 +110,7 @@ export const ScreenshotsSlider: FC = () => {
         <SplideTrack>
           {Data.map((image, index) => (
             <ImageSlide
-              key={`${image.name}-${index}`}
+              key={`${image.name.en}-${index}`}
               image={image}
               index={index}
               openLightboxOnSlide={openLightboxOnSlide}
