@@ -25,7 +25,7 @@ interface ImageSlideProps {
 }
 
 const DynamicFsLightbox = dynamic(() => import("fslightbox-react"), {
-  ssr: false,
+  ssr: true,
 });
 
 const ImageSlide: FC<ImageSlideProps> = ({
