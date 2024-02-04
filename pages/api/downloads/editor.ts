@@ -1,6 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import editorData from "data/downloads/editor.json";
 
+export const config = {
+  runtime: "edge",
+};
+
 // Define the type for your data
 type editorDataType = typeof editorData;
 

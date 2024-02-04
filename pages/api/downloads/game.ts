@@ -1,6 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import gameData from "data/downloads/game.json";
 
+export const config = {
+  runtime: "edge",
+};
+
 // Define the type for your data
 type GameDataType = typeof gameData;
 
