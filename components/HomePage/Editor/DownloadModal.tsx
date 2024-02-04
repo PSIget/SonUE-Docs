@@ -7,7 +7,7 @@ import { modalSubtitle, modalTitle } from "./text";
 import { CTAButton } from "../components/CTAButton";
 import useLocalesMap from "utils/use-locales-map";
 
-const DynamicModal = dynamic(() => import("components/Modal"), { ssr: false });
+const DynamicModal = dynamic(() => import("components/Modal"), { ssr: true });
 
 interface Additional {
   icon: string;
