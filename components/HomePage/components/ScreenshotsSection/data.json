@@ -1,35 +1,27 @@
 [
   {
     "name": {
-      "ru": "Радар",
-      "en": "Radar",
-      "uk": "Радар"
+      "ru": "Мост на Кордоне",
+      "en": "Bridge at Cordon",
+      "uk": "Міст на Кордоні"
     },
-    "url": "https://cdn.s2ue.org/screenshots/radar.jpeg"
+    "url": "https://cdn.s2ue.org/screenshots/711ad0c98d/HighresScreenshot00012.jpeg"
   },
   {
     "name": {
-      "ru": "Зил на Радаре",
-      "en": "Truck on Radar",
-      "uk": "Зіл на Радарі"
+      "ru": "Вертолет на Радаре",
+      "en": "Helicopter on Radar",
+      "uk": "Гелікоптер на Радарі"
     },
-    "url": "https://cdn.s2ue.org/screenshots/truck.jpeg"
+    "url": "https://cdn.s2ue.org/screenshots/711ad0c98d/HighresScreenshot00017.jpeg"
   },
   {
     "name": {
-      "ru": "Бункер на Радаре",
-      "en": "Bunker on Radar",
-      "uk": "Бункер на Радарі"
+      "ru": "Чертово колесо в Припяти",
+      "en": "Ferris Wheel in Pripyat",
+      "uk": "Чортове колесо у Прип'яті"
     },
-    "url": "https://cdn.s2ue.org/screenshots/newbunker.jpeg"
-  },
-  {
-    "name": {
-      "ru": "Блокпост военных",
-      "en": "Military Checkpoint",
-      "uk": "Військовий блокпост"
-    },
-    "url": "https://cdn.s2ue.org/screenshots/checkpoint.jpeg"
+    "url": "https://cdn.s2ue.org/screenshots/711ad0c98d/HighresScreenshot00023.jpeg"
   },
   {
     "name": {
@@ -37,14 +29,30 @@
       "en": "Chernobyl NPP",
       "uk": "Чорнобильська АЕС"
     },
-    "url": "https://cdn.s2ue.org/screenshots/chaes.jpeg"
+    "url": "https://cdn.s2ue.org/screenshots/711ad0c98d/HighresScreenshot00024.jpeg"
   },
   {
     "name": {
-      "ru": "Бункер на Радаре",
-      "en": "Bunker on Radar",
-      "uk": "Бункер на Радарі"
+      "ru": "Деревня Новичков",
+      "en": "Novikov Village",
+      "uk": "Село Новічків"
     },
-    "url": "https://cdn.s2ue.org/screenshots/burner.jpeg"
+    "url": "https://cdn.s2ue.org/screenshots/711ad0c98d/HighresScreenshot00004.jpeg"
+  },
+  {
+    "name": {
+      "ru": "БТР на Блокпосте",
+      "en": "APC at the Checkpoint",
+      "uk": "БТР на Блокпості"
+    },
+    "url": "https://cdn.s2ue.org/screenshots/711ad0c98d/HighresScreenshot00005.jpeg"
+  },
+  {
+    "name": {
+      "ru": "Блокпост военных",
+      "en": "Military Checkpoint",
+      "uk": "Військовий Блокпост"
+    },
+    "url": "https://cdn.s2ue.org/screenshots/711ad0c98d/HighresScreenshot00011.jpeg"
   }
 ]
