@@ -1,11 +1,14 @@
-const withNextra = require("nextra")({
+import nextra from "nextra";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withNextra = nextra({
   theme: "nextra-theme-docs",
   themeConfig: "./theme.config.tsx",
   staticImage: true,
   defaultShowCopyCode: true,
 });
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
+const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
 });
 
@@ -31,6 +34,12 @@ const images = {
     {
       protocol: "https",
       hostname: "**.s2ue.org",
+      port: "",
+      pathname: "/**",
+    },
+    {
+      protocol: "https",
+      hostname: "**.timeweb.cloud",
       port: "",
       pathname: "/**",
     },
@@ -112,4 +121,4 @@ const nextraConfig = withNextra({
   reactStrictMode: true,
 });
 
-module.exports = withBundleAnalyzer(nextraConfig);
+export default withBundleAnalyzer(nextraConfig);
