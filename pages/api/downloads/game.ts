@@ -1,10 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import gameData from "data/downloads/game.json";
 
-export const config = {
-  runtime: "edge",
-};
-
 // Define the type for your data
 type GameDataType = typeof gameData;
 
@@ -33,21 +29,17 @@ const handler = async (
     } catch (error) {
       // If there is an error, return 500 Internal Server Error
       if (error instanceof Error) {
-        res
-          .status(500)
-          .json({
-            status: "error",
-            error: "Internal Server Error",
-            message: error.message,
-          });
+        res.status(500).json({
+          status: "error",
+          error: "Internal Server Error",
+          message: error.message,
+        });
       } else {
-        res
-          .status(500)
-          .json({
-            status: "error",
-            error: "Internal Server Error",
-            message: "An unexpected error occurred",
-          });
+        res.status(500).json({
+          status: "error",
+          error: "Internal Server Error",
+          message: "An unexpected error occurred",
+        });
       }
     }
   } else {
