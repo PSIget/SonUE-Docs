@@ -60,6 +60,7 @@ export default function HeroSection() {
             width={1200}
             alt="Unreal Engine 5 Editor with STALKER on UE"
             quality={100}
+            priority
             style={{
               transform: "rotateX(35deg)",
               marginBottom: "-100px",
