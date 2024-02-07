@@ -72,7 +72,6 @@ export const SectionSubtext: React.FC<SectionSubtextProps> = ({
     "leading-snug": !noWrap,
     "!whitespace-nowrap leading-10": noWrap,
     "font-sans font-normal dark:text-[#FFFFFFB2] text-[#00000080]": true,
-    className,
   });
 
   // Затем добавляем классы для textAlign динамически
@@ -82,7 +81,13 @@ export const SectionSubtext: React.FC<SectionSubtextProps> = ({
   const textClasses = cn(baseClasses, textAlignClass);
 
   return (
-    <p className={cn(textClasses, "max-w-md md:max-w-xl lg:max-w-[792px]")}>
+    <p
+      className={cn(
+        textClasses,
+        "max-w-md md:max-w-xl lg:max-w-[792px]",
+        className
+      )}
+    >
       {children}
     </p>
   );
