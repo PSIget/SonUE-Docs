@@ -37,12 +37,7 @@ export function GetEditor() {
         sizes="(min-width: 1024px) 500px, 100vw"
         alt="Unreal Engine 5 Editor with STALKER on UE"
         quality={100}
-        // fill
-        className="absolute max-lg:relative max-lg:mx-8 max-lg:mb-8 w-[500px] max-lg:w-auto rounded-md max-lg:right-0 max-lg:mb-4 max-lg:mx-0 max-lg:top-0 right-8 top-8 -z-10 border border-zinc-800"
-        // style={{
-        //   width: '100%',
-        //   height: 'auto',
-        // }}
+        className="absolute max-lg:relative w-[500px] max-lg:w-auto rounded-md max-lg:right-0 max-lg:mb-4 max-lg:mx-0 max-lg:top-0 right-8 top-8 -z-10 border border-zinc-800"
       />
     </FadeIn>
   );
