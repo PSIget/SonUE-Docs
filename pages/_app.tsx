@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import NProgress from "nprogress";
 import { Inter } from "next/font/google";
+import { setupWebVitals } from "utils/webVitals";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,6 +42,12 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
       router.events.off("routeChangeError", handleRouteChangeError);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setupWebVitals();
+    }
+  }, []);
 
   return (
     <>
