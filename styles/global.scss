@@ -31,11 +31,20 @@ table {
   border-collapse: collapse;
   border-radius: 0.75rem;
   border-style: hidden; /* hide standard table (collapsed) border */
-  box-shadow: 0 0 0 1px #666; /* this draws the table border  */
+  box-shadow: 0 0 0 1px rgb(39 39 42); /* this draws the table border  */
+}
+
+th {
+  border-color: rgb(39 39 42) !important;
 }
 
 td {
-  border: 1px solid #ccc;
+  border: 1px solid rgb(39 39 42);
+  border-color: rgb(39 39 42) !important;
+}
+
+tr {
+  border-color: rgb(39 39 42) !important;
 }
 
 tr:last-child {
@@ -46,6 +55,16 @@ tr:last-child {
   td:last-child {
     border-radius: 0px 0px 0.75rem 0px;
   }
+}
+
+// Custom IMG Styles in docs
+
+.nextra-content img {
+  border-radius: 0.75rem;
+  outline: 1px solid rgb(39 39 42);
+  outline-offset: -1px; /* Сдвигает контур внутрь элемента */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Custom Light Theme */
