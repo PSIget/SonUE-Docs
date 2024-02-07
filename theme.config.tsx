@@ -218,6 +218,11 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
           hrefLang="uk"
           href={generateHref("/uk", asPath)}
         />
+        <link
+          href="https://cdn.s2ue.org"
+          rel="preconnect"
+          crossOrigin="anonymous"
+        />
       </>
     );
   },
