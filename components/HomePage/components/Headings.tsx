@@ -29,17 +29,20 @@ export const HeroText: React.FC<HeroTextProps> = ({
 interface SectionHeaderProps {
   children: React.ReactNode;
   textAlign?: string; // Добавленный пропс
+  className?: string;
 }
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
   children,
   textAlign = "center",
+  className,
 }) => {
   return (
     <h2
       className={cn(
         gradients.heroHeading,
-        `font-sans font-bold w-full tracking-[-0.01em] text-[32px] text-${textAlign} text-transparent overflow-visible`
+        `font-sans font-bold w-full tracking-[-0.01em] text-[32px] text-${textAlign} text-transparent overflow-visible`,
+        className
       )}
     >
       {children}
@@ -51,6 +54,7 @@ interface SectionSubtextProps {
   noWrap?: boolean;
   hero?: boolean;
   children: React.ReactNode;
+  className?: string;
   textAlign?: string; // Добавленный пропс
 }
 
@@ -58,6 +62,7 @@ export const SectionSubtext: React.FC<SectionSubtextProps> = ({
   noWrap = false,
   hero = false,
   children,
+  className,
   textAlign = "center", // Значение по умолчанию
 }) => {
   // Сначала создаем базовые классы без учета textAlign
@@ -67,6 +72,7 @@ export const SectionSubtext: React.FC<SectionSubtextProps> = ({
     "leading-snug": !noWrap,
     "!whitespace-nowrap leading-10": noWrap,
     "font-sans font-normal dark:text-[#FFFFFFB2] text-[#00000080]": true,
+    className,
   });
 
   // Затем добавляем классы для textAlign динамически
