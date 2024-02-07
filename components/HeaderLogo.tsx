@@ -6,7 +6,11 @@ import Logo from "./Logo";
 function HeaderLogo() {
   return (
     <>
-      <Link href="/" title="Home" className="hover:opacity-75">
+      <Link
+        href="/"
+        title="Go to Home"
+        className="hover:opacity-75 transition-opacity"
+      >
         <Logo height={24} showText />
       </Link>
       <div className={styles.siteSwitcher}>

@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import React, { useMemo } from "react";
 import { Item } from "./Item";
 import useLocalesMap from "utils/use-locales-map";
-import { setup, unpacked } from "./text";
+import { setup, unpacked, ver } from "./text";
 import { m, useReducedMotion } from "framer-motion";
 
 interface Additional {
@@ -39,6 +39,7 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
 
   const setupTranslation = useLocalesMap(setup);
   const unpackedTranslation = useLocalesMap(unpacked);
+  const verTranslation = useLocalesMap(ver);
 
   const groupTypeMapping: { [key: string]: string } = useMemo(
     () => ({
@@ -83,9 +84,11 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
         <MotionDiv
           key={version.version}
           variants={item}
-          className={styles.verison}
+          className={`${styles.verison} bg-black rounded-xl border border-zinc-800 p-4`}
         >
-          <h2>Версия {version.version}</h2>
+          <h2>
+            {verTranslation} {version.version}
+          </h2>
           {version.groups.map((group) => (
             <div key={group.groupType} className={styles.group}>
               <h3>{group.groupType}</h3>

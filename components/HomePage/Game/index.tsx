@@ -17,6 +17,7 @@ import { LazyMotion, domAnimation } from "framer-motion";
 import UeBanner1 from "../assets/banner-graphic.svg";
 import UeBanner2 from "../assets/banner-light.svg";
 import UeBanner3 from "../assets/banner-sound.svg";
+import { GetEditor } from "../components/GetEditor";
 
 const featuresContent = {
   techTitle: {
@@ -146,6 +147,7 @@ export default function Home() {
           />
           <OriginalStorySection />
           <DiscordSection />
+          <GetEditor />
           <BoostySection />
           <LastSection
             title={useLocalesMap(goTitle)}
