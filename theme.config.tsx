@@ -15,7 +15,6 @@ import {
   titleMap,
   metaTags,
 } from "./translations/text";
-import Logo from "./components/Logo";
 import { Footer } from "components/Footer";
 import Navigation from "components/Navigation";
 import HeaderLogo from "components/HeaderLogo";
