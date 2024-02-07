@@ -12,8 +12,8 @@ export const Title = {
 
 /** @type {Readonly<Record<Locale, string>>} */
 export const SubTitle = {
-  en: "Together we create a unique survival experience in a world where every decision matters. Welcome to our stalker community!",
-  uk: "Разом ми створюємо унікальний досвід виживання в світі, де кожне рішення має значення. Ласкаво просимо до нашої спільноти сталкерів!",
+  en: "Discover a next-generation editor that transforms the legendary STALKER legacy and X-Ray Engine mechanics with the incredible Unreal Engine 5, opening up limitless possibilities for creativity and creation",
+  uk: "Відкрийте для себе редактор нового покоління, який трансформує легендарну спадщину STALKER і механіки X-Ray Engine за допомогою неймовірного Unreal Engine 5, відкриваючи безмежні можливості для творчості та творення",
   ru: "Откройте для себя редактор нового поколения, который трансформирует легендарное наследие STALKER и механики X-Ray Engine с помощью невероятного Unreal Engine 5, открывая безграничные возможности для творчества и созидания",
 };
 
