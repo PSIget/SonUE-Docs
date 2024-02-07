@@ -83,7 +83,7 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
         <MotionDiv
           key={version.version}
           variants={item}
-          className={styles.verison}
+          className={`${styles.verison} bg-black rounded-xl border border-zinc-800 p-4`}
         >
           <h2>Версия {version.version}</h2>
           {version.groups.map((group) => (
