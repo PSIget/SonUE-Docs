@@ -22,3 +22,10 @@ export const unpacked = {
   uk: "ZIP-Архів",
   ru: "ZIP-Архив",
 };
+
+/** @type {Readonly<Record<Locale, string>>} */
+export const ver = {
+  en: "Build",
+  uk: "Build",
+  ru: "Build",
+};
