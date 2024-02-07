@@ -1,5 +1,5 @@
 import { m, useInView, useReducedMotion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -23,13 +23,17 @@ export const FadeIn: React.FC<FadeInProps> = ({
     once: true,
     margin: viewTriggerOffset ? "-128px" : "0px",
   });
-
   const shouldReduceMotion = useReducedMotion();
+  const [isJsEnabled, setIsJsEnabled] = useState(false);
+
+  useEffect(() => {
+    setIsJsEnabled(true); // Это будет установлено только если JavaScript включен
+  }, []);
 
   const fadeUpVariants = {
     initial: {
-      opacity: shouldReduceMotion ? 1 : 0,
-      y: shouldReduceMotion ? 0 : noVertical ? 0 : 24,
+      opacity: 0,
+      y: noVertical ? 0 : 24,
     },
     animate: {
       opacity: 1,
@@ -42,15 +46,20 @@ export const FadeIn: React.FC<FadeInProps> = ({
   return (
     <Component
       ref={ref}
-      animate={inView ? "animate" : "initial"}
-      variants={fadeUpVariants}
+      animate={isJsEnabled ? (inView ? "animate" : "initial") : ""}
+      variants={isJsEnabled ? fadeUpVariants : {}}
       className={className}
-      initial="initial"
-      transition={{
-        duration: shouldReduceMotion ? 0 : 1,
-        delay: delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
-      }}
+      initial={isJsEnabled ? "initial" : ""}
+      transition={
+        isJsEnabled
+          ? {
+              duration: shouldReduceMotion ? 0 : 1,
+              delay: delay,
+              ease: [0.21, 0.47, 0.32, 0.98],
+            }
+          : {}
+      }
+      style={!isJsEnabled ? { opacity: 1, transform: "translateY(0px)" } : {}}
     >
       {children}
     </Component>
