@@ -7,7 +7,6 @@ import Link from "next/link";
 import { DownloadModal } from "./DownloadModal";
 import useLocalesMap from "utils/use-locales-map";
 import { AnimatedBackground } from "../components/AnimatedBackground";
-import Logo from "components/Logo";
 
 import Image from "next/image";
 
