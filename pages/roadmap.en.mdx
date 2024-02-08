@@ -1,89 +1,109 @@
-import { Callout, Steps } from 'nextra-theme-docs'
+---
+description: "Detailed roadmap for porting the STALKER trilogy to Unreal Engine 5, including key development stages and game elements integration."
+---
+
+import { Steps } from 'nextra-theme-docs'
 
 # Roadmap
 
-Learn about the history of STALKER on UE and our roadmap for future products
+To create a detailed roadmap for porting the STALKER trilogy to Unreal Engine 5, we will define key development stages, dividing them into priority categories: Foundation, Shadow of Chernobyl (SoC), and Call of Pripyat (CoP). This will organize the development process more efficiently and focus on the most important aspects of porting.
 
-## Minimum Program
+## 1. Foundation
 
-- Port Shadow of Chernobyl
-- Port Clear Sky
-- Port Call of Pripyat
-- Create a base for the editor
+These steps form the foundation of the port, ensuring compatibility and the possibility of further functionality extensions.
 
 <Steps>
-### First Iteration
 
-- Launch Shadow of Chernobyl on a single location
+### Implementation of full cycle location development
 
-### Second Iteration
+Developing tools and methodologies for creating and adapting locations for Unreal Engine 5, including transferring textures, lighting, and basic objects. This will ensure visual consistency with the original game while improving graphics quality.
 
-- Implement full location development cycle on UE5
-- Implement the ability to fully play through Shadow of Chernobyl as a technology demonstration
-- Fix HUD and other minor bugs
-- Release Shadow of Chernobyl Build
-- Release Editor Build (with all locations)
-- Minimum graphical fixes on Shadow of Chernobyl locations
+### Ability to port old content
 
-### Third Iteration
+Creating tools for efficient transfer of existing content, including models, textures, and gameplay elements from the original trilogy to Unreal Engine 5, while retaining their unique features.
 
-- Implementation of particles
+### Kinematics System Support
 
-#### `we are here`
+Integration of X-Ray animations into Unreal Engine 5 to preserve mechanics and enhance quality, with the ability for reverse integration into X-Ray.
 
-- Fix HUD and other minor bugs
-- Implement the ability to fully play through Shadow of Chernobyl as a technology demonstration
-- Release Clear Sky Build
-- Release Editor Build (with all locations)
-- Minimum graphical fixes on Clear Sky locations
+### Implementation of Attachments in Unreal Engine 5
 
-### Fourth Iteration
+Attachments from X-Ray Engine are now integrated into Unreal Engine 5 via Proxy to ensure compatibility and efficient interaction.
 
-- Implementation of weather
-- Fix HUD and other minor bugs
-- Implement the ability to fully play through Call of Pripyat in one build as a technology demonstration
-- Release Call of Pripyat Build
-- Release Editor Build (with all locations)
-- Minimum graphical fixes on Clear Sky locations
+### Implementation of HUD Weapon Rendering
 
-### Fifth Iteration
+Implementation of first-person HUD weapon support in Unreal Engine, providing native integration and improved visualization quality.
 
-- Implementation of sound on the GU5
-- Fix other minor bugs
-- Implement the ability to fully play through the entire trilogy in one build as a technology demonstration
-- Release Trilogy Build
-- Release Editor Build (with all locations)
+### Create a tool for terrain transfer
 
-### Sixth Iteration
-
-- Implementation of multithreaded animation
-- Implementation of all attachments on UE5
-- Implementation of a full-fledged menu
-- Release Trilogy Build
-- Release Editor Build (with all locations)
-- Fix other minor bugs
-
-### Seventh Iteration
-
-- Implementation of decals
-- Optimization (including LOD fixes)
-- Fix other minor bugs
-- Release Trilogy Build
-- Release Editor Build (with all locations)
-- PP effects
+Developing a tool for automatic conversion of terrain from X-Ray to the Unreal Engine 5 Landscape format, ensuring high accuracy of transfer and preservation of the original world's features.
 
 </Steps>
 
-<Callout type="info" emoji="ℹ️">
-    Release the game if it is not possible to find specialists to implement the Maximum Program (referring to texture and model updates)
-</Callout>
+## 2. Shadow of Chernobyl
 
-## Maximum Program
+These steps focus on recreating key elements and atmosphere of the first part of the trilogy.
 
-Remaster or Remake - ideally, we would like to have Next-Gen graphics level, but it's our wet dreams, and everything depends on a series of factors: from finding interested individuals to the amount of donations. It's unlikely that these people will do it for free.
+<Steps>
 
-Remember, you can support us on [Boosty](https://boosty.to/stalker2ue)
+### Implementation of weather
 
-- Port Shadow of Chernobyl as a Remaster or Remake
-- Port Clear Sky as a Remaster or Remake
-- Port Call of Pripyat as a Remaster or Remake
+Adapting the dynamic weather system from Shadow of Chernobyl for Unreal Engine 5, achieving a new level of realism and immersion in the game world.
+
+### Implementation of particles
+
+Transferring the particle system responsible for anomalies, explosions, shots, and other visual effects, optimized for modern hardware and engine capabilities.
+
+### Implementation of decals
+
+Creating a decals system for realistic display of bullet marks, blood, and other elements, enhancing the visual component and atmosphere.
+
+### Transfer of sounds to Unreal Engine 5
+
+Integrating audio content from Shadow of Chernobyl, ensuring high-quality sound using the new capabilities of Unreal Engine 5's audio system.
+
+### Post Process effects
+
+Integrating and adjusting post-processing to achieve characteristic visual effects and atmosphere of the original trilogy, using modern technologies and capabilities of Unreal Engine 5.
+
+`we are here`
+
+### Implementation of Full Menu Functionality
+
+Complete menu adaptation, including settings and loading screen, to ensure deep customization and enhanced user experience.
+
+</Steps>
+
+## 3. Call of Pripyat
+
+Stages aimed at implementing features and improvements introduced in the last part of the trilogy.
+
+<Steps>
+
+### Implementation of a multithreaded animation system
+
+Optimizing and adapting the animation system for multithreading use, significantly increasing performance and quality of animations.
+
+### Implementation of development capabilities on Blueprint
+
+Introducing support for programming in Blueprints for developing game mechanics and interactive elements, simplifying the development process and providing more flexibility.
+
+### Physics Implementation on Unreal Engine 5
+
+Optimization of the physics engine to increase realism of object interactions, eliminating the need for redundant metadata and simplifying the porting of Skeletal Mesh without Actor Editor.
+
+### Implementation of 3D UI
+
+Creating a three-dimensional user interface, improving player interaction and enriching the visual and gameplay experience.
+
+</Steps>
+
+---
+
+### Additional Notes
+
+#### Clear Sky
+
+Including a full port of Clear Sky in our project is not planned due to significant resource and time constraints, as well as a number of technical and organizational difficulties. Nevertheless, we intend to explore possibilities for integrating certain elements and aspects of "Clear Sky" within our available resources. It should be understood that this endeavor is not mandatory, and we are making efforts to achieve this goal without prior guarantees.
+
+This roadmap represents a comprehensive plan for porting the STALKER trilogy to Unreal Engine 5, taking into account current priorities and resources, as well as the desire to recreate the original gaming experience using modern technologies.
