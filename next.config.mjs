@@ -103,6 +103,9 @@ const nextraConfig = withNextra({
   images,
   redirects,
   reactStrictMode: true,
+  experimental: {
+    nextScriptWorkers: true,
+  },
 });
 
 export default withBundleAnalyzer(nextraConfig);

@@ -40,6 +40,7 @@
     "web-vitals": "^3.5.2"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.9.1",
     "@next/bundle-analyzer": "^14.1.0",
     "@next/env": "^14.1.0",
     "@types/fslightbox-react": "^1.7.7",

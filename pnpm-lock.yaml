@@ -67,6 +67,9 @@ dependencies:
     version: 3.5.2
 
 devDependencies:
+  '@builder.io/partytown':
+    specifier: ^0.9.1
+    version: 0.9.1
   '@next/bundle-analyzer':
     specifier: ^14.1.0
     version: 14.1.0
@@ -140,6 +143,12 @@ packages:
   /@braintree/sanitize-url@6.0.4:
     resolution: {integrity: sha512-s3jaWicZd0pkP0jf5ysyHUI/RE7MHos6qlToFcGWXVp+ykHOy77OUMrfbgJ9it2C5bow7OIQwYYaHjk9XlBQ2A==}
     dev: false
+
+  /@builder.io/partytown@0.9.1:
+    resolution: {integrity: sha512-9Bo4eZBoc7FlY38atqaXvuEMjuwU6ege/ZN+lh5G7/dC0LtdZCQJQ6CndrUtYGeia+7JoQyWXBpjcx1jFty0VA==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dev: true
 
   /@corex/deepmerge@4.0.43:
     resolution: {integrity: sha512-N8uEMrMPL0cu/bdboEWpQYb/0i2K5Qn8eCsxzOmxSggJbbQte7ljMRoXm917AbntqTGOzdTu+vP3KOOzoC70HQ==}

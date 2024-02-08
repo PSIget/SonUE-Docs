@@ -146,6 +146,7 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
     return (
       <>
         {/* Favicons, meta */}
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -163,7 +164,6 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
           sizes="16x16"
           href="/favicon/favicon-16x16.png"
         />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link
