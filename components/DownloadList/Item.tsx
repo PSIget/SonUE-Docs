@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Item.module.scss";
 import { ArrowDown, ExternalLink, File } from "react-feather";
 import React from "react";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface Additional {
   icon: string;
@@ -14,6 +17,8 @@ interface DownloadFile {
   size: number;
   url: string;
   additional: Additional;
+  version: string;
+  type: string;
 }
 
 const formatBytes = (bytes: number, decimals = 2) => {
@@ -34,6 +39,8 @@ export const Item: React.FC<DownloadFile> = ({
   size,
   url,
   additional,
+  version,
+  type,
 }) => {
   // Проверяем, содержит ли url подстроку "https://boosty.to/"
   const isBoosty = /^https:\/\/(www\.)?boosty\.to/.test(url);
@@ -46,6 +53,17 @@ export const Item: React.FC<DownloadFile> = ({
     isPatreon ? styles.patreon : ""
   }`;
 
+  // Функция для отправки события аналитики
+  const handleClick = () => {
+    // Отправляем событие с названием файла, который содержит способ загрузки
+    sendGAEvent({
+      event: "download",
+      version: version,
+      method: name,
+      type: type,
+    });
+  };
+
   return (
     <Link
       href={url}
@@ -53,6 +71,7 @@ export const Item: React.FC<DownloadFile> = ({
         ? { rel: "noreferrer", target: "_blank" }
         : {})}
       className={itemClasses}
+      onClick={handleClick}
     >
       <div className={styles.icon}>
         <File size={24} color="white" />

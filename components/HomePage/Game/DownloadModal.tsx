@@ -110,7 +110,7 @@ export const DownloadModal: React.FC<Props> = ({
               {error ? (
                 <div>Error: {error}</div>
               ) : data ? (
-                <DownloadList data={data} />
+                <DownloadList data={data} type="game" />
               ) : (
                 <Loader />
               )}
