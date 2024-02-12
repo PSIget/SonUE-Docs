@@ -18,6 +18,7 @@
     "node": "20.x"
   },
   "dependencies": {
+    "@next/third-parties": "^14.1.0",
     "@splidejs/react-splide": "^0.7.12",
     "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.9",
