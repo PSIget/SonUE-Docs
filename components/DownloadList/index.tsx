@@ -30,11 +30,12 @@ interface Version {
 
 interface DownloadListProps {
   data: Version[];
+  type: string;
 }
 
 const MotionDiv = m.div;
 
-const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
+const DownloadList: React.FC<DownloadListProps> = ({ data, type }) => {
   const shouldReduceMotion = useReducedMotion();
 
   const setupTranslation = useLocalesMap(setup);
@@ -94,7 +95,12 @@ const DownloadList: React.FC<DownloadListProps> = ({ data }) => {
               <h3>{group.groupType}</h3>
               <MotionDiv variants={item} className={styles.items}>
                 {group.files.map((file) => (
-                  <Item {...file} key={file.name} />
+                  <Item
+                    {...file}
+                    version={version.version}
+                    type={type}
+                    key={file.name}
+                  />
                 ))}
               </MotionDiv>
             </div>

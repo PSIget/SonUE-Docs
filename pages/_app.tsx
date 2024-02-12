@@ -4,12 +4,12 @@ import { ReactNode } from "react";
 import "nextra-theme-docs/style.css";
 import "nprogress/nprogress.css";
 import "../styles/global.scss";
-import Analytics from "components/GoogleAnalytics";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import NProgress from "nprogress";
 import { Inter } from "next/font/google";
 import { setupWebVitals } from "utils/webVitals";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,7 +58,7 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
       `}</style>
       <Component {...pageProps} />
       <SpeedInsights />
-      <Analytics />
+      <GoogleAnalytics gaId="G-55PM901V2S" />
     </>
   );
 }
