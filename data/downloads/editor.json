@@ -9,7 +9,7 @@
             "name": "Direct Link",
             "description": "Unreal Engine 5.2.1",
             "size": 378438794,
-            "url": "https://cdn.s2ue.org/builds/editor/362/SonUE_Editor_Build_362.zip",
+            "url": "https://storage.s2ue.org/builds/editor/362/SonUE_Editor_Build_362.zip",
             "additional": {
               "icon": "",
               "external_link": false
@@ -29,7 +29,7 @@
             "name": "Direct Link",
             "description": "Unreal Engine 5.1.1",
             "size": 349561971,
-            "url": "https://cdn.s2ue.org/builds/editor/135/SonUE_Editor_Build_135.zip",
+            "url": "https://storage.s2ue.org/builds/editor/135/SonUE_Editor_Build_135.zip",
             "additional": {
               "icon": "",
               "external_link": false
