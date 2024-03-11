@@ -204,8 +204,8 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
         <link rel="canonical" href={getCanonicalURL()} />
         <link
           rel="alternate"
-          hrefLang="x-default"
-          href={generateHref("", asPath)}
+          hrefLang="ru"
+          href={generateHref("/ru", asPath)}
         />
         <link
           rel="alternate"
@@ -216,6 +216,11 @@ const themeConfig: import("nextra-theme-docs").DocsThemeConfig = {
           rel="alternate"
           hrefLang="uk"
           href={generateHref("/uk", asPath)}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={generateHref("", asPath)}
         />
         <link
           href="https://cdn.s2ue.org"
