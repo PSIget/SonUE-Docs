@@ -4,11 +4,7 @@
     touch-action: pan-y;
     display: flex;
     max-width: 100%;
-    margin-left: 24px;
     --slide-size: 792px;
-    @media screen and (max-width: 64rem) {
-      margin-left: 0.5rem;
-    }
   }
   .slide {
     flex: 0 0 var(--slide-size);
