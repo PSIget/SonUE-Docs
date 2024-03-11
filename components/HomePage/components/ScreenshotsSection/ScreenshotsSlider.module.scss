@@ -1,59 +1,55 @@
 .slider {
-  & > div > div {
-    overflow: visible;
+  .sliderContainer {
+    backface-visibility: hidden;
+    touch-action: pan-y;
+    display: flex;
+    max-width: 100%;
+    margin-left: 24px;
+    --slide-size: 792px;
+    @media screen and (max-width: 64rem) {
+      margin-left: 0.5rem;
+    }
   }
-  li {
-    figure {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease 0s;
-      @media (prefers-reduced-motion) {
-        transition: none;
-      }
-      figcaption {
-        color: #888;
-        font-family: var(--font-inter);
-        font-size: 0.75rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 1.125rem; /* 150% */
-        letter-spacing: 0.2rem;
-        text-transform: uppercase;
-        @media screen and (max-width: 48rem) {
+  .slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    margin-left: 24px;
+    @media screen and (max-width: 64rem) {
+      flex: 0 0 calc(100% + 2rem);
+      margin-left: 0.5rem;
+    }
+  }
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    img {
+      box-sizing: border-box;
+      border-radius: 0.75rem;
+      display: block;
+      z-index: 5;
+      &.shadow {
+        position: absolute;
+        z-index: 0;
+        filter: blur(3rem);
+        opacity: 0.25;
+        @media screen and (max-device-width: 48rem) {
           display: none;
         }
       }
     }
-  }
-  :global(li:not(.is-active) figure) {
-    opacity: 0.5;
-    cursor: inherit;
-    pointer-events: none;
-    @media (prefers-reduced-motion) {
-      opacity: inherit;
-    }
     figcaption {
-      opacity: 0;
-      @media (prefers-reduced-motion) {
-        opacity: inherit;
-      }
-    }
-  }
-  img {
-    box-sizing: border-box;
-    border-radius: 0.75rem;
-    border: 0.0625rem solid rgba(255, 255, 255, 0.08);
-    display: block;
-    z-index: 5;
-    &.shadow {
-      position: absolute;
-      z-index: 0;
-      filter: blur(3rem);
-      opacity: 0.25;
-      @media screen and (max-device-width: 48rem) {
+      color: #888;
+      font-family: var(--font-inter);
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.125rem; /* 150% */
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      @media screen and (max-width: 48rem) {
         display: none;
       }
     }

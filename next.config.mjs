@@ -30,16 +30,11 @@ const i18n = {
 const images = {
   minimumCacheTTL: 86400,
   formats: ["image/avif", "image/webp"],
+  imageSizes: [16, 32, 48, 64, 96, 128, 256, 294, 384, 512, 600, 792],
   remotePatterns: [
     {
       protocol: "https",
       hostname: "**.s2ue.org",
-      port: "",
-      pathname: "/**",
-    },
-    {
-      protocol: "https",
-      hostname: "**.timeweb.cloud",
       port: "",
       pathname: "/**",
     },

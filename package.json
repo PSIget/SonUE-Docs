@@ -19,11 +19,13 @@
   },
   "dependencies": {
     "@next/third-parties": "^14.1.0",
-    "@splidejs/react-splide": "^0.7.12",
     "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.9",
     "classnames": "^2.5.1",
     "dotenv": "^16.4.1",
+    "embla-carousel": "^8.0.0",
+    "embla-carousel-autoplay": "^8.0.0",
+    "embla-carousel-react": "^8.0.0",
     "focus-visible": "^5.2.0",
     "framer-motion": "^11.0.3",
     "fslightbox-react": "^1.7.6",
@@ -67,5 +69,6 @@
   "peerDependencies": {
     "@next/env": "^13.4.12",
     "prop-types": "^15.8.1"
-  }
+  },
+  "packageManager": "pnpm@8.15.1+sha1.8adba2d20330c02d3856e18c4eb3819d1d3ca6aa"
 }

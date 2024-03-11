@@ -1,14 +1,15 @@
-"use client"
-
-import React, { useCallback, useState, FC } from "react";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css";
+import React, { useCallback, useState, FC, useRef, useEffect } from "react";
+import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
 import styles from "./ScreenshotsSlider.module.scss";
 import Data from "./data.json";
 import useLocalesMap, { ILocaleMap } from "utils/use-locales-map";
+
+const TWEEN_FACTOR_BASE = 0.6;
 
 interface ImageData {
   name: ILocaleMap<string>;
@@ -38,7 +39,7 @@ const ImageSlide: FC<ImageSlideProps> = ({
   const localizedName = useLocalesMap<string>(image.name);
 
   return (
-    <SplideSlide key={`${image.name.en}-${index}`}>
+    <div key={`${image.name.en}-${index}`} className={styles.slide}>
       <figure>
         <Image
           src={image.url}
@@ -47,15 +48,11 @@ const ImageSlide: FC<ImageSlideProps> = ({
           height={444}
           quality={100}
           onClick={() => openLightboxOnSlide(index)}
-          sizes="(max-width: 768px) 294px, (max-width: 916px) 600px, 828px"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
+          sizes="(max-width: 768px) 294px, (max-width: 916px) 600px, 792px"
         />
         <figcaption>{localizedName}</figcaption>
       </figure>
-    </SplideSlide>
+    </div>
   );
 };
 
@@ -78,46 +75,84 @@ export const ScreenshotsSlider: FC = () => {
     [lightboxController]
   );
 
+  const numberWithinRange = (
+    number: number,
+    min: number,
+    max: number
+  ): number => Math.min(Math.max(number, min), max);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ playOnInit: true, delay: 60000, stopOnMouseEnter: true }),
+  ]);
+  const tweenFactor = useRef(0);
+
+  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
+    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
+  }, []);
+
+  const tweenOpacity = useCallback(
+    (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
+      const engine = emblaApi.internalEngine();
+      const scrollProgress = emblaApi.scrollProgress();
+      const slidesInView = emblaApi.slidesInView();
+      const isScrollEvent = eventName === "scroll";
+
+      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+        let diffToTarget = scrollSnap - scrollProgress;
+        const slidesInSnap = engine.slideRegistry[snapIndex];
+
+        slidesInSnap.forEach((slideIndex) => {
+          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
+
+          if (engine.options.loop) {
+            engine.slideLooper.loopPoints.forEach((loopItem) => {
+              const target = loopItem.target();
+
+              if (slideIndex === loopItem.index && target !== 0) {
+                const sign = Math.sign(target);
+
+                if (sign === -1) {
+                  diffToTarget = scrollSnap - (1 + scrollProgress);
+                }
+                if (sign === 1) {
+                  diffToTarget = scrollSnap + (1 - scrollProgress);
+                }
+              }
+            });
+          }
+
+          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+          const opacity = numberWithinRange(tweenValue, 0, 1).toString();
+          emblaApi.slideNodes()[slideIndex].style.opacity = opacity;
+        });
+      });
+    },
+    []
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    setTweenFactor(emblaApi);
+    tweenOpacity(emblaApi);
+    emblaApi
+      .on("reInit", setTweenFactor)
+      .on("reInit", tweenOpacity)
+      .on("scroll", tweenOpacity);
+  }, [emblaApi, tweenOpacity, setTweenFactor]);
+
   return (
-    <div className={styles.slider}>
-      <Splide
-        aria-label="Screenshots"
-        hasTrack={false}
-        options={{
-          type: "loop",
-          perPage: 1,
-          focus: "center",
-          autoWidth: true,
-          lazyLoad: "nearby",
-          gap: "1.5rem",
-          pagination: false,
-          arrows: false,
-          autoplay: true,
-          reducedMotion: {
-            speed: 0,
-            rewindSpeed: 0,
-            autoplay: "pause",
-          },
-          breakpoints: {
-            768: {
-              perPage: 1,
-              autoWidth: false,
-              gap: ".5rem",
-            },
-          },
-        }}
-      >
-        <SplideTrack>
-          {Data.map((image, index) => (
-            <ImageSlide
-              key={`${image.name.en}-${index}`}
-              image={image}
-              index={index}
-              openLightboxOnSlide={openLightboxOnSlide}
-            />
-          ))}
-        </SplideTrack>
-      </Splide>
+    <div className={styles.slider} ref={emblaRef}>
+      <div className={styles.sliderContainer}>
+        {Data.map((image, index) => (
+          <ImageSlide
+            key={`${image.name.en}-${index}`}
+            image={image}
+            index={index}
+            openLightboxOnSlide={openLightboxOnSlide}
+          />
+        ))}
+      </div>
       <DynamicFsLightbox
         toggler={lightboxController.toggler}
         sources={urls}
