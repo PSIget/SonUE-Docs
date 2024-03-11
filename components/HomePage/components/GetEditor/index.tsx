@@ -6,15 +6,12 @@ import { Button, SubTitle, Title } from "./text";
 import Link from "next/link";
 import ueScreenshot from "../../assets/ue-screenshot.png";
 import { CTAButton } from "../CTAButton";
-// import styles from "./index.module.scss";
 
 export function GetEditor() {
   return (
     <FadeIn
       delay={0.3}
-      className={
-        "font-sans xl:mx-auto max-w-[1200px] p-8 my-20 mx-6 max-sm:p-4 flex max-lg:flex-col-reverse relative z-0 bg-neutral-950 rounded-xl border border-zinc-800 overflow-hidden"
-      }
+      className="font-sans xl:mx-auto max-w-[1200px] p-8 my-20 mx-6 max-sm:p-4 flex max-lg:flex-col-reverse relative z-0 rounded-xl border border-gray-300 overflow-hidden bg-gray-100 dark:text-white dark:border-zinc-800 dark:bg-neutral-950"
       section
     >
       <div className="flex flex-col w-full gap-6 max-lg:gap-4 !text-left">
