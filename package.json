@@ -25,6 +25,7 @@
     "dotenv": "^16.4.5",
     "embla-carousel": "^8.0.0",
     "embla-carousel-autoplay": "^8.0.0",
+    "embla-carousel-class-names": "^8.0.0",
     "embla-carousel-react": "^8.0.0",
     "focus-visible": "^5.2.0",
     "framer-motion": "^11.0.12",

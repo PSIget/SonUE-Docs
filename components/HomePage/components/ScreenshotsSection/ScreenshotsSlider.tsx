@@ -2,6 +2,7 @@ import React, { useCallback, useState, FC, useRef, useEffect } from "react";
 import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import ClassNames from "embla-carousel-class-names";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
@@ -83,6 +84,7 @@ export const ScreenshotsSlider: FC = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ playOnInit: true, delay: 60000, stopOnMouseEnter: true }),
+    ClassNames({ snapped: styles.active }),
   ]);
   const tweenFactor = useRef(0);
 
